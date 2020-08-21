@@ -1,0 +1,66 @@
+{
+  "name": "todo-full-stack",
+  "version": "0.1.0",
+  "description": "Todo Full Stack",
+  "repository": "https://github.com/piwakawaka-2020/todo-full-stack",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "run-p watch:client watch:server",
+    "watch:client": "webpack --watch",
+    "watch:server": "nodemon --watch server",
+    "start": "node server",
+    "test": "jest --noStackTrace --watchAll",
+    "build": "webpack"
+  },
+  "author": "EDA",
+  "license": "ISC",
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-proposal-object-rest-spread"
+    ]
+  },
+  "jest": {
+    "setupFiles": [
+      "./tests/client/setup-enzyme.js"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.2.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.3",
+    "jest": "^26.4.1",
+    "nodemon": "^2.0.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "sqlite3": "^5.0.0",
+    "sass": "^1.26.10",
+    "sass-loader": "^9.0.3",
+    "style-loader": "^1.2.1",
+    "supertest": "^4.0.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.21.5",
+    "mini-css-extract-plugin": "^0.10.0",
+    "npm-run-all": "^4.1.5",
+    "pg": "^8.3.2",
+    "superagent": "^6.0.0"
+  }
+}

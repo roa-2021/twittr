@@ -1,0 +1,7 @@
+node_modules
+*.sqlite3
+public/bundle.js
+public/bundle.js.map
+public/styles.css
+public/styles.css.map
+.env
