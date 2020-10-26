@@ -5,15 +5,21 @@
   "repository": "https://github.com/piwakawaka-2020/todo-full-stack",
   "main": "server/index.js",
   "scripts": {
-    "dev": "run-p watch:client watch:server",
-    "watch:client": "webpack --watch",
-    "watch:server": "nodemon --watch server",
+    "build": "npm run webpack -- --mode production",
     "start": "node server",
-    "test": "jest --noStackTrace --watchAll",
-    "build": "webpack"
+    "test": "jest",
+    "test:watch": "jest --noStackTrace --watchAll",
+    "dev": "run-p dev:client dev:server",
+    "dev:client": "npm run webpack -- --watch",
+    "dev:server": "nodemon --watch server",
+    "webpack": "webpack --config ./client/webpack.config.js",
+    "knex": "knex --knexfile ./server/db/knexfile.js"
   },
   "author": "EDA",
   "license": "ISC",
+  "keywords": [
+    "fullstack"
+  ],
   "babel": {
     "presets": [
       "@babel/preset-env",
@@ -30,37 +36,37 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.11.4",
-    "@babel/plugin-proposal-class-properties": "^7.10.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
-    "@babel/preset-env": "^7.11.0",
-    "@babel/preset-react": "^7.10.4",
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
     "babel-loader": "^8.1.0",
-    "css-loader": "^4.2.1",
+    "css-loader": "^5.0.0",
     "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.3",
-    "jest": "^26.4.1",
-    "nodemon": "^2.0.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "jest": "^26.6.0",
+    "nodemon": "^2.0.6",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "sqlite3": "^5.0.0",
-    "sass": "^1.26.10",
-    "sass-loader": "^9.0.3",
-    "style-loader": "^1.2.1",
-    "supertest": "^4.0.2",
+    "sass": "^1.27.0",
+    "sass-loader": "^10.0.3",
+    "style-loader": "^2.0.0",
+    "supertest": "^5.0.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
     "express": "^4.17.1",
-    "knex": "^0.21.5",
-    "mini-css-extract-plugin": "^0.10.0",
+    "knex": "^0.21.6",
+    "mini-css-extract-plugin": "^1.1.1",
     "npm-run-all": "^4.1.5",
-    "pg": "^8.3.2",
-    "superagent": "^6.0.0"
+    "pg": "^8.4.1",
+    "superagent": "^6.1.0"
   }
 }
