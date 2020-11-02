@@ -5,7 +5,9 @@
   "repository": "https://github.com/piwakawaka-2020/todo-full-stack",
   "main": "server/index.js",
   "scripts": {
-    "build": "npm run webpack -- --mode production",
+    "build": "run-s build:client build:server",
+    "build:client": "npm run webpack -- --mode production",
+    "build:server": "npm run knex -- migrate:latest",
     "start": "node server",
     "test": "jest",
     "test:watch": "jest --noStackTrace --watchAll",
