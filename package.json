@@ -15,7 +15,8 @@
     "dev:client": "npm run webpack -- --watch",
     "dev:server": "nodemon --watch server",
     "webpack": "webpack --config ./client/webpack.config.js",
-    "knex": "knex --knexfile ./server/db/knexfile.js"
+    "knex": "knex --knexfile ./server/db/knexfile.js",
+    "lint": "eslint ."
   },
   "author": "EDA",
   "license": "ISC",
@@ -47,6 +48,8 @@
     "css-loader": "^5.0.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
+    "eslint": "7.9.0",
+    "eslint-config-eda": "0.1.4",
     "jest": "^26.6.0",
     "nodemon": "^2.0.6",
     "react": "^16.14.0",
