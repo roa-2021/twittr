@@ -35,7 +35,7 @@
   },
   "jest": {
     "setupFiles": [
-      "./tests/client/setup-enzyme.js"
+      "./client/testing/setup-enzyme.js"
     ]
   },
   "devDependencies": {
