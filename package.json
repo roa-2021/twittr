@@ -38,6 +38,10 @@
       "./client/testing/setup-enzyme.js"
     ]
   },
+  "eslintConfig": {
+    "extends": "eda",
+    "ignorePatterns": ["bundle.js"]
+  },
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
