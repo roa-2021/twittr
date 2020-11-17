@@ -1,10 +1,10 @@
-import React from "react"
-import AddTodo from "./AddTodo"
+import React from 'react'
+import AddTodo from './AddTodo'
 
 class App extends React.Component {
-  componentDidMount() {}
+  componentDidMount () {}
 
-  render() {
+  render () {
     return (
       <>
         <header className="header">
