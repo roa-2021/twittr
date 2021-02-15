@@ -1,21 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import AddTodo from './AddTodo'
 
-class App extends React.Component {
-  componentDidMount () {}
+function App () {
+  useEffect(() => {
 
-  render () {
-    return (
-      <>
-        <header className="header">
-          <h1>todos</h1>
-          <AddTodo />
-        </header>
-        <section className="main"></section>
-        <footer className="footer"></footer>
-      </>
-    )
-  }
+  }, [])
+
+  return (
+    <>
+      <header className="header">
+        <h1>todos</h1>
+        <AddTodo />
+      </header>
+      <section className="main"></section>
+      <footer className="footer"></footer>
+    </>
+  )
 }
 
 export default App
