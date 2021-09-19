@@ -1,7 +1,7 @@
 {
   "name": "todo-full-stack",
   "version": "0.1.0",
-  "description": "Todo Full Stack",
+  "description": "Full Stack",
   "repository": "https://https://github.com/dev-academy-challenges/todo-full-stack",
   "main": "server/index.js",
   "scripts": {
@@ -64,7 +64,7 @@
     "redux-thunk": "^2.3.0",
     "sass": "^1.32.7",
     "sass-loader": "^11.0.1",
-    "sqlite3": "^5.0.1",
+    "sqlite3": "^5.0.2",
     "style-loader": "^2.0.0",
     "supertest": "^6.1.3",
     "webpack": "^5.21.2",
