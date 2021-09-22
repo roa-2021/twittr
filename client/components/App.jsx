@@ -2,7 +2,7 @@ import React from 'react'
 //
 import Landing from './Landing'
 
-function App() {
+function App () {
   return (
     <>
       <Landing />
