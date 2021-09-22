@@ -1,10 +1,11 @@
 import React from 'react'
+//
+import Landing from './Landing'
 
-function App () {
-
+function App() {
   return (
     <>
-      <h1>App</h1>
+      <Landing />
     </>
   )
 }
