@@ -1,21 +1,13 @@
 import { addUser, getUser, updateUserDetails } from '../apis/userAPI'
 
-// ---- CASES ----
+// ---- CASE ----
 export const RECEIVE_USER = 'RECEIVED_USER_DETAILS'
-export const RECEIVE_NEW_USER = 'RECEIVED_NEW_USER'
 
-// ---- ACTIONS ----
+// ---- ACTION ----
 export const receiveUser = user => {
   return {
     type: RECEIVE_USER,
-    user // obj with user details
-  }
-}
-
-export const receiveNewUser = newUser => {
-  return {
-    type: RECEIVE_NEW_USER,
-    newUser
+    user
   }
 }
 
@@ -24,36 +16,36 @@ export const createUser = newUser => {
   return dispatch => {
     addUser(newUser)
       .then(res => {
-        // res is id from DB
-        // dispatch(receiveNewUser(newUser with new ID from db))
-        console.log(res)
-        dispatch(receiveNewUser(res))
+        const createdUserId = res[0]
+        const createdUserObj = {
+          id: createdUserId,
+          ...newUser
+        }
+        dispatch(receiveUser(createdUserObj))
       })
+      // .catch(err => console.log(err))
   }
 }
 
-// export const getUser = () => {{
-//   return dispatch => {
-//     return request
-//       .get() // include :id in API call
-//       .then(res =>)
-//       .catch(err => {
-//         console.log(err)
-//         // dispatch(something to show the user an err)
-//       })
-//   }
-// }}
+export const getUserDetails = id => {{
+  return dispatch => {
+    getUser(id)
+      .then(res => {
+        const requestedUser = res[0]
+        dispatch(receiveUser(requestedUser))
+      })
+      // .catch(err => console.log(err))
+  }
+}}
 
-// export const updateUser = () => {
-//   return dispatch => {{
-//     return request
-//       .patch()
-//       .send({})
-//       .then(res => )
-//       .catch(err => {
-//         console.log(err)
-//         // dispatch(something to show the user an err)
-//       })
-//   }}
-// }
+export const updateUser = userDetails => {
+  return dispatch => {{
+    return updateUserDetails(userDetails)
+    .then(res => {
+      const upToDateUser = res[0]
+      dispatch(receiveUser(upToDateUser))
+    })
+      // .catch(err => console.log(err))
+  }}
+}
 
