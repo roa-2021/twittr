@@ -1,0 +1,39 @@
+// Home bar
+
+.feed-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 53px;
+  border-bottom: #EEE solid 1px;
+}
+
+.feed-header--content {
+  display: flex;
+  flex-direction: row;
+  padding: 0px 16px;
+  width: 100%;
+  justify-content: space-between;
+  a {
+    color: #000;
+  }
+  svg {
+    width: 20px;
+    height: 20px;
+    margin-left: auto;
+  }
+  h2 {
+    width: 510px;
+    font-size: 1.25rem;
+  }
+  h2:hover {
+    cursor: pointer;
+  }
+}
+
+.svg-container {
+  display: flex;
+  align-self: flex-end;
+}
+
+// 
