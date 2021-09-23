@@ -14,13 +14,23 @@
   padding: 0px 16px;
   width: 100%;
   justify-content: space-between;
+  align-items: center;
   a {
     color: #000;
+    height:24px;
   }
   svg {
     width: 20px;
     height: 20px;
     margin-left: auto;
+    padding: 10px;
+    border-radius: 50%;
+  }
+  svg:hover {
+    cursor: pointer;
+    background-color: #EEE;
+    border-radius: 50%;
+    transition-duration: 0.4s;
   }
   h2 {
     width: 510px;
