@@ -6,7 +6,14 @@ router.get('/:id',(req,res)=>{
   userID=req.params.id
   db.getUser(userID)
   .then(user=>{
-    res.json(user)
+      db.getFollowingNum(userID)
+        .then(followingNum=>{
+           db.getFollowerNum(userID)
+            .then(followerNum=>{
+              user[0].followingNum = followingNum[0].followingNum
+              user[0].followerNum = followerNum[0].followerNum
+                res.json(user)
+            })})
   })
   .catch(err => res.status(500).json({ message: err.message }))
 })
