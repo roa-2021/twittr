@@ -1,13 +1,13 @@
 import React from 'react'
 //
-import Landing from './Landing'
-import Home from './Home'
+import Landing from './home/landing/Landing'
+import Home from './home/Home'
 
 function App () {
   return (
     <>
-      <Landing />
-      {/* <Home /> */}
+      {/* <Landing /> */}
+      <Home />
     </>
   )
 }
