@@ -9,7 +9,7 @@ exports.up = function(knex) {
     table.string('name')
     table.string('nickname');
     table.string('email');
-    table.string('password');
+    table.string('hash');
     table.string('profile_image');
     table.string('varified');
     table.string('bio');
