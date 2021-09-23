@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: red;
+  // background-color: red;
 }
 
 // .image-panel {
@@ -58,7 +58,7 @@ body {
   padding: 0px 36px;
   width: 85vw;
   height: 100%;
-  background-color: #eee;
+  // background-color: #eee;
 }
 
 .login-panel {
@@ -67,7 +67,7 @@ body {
   }
   h1 {
     margin: 30px 0;
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: 900;
   }
   h2 {
@@ -75,12 +75,19 @@ body {
     font-size: 2rem;
     font-weight: 800;
   }
+  a {
+    color: cornflowerblue;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
   p {
+    font-size: 0.75rem;
     margin: 20px 0;
-    width: 500px;
+    width: 380px;
   }
   .login-question {
-    font-weight: bold;
+    font-size: 1rem;
   }
 }
 
@@ -88,14 +95,19 @@ body {
   display: flex;
   flex-direction: column;
   button {
+    background-color: #fff;
     margin: 10px 0px;
     font-weight: 900;
+  }
+  button:hover {
+    background-color: #eee;
+    cursor: pointer;
   }
 }
 
 .login-panel button {
   border: none;
-  width: 266px;
+  width: 320px;
   height: 38px;
   border-style: solid;
   border-width: 1px;
@@ -115,12 +127,16 @@ footer {
   min-height: 30px;
   // font-family: Arial, Helvetica, sans-serif;
   font-size: 0.75rem;
-
-  background-color: #eee;
 }
 
-footer a {
+footer {
+  a {
+    color: #222;
   padding: 5px 10px;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
 }
 /* 
 
