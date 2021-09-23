@@ -37,6 +37,19 @@ const Landing = () => {
               <a href=""> Sign in</a>
             </p>
           </div>
+
+          <p>
+            <span>By signing up, you agree to the </span>
+            <a href="">Terms of Service</a>
+             <span> and </span> 
+            <a href="">Privacy Policy</a>
+            <span>, including </span>
+            <a href="">Cookie Use.</a>
+          </p>
+          <p className="login-question">
+            <span>Already have an account? </span>
+            <a href="">Sign in</a>
+          </p>
         </div>
         <footer>
           <a href="">About</a>

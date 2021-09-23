@@ -3,6 +3,7 @@
   padding: 0;
   list-style-type: none;
   text-decoration: none;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -14,12 +15,26 @@ body {
 // }
 
 .landing-login-container {
-  height: 90vh;
+  height: 100vh;
+}
+
+.image-panel {
+  background-image: url('landing-background-image.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
 }
 
 .landing-logo {
-  width: 300px;
-  height: 240px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  max-height: 380px;
+  height: 50%;
   fill: rgb(255, 255, 255);
 }
 
@@ -30,15 +45,51 @@ body {
 }
 
 .landing-container {
+  height: 95vh;
   display: flex;
   flex-direction: row;
 }
 
 .login-panel {
-  display: relative;
-  width: 709;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  padding: 0px 36px;
+  width: 85vw;
   height: 100%;
-  background-color: yellow;
+  // background-color: #eee;
+}
+
+.login-panel {
+  svg {
+    margin-bottom: 30px;
+  }
+  h1 {
+    margin: 30px 0;
+    font-size: 4rem;
+    font-weight: 900;
+  }
+  h2 {
+    margin: 20px 0;
+    font-size: 2rem;
+    font-weight: 800;
+  }
+  a {
+    color: cornflowerblue;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  p {
+    font-size: 0.75rem;
+    margin: 20px 0;
+    width: 380px;
+  }
+  .login-question {
+    font-size: 1rem;
+  }
 }
 
 .login-panel img {
@@ -50,11 +101,20 @@ body {
 .login-buttons {
   display: flex;
   flex-direction: column;
+  button {
+    background-color: #fff;
+    margin: 10px 0px;
+    font-weight: 900;
+  }
+  button:hover {
+    background-color: #eee;
+    cursor: pointer;
+  }
 }
 
 .login-panel button {
   border: none;
-  width: 266px;
+  width: 320px;
   height: 38px;
   border-style: solid;
   border-width: 1px;
@@ -68,8 +128,32 @@ footer {
   flex-wrap: wrap;
   flex-basis: auto;
   flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+  min-height: 30px;
+  // font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+}
+
+footer {
+  a {
+    color: #222;
+  padding: 5px 10px;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
 }
 /* 
+
+<!-- apple -->
+
+<svg viewBox="0 0 24 24" aria-hidden="true" class="r-18jsvk2 r-4qtqp9 r-yyyyoo r-z80fyv r-1d4mawv r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-19wmn03">
+  <g>
+    <path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.428-2.8-1.287-1.82-2.323-4.63-2.323-7.28 0-4.28 2.797-6.55 5.552-6.55 1.448 0 2.675.95 3.6.95.865 0 2.222-1.01 3.902-1.01.613 0 2.886.06 4.374 2.19-.13.09-2.383 1.37-2.383 4.19 0 3.26 2.854 4.42 2.955 4.45z"></path>
+  </g>
+</svg>
 
 <!-- logo -->
 <svg
