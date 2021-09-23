@@ -41,6 +41,20 @@ function deleteTweet(tweetID)
 }
 
 //follows
+function getFollowingNum(userID)
+{
+  return db('follows')
+  .count('following as followingNum')
+  .where('followers',userID)
+}
+
+function getFollowerNum(userID)
+{
+  return db('follows')
+  .count('followers as followerNum')
+  .where('following',userID)
+}
+
 function getFollower(userID)
 {
   return db('follows')
@@ -100,4 +114,6 @@ module.exports = {
   deleteFollowing,
   getComments,
   creatComment,
+  getFollowingNum,
+  getFollowerNum,
 }
