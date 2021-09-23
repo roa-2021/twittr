@@ -18,7 +18,7 @@ const Feed = () => {
               </div>
             </div>
           </div>
-          <div className="tweet-card">
+          <div className="make-tweet-card">
             <div className="tweet-container">
               <div className="profile-image">
                 <img src="default_image.png" />
