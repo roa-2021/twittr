@@ -1,11 +1,12 @@
-// import action blah blah
+import { RECEIVE_USER, RECEIVE_NEW_USER } from '../actions/userActions'
 
-// initial state
+const initialState = []
 
-const userReducer = (state = [], action) => {
+const userReducer = (state = initialState, action) => {
   switch(action.type) {
-    // case action:
-        // state = action.something
+    case RECEIVE_NEW_USER:
+        state = [...state, action.newUser]
+        return state
 
     default:
       return state

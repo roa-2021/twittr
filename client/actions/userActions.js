@@ -1,6 +1,8 @@
-import request from "superagent"
+import { addUser, getUser, updateUserDetails } from '../apis/userAPI'
+
 // ---- CASES ----
 export const RECEIVE_USER = 'RECEIVED_USER_DETAILS'
+export const RECEIVE_NEW_USER = 'RECEIVED__NEW_USER'
 
 // ---- ACTIONS ----
 export const receiveUser = user => {
@@ -10,19 +12,20 @@ export const receiveUser = user => {
   }
 }
 
+export const receiveNewUser = newUser => {
+  return {
+    type: RECEIVE_NEW_USER,
+    newUser
+  }
+}
+
 // ---- THUNKS ----
-// export const createUser = () => {
-//   return dispatch => {
-//     return request
-//       .post()
-//       .send({})
-//       .then(res => )
-//       .catch(err => {
-//         console.log(err)
-//         // dispatch(something to show the user an err)
-//       })
-//   }
-// }
+export const createUser = newUser => {
+  return dispatch => {
+    return addUser(newUser)
+      .then(res => dipatch(receiveNewUser(res)))
+  }
+}
 
 // export const getUser = () => {{
 //   return dispatch => {
