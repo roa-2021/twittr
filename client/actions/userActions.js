@@ -2,7 +2,7 @@ import { addUser, getUser, updateUserDetails } from '../apis/userAPI'
 
 // ---- CASES ----
 export const RECEIVE_USER = 'RECEIVED_USER_DETAILS'
-export const RECEIVE_NEW_USER = 'RECEIVED__NEW_USER'
+export const RECEIVE_NEW_USER = 'RECEIVED_NEW_USER'
 
 // ---- ACTIONS ----
 export const receiveUser = user => {
@@ -22,8 +22,8 @@ export const receiveNewUser = newUser => {
 // ---- THUNKS ----
 export const createUser = newUser => {
   return dispatch => {
-    return addUser(newUser)
-      .then(res => dipatch(receiveNewUser(res)))
+    addUser(newUser)
+      .then(res => dispatch(receiveNewUser(res)))
   }
 }
 
