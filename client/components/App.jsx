@@ -6,8 +6,8 @@ import Home from './Home'
 function App () {
   return (
     <>
-      {/* <Landing /> */}
-      <Home />
+      <Landing />
+      {/* <Home /> */}
     </>
   )
 }

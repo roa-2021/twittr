@@ -26,30 +26,18 @@ const Landing = () => {
               <button className="login">Sign up with phone or email</button>
             </div>
             <p>
-              By signing up, you agree to the
-              <a href=""> Terms of Service </a>
-              and
-              <a href=""> Privacy Policy</a>
-              , including
-              <a href=""> Cookie Use.</a>
+              <span>By signing up, you agree to the </span>
+              <a href="">Terms of Service</a>
+              <span> and </span> 
+              <a href="">Privacy Policy</a>
+              <span>, including </span>
+              <a href="">Cookie Use.</a>
             </p>
-            <p className="login-question">Already have an account?
-              <a href=""> Sign in</a>
+            <p className="login-question">
+              <span>Already have an account? </span>
+              <a href="">Sign in</a>
             </p>
           </div>
-
-          <p>
-            <span>By signing up, you agree to the </span>
-            <a href="">Terms of Service</a>
-             <span> and </span> 
-            <a href="">Privacy Policy</a>
-            <span>, including </span>
-            <a href="">Cookie Use.</a>
-          </p>
-          <p className="login-question">
-            <span>Already have an account? </span>
-            <a href="">Sign in</a>
-          </p>
         </div>
         <footer>
           <a href="">About</a>
