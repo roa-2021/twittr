@@ -70,7 +70,7 @@
   "dependencies": {
     "@auth0/auth0-react": "^1.8.0",
     "express": "^4.17.1",
-    "knex": "^0.21.17",
+    "knex": "^0.95.11",
     "pg": "^8.5.1",
     "superagent": "^6.1.0"
   }
