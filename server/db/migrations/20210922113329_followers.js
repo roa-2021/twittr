@@ -1,12 +1,12 @@
 
 exports.up = function(knex) {
-  return knex.schema.createTable('followers',function(table){
+  return knex.schema.createTable('follows',function(table){
     table.increments('id').primary()
-    table.integer('follower')
+    table.integer('followers')
     table.integer('following')
   })
 };
 
 exports.down = function(knex) {
-  knex.schema.dropTable('followers')
+  return knex.schema.dropTable('follows')
 };
