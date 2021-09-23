@@ -23,7 +23,12 @@ export const receiveNewUser = newUser => {
 export const createUser = newUser => {
   return dispatch => {
     addUser(newUser)
-      .then(res => dispatch(receiveNewUser(res)))
+      .then(res => {
+        // res is id from DB
+        // dispatch(receiveNewUser(newUser with new ID from db))
+        console.log(res)
+        dispatch(receiveNewUser(res))
+      })
   }
 }
 
