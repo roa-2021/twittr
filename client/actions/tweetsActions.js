@@ -1,49 +1,49 @@
-import { addTweet, getTweet, deleteTweet } from '../apis/tweetsAPI'
+import { addATweetAPI, getUsersTweetsAPI, deleteATweetAPI } from '../apis/tweetsAPI'
 
 // ---- CASES ----
-export const RECEIVE_TWEETS = 'RECEIVED_TWEETS'
+export const STORE_TWEETS_CASE = 'STORED_TWEETS'
 
 // ---- ACTIONS ----
-export const receiveTweet = tweet => {
+export const storeTweetACTION = tweet => {
   return {
-    type: RECEIVE_TWEETS,
+    type: STORE_TWEETS_CASE,
     tweet
   }
 }
 
 // ---- THUNKS ----
-export const createTweet = newTweet => {
+export const createANewTweetTHUNK = newTweet => {
   return dispatch => {
-    addTweet(newTweet)
+    addATweetAPI(newTweet)
     .then(res => {
       const createdTweetId = res[0]
       const createdTweetObj = {
         id: createdTweetId,
         ...newTweet
       }
-      dispatch(receiveTweet(createdTweetObj))
+      dispatch(storeTweetACTION(createdTweetObj))
     })
     // .catch(err => console.log(err))
   }
 }
 
-export const retrieveUserTweets = userId => {
+export const retrieveAUsersTweetsTHUNK = userId => {
   return dispatch => {
-    getTweet(userId)
+    getUsersTweetsAPI(userId)
       .then(res => {
         const tweets = res // arr of tweet objs
-        dispatch(receiveTweet(tweets))
+        dispatch(storeTweetACTION(tweets))
       })
       // .catch(err => console.log(err))
   }
 }
 
-export const removeTweet = id => {
+export const removeATweetByIDTHUNK = id => {
   return dispatch => {
-    deleteTweet(id)
+    deleteATweetAPI(id)
     .then(res => {
       const removedTweet = res
-      dispatch(receiveTweet(removedTweet))
+      dispatch(storeTweetACTION(removedTweet))
     })
     // .catch(err => console.log(err))
   }

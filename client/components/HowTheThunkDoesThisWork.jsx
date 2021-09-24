@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 // USERSREDUCER
 import { createUser, getUserDetails, updateUser } from '../actions/userActions'
 // TWEETSREDUCER
-import { createTweet, retrieveUserTweets, removeTweet } from '../actions/tweetsActions'
+import { createANewTweetTHUNK, retrieveAUsersTweetsTHUNK, removeATweetByIDTHUNK } from '../actions/tweetsActions'
 // FOLLOWERSREDUCER
 import { getFollowersOfUserTHUNK } from '../actions/followersActions'
 // FOLLOWINGREDUCER
@@ -58,16 +58,16 @@ function App ({ dispatch }) {
     quote_count: 1000000
   }
   const userIDTWEET = 3
-  const tweetDeleteID = 6 
+  const tweetDeleteID = 10 
 
   const createATweet = tweet => {
-    dispatch(createTweet(tweet)) // takes an obj of tweet (as above)
+    dispatch(createANewTweetTHUNK(tweet)) // takes an obj of tweet (as above)
   }
   const retrieveTweets = userID => {
-    dispatch(retrieveUserTweets(userID)) // takes userID + gets their tweets 
+    dispatch(retrieveAUsersTweetsTHUNK(userID)) // takes userID + gets their tweets 
   }
   const deleteTweet = tweetID => {
-    dispatch(removeTweet(tweetID)) // takes ID of tweet to del
+    dispatch(removeATweetByIDTHUNK(tweetID)) // takes ID of tweet to del
   }
   // TWEETS_THUNK TESTING
 
