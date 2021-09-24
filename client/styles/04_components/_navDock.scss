@@ -5,19 +5,16 @@
   font-size: 1.1rem;
 }
 
-.nav-panel {
-  min-width: 252px;
-}
-
 .nav-container {
   width: auto;
   height: 100%;
-  margin-left: 10px;
-  padding: 5px 0px 5px 50px;
+  margin-left: 0px;
+  padding: 5px 0px 5px 0px;
 }
 
 .logo-container {
   svg {
+    fill: #1c9bef;
     width: 30px;
   }
   padding: 10px 15px;
@@ -55,12 +52,20 @@
 }
 
 .nav-tweet-button {
-  padding: 5px;
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  padding: 15px 32px;
+  background-color: cornflowerblue;
+  border-radius: 32px ;
 }
 
 .nav-tweet-button-content {
   display: flex;
   justify-content: center;
+  span {
+    color: white;
+  }
 }
 
 svg {
