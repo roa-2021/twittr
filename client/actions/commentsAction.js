@@ -29,7 +29,7 @@ export const retrieveCommentsTHUNK = tweetID => {
   }
 }
 
-export const createCommentsTHUNK = commentObj => {
+export const createCommentTHUNK = commentObj => {
   return dispatch => {
     createCommentAPI(commentObj)
       .then(newCommentID => {

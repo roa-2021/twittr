@@ -10,7 +10,7 @@ import { retrieveFollowers } from '../actions/followersActions'
 // FOLLOWINGREDUCER
 import { getWhoUserIsFollowingTHUNK, userWantsToFollowTHUNK, userWantsToUnfollowTHUNK } from '../actions/followingActions'
 // COMMENTSREDUCER
-import { retrieveCommentsTHUNK, createCommentsTHUNK } from '../actions/commentsAction'
+import { retrieveCommentsTHUNK, createCommentTHUNK } from '../actions/commentsAction'
 
 function App ({ dispatch }) {
   // USERS_THUNK TESTING
@@ -118,7 +118,7 @@ function App ({ dispatch }) {
     dispatch(retrieveCommentsTHUNK(tweetID))
   } 
   const createAComment = newComment => {
-    dispatch(createCommentsTHUNK(newComment))
+    dispatch(createCommentTHUNK(newComment))
   }
   // COMMENTS_THUNK TESTING
 
