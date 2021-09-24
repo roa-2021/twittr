@@ -1,4 +1,7 @@
 import React from 'react'
+import un from '../../../styles/UN.png';
+import setting from '../../../styles/SETTING.png';
+import mac from '../../../styles/MAC.png';
 
 const SideDock = () => {
     return (
@@ -29,14 +32,50 @@ const SideDock = () => {
   </g>
 </svg>
                     </button>
-                  
                         <input className="sideDock-form--search__input" type="text" placeholder="Search Twitter" />
                    
                 </form>
             </div>
-            <div className="sideDock--happening"></div>
-            <div className="sideDock--follow"></div>
-            <div className="sideDock--footer"></div>
+            <section className="sideDock--happening">
+                <header className="happening--header">
+                    <h2 className="happening--title">What's Happening</h2>
+                </header>
+                <div className="happening--body">
+                    <article className="happening--card">
+                       
+                            <div className="happening--card__text-wrapper">
+                                <p>World news &bull; LIVE</p>
+                                <h3>The UN General Assembly continues in New York</h3>
+                            </div>
+                       
+                        <img src={un} />
+                    </article>
+                    <article className="happening--card">
+                    <div>
+                        <div className="happening--card__text-wrapper">
+                            <p>Trending in New Zealand</p>
+                            <h3>Chris Hipkins</h3>
+                        </div>
+                    </div>
+                    </article>
+                    <article className="happening--card">
+                    <div className="happening--card__text-wrapper">
+                    <p>The Washington Post &bull; This morning</p>
+                        <h3>Every setting you should change right now to protext your privacy</h3>
+                        </div>
+                        <img src={setting} />
+                    </article>
+                </div>
+                <footer className="happening--footer">
+                    <p className="happening--footer-text">Show more</p>
+                </footer>
+            </section>
+            {/* <div className="sideDock--follow"></div> */}
+            <div className="sideDock--footer">
+                <div className="footer--wrapper">
+                <a href="">Terms of Service</a><a href="">Privacy Policy</a><a href="">Cookie Policy</a><a href="">Ads info</a><a href="">More ...</a><a href="">&copy; 2021 Twitter, Inc.</a>
+                </div>
+            </div>
         </div>
     )
 }
