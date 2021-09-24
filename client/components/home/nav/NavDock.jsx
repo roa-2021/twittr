@@ -216,6 +216,33 @@ const NavDock = () => {
             </a>
           </div>
         </div>
+        {/* PROFILE BADGE */}
+        <div className="nav-profile-badge-container">
+          <div className="nav-profile-badge-content">
+            <div>
+              <div> {/* profile icon */}
+                <div className="nav-profile-badge_img-container">
+                  <img src="default_image.png" />
+                </div>
+              </div>
+              <div className="nav-profile-badge_tag-container"> {/* name and handle */}
+                <div className="nav-profile-badge_name-tag-container">
+                  <p>
+                    Gordon Fong {/* to be req from server */}
+                  </p>
+                </div>
+                <div className="nav-profile-badge_handle-tag-container">
+                  <p>
+                    @LittleRocketDev {/* to be req from server */}
+                  </p>
+                </div>
+              </div>
+              <div> {/* more svg */}
+
+              </div>
+            </div>
+          </div>
+        </div> 
       </div>
     </section>
   )
