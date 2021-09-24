@@ -2,7 +2,7 @@ import React from 'react'
 
 import Feed from './feed/Feed'
 import NavDock from './nav/NavDock'
-import SideDock from './side/sideDock'
+import SideDock from './side/SideDock'
 
 const Home = () => {
   return (
