@@ -1,15 +1,11 @@
-import { RECEIVE_TWEETS, RECEIVE_TWEET, ADDITIONAL_TWEET } from '../actions/tweetsActions'
+import { RECEIVE_TWEETS } from '../actions/tweetsActions'
 
 const initialState = []
 
 const tweetsReducer = (state = initialState, action) => {
   switch(action.type) {
-    // case RECEIVE_TWEETS:
-    //   state = [...action.tweets]
     case RECEIVE_TWEETS:
-      state = [...action.tweet]
-    case ADDITIONAL_TWEET:
-      state = [...state, action.tweet]
+      return action.tweet
 
     default:
       return state
