@@ -6,12 +6,12 @@ export const RECEIVE_TWEET = 'RECEIVED_TWEET'
 export const ADDITIONAL_TWEET = 'RECEIVED_ADDITIONAL_TWEET'
 
 // ---- ACTIONS ----
-export const receiveTweets = tweets => {
-  return {
-    type: RECEIVE_TWEETS,
-    tweets
-  }
-}
+// export const receiveTweets = tweets => {
+//   return {
+//     type: RECEIVE_TWEETS,
+//     tweets
+//   }
+// }
 export const receiveTweet = tweet => {
   return {
     type: RECEIVE_TWEETS,
@@ -41,18 +41,18 @@ export const createTweet = newTweet => {
   }
 }
 
-export const getTweet = id => {
+export const retrieveUserTweets = userId => {
   return dispatch => {
-    getTweet(id)
+    getTweet(userId)
       .then(res => {
-        const tweet = res[0]
-        dispatch(receiveTweet(tweet))
+        const tweets = res // this is an array of the tweets
+        dispatch(receiveTweet(tweets))
       })
       // .catch(err => console.log(err))
   }
 }
 
-// export const getTweets = () => {
+// export const retrieveTweets = () => {
 //   return dispatch => {
 //     return request
 //       .get() // this one is for all tweets
