@@ -4,7 +4,9 @@ import Wtf from './Wtf'
 import PostTweet from './PostTweet'
 import HomeHeader from './HomeHeader'
 
-const Feed = () => {
+const FeedDock = () => {
+
+
   return (
     <>
       <section className="feed-panel">
@@ -17,4 +19,4 @@ const Feed = () => {
   )
 }
 
-export default Feed
+export default FeedDock

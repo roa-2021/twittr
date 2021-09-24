@@ -1,6 +1,14 @@
 // Home bar
 
+.feed-panel-container {
+  z-index: 1;
+  position: relative;
+  margin-bottom: 63px;
+}
+
 .feed-header {
+  position: fixed;
+  background-color: #fff;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -12,7 +20,7 @@
   display: flex;
   flex-direction: row;
   padding: 0px 16px;
-  width: 100%;
+  width: 566px;
   justify-content: space-between;
   align-items: center;
   a {
@@ -22,7 +30,6 @@
   svg {
     width: 20px;
     height: 20px;
-    margin-left: auto;
     padding: 10px;
     border-radius: 50%;
     transition-duration: 0.2s;
@@ -34,7 +41,6 @@
     transition-duration: 0.2s;
   }
   h2 {
-    width: 510px;
     font-size: 1.25rem;
   }
   h2:hover {
@@ -181,6 +187,15 @@
 .tweet-post p {
   font-size: 0.9rem;
   padding-top: 5px;
+}
+
+.image-post {
+  img {
+  max-width: 400px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  margin-top: 15px;
+  }
 }
 
 // who to follow
