@@ -1,22 +1,22 @@
-import { getFollower } from '../apis/followersAPI'
+import { getUsersFollowersAPI } from '../apis/followersAPI'
 
 // ---- CASE ----
-export const RECEIVE_FOLLOWER = 'RECEIVED_FOLLOWER_DETAILS'
+export const STORE_FOLLOWERS_CASE = 'STORED_FOLLOWER_DETAILS'
 
 // ---- ACTION ----
-export const receiveFollower = follower => {
+export const storeFollowersACTION = follower => {
   return {
-    type: RECEIVE_FOLLOWER,
+    type: STORE_FOLLOWERS_CASE,
     follower
   }
 }
 
 // ---- ACTION ----
-export const retrieveFollowers = followerID => {
+export const getFollowersOfUserTHUNK = usersID => {
   return dispatch => {
-    getFollower(followerID)
-      .then(retrievedFollowers => {
-        dispatch(receiveFollower(retrievedFollowers))
+    getUsersFollowersAPI(usersID)
+      .then(theUsersFollowers => {
+        dispatch(storeFollowersACTION(theUsersFollowers))
       })
       // .catch(err => console.log(err))
   }

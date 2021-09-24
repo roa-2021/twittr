@@ -1,10 +1,10 @@
-import { RECEIVE_FOLLOWER } from '../actions/followersActions'
+import { STORE_FOLLOWERS_CASE } from '../actions/followersActions'
 
 const initialState = []
 
 const followersReducer = (state = initialState, action) => {
   switch(action.type) {
-    case RECEIVE_FOLLOWER:
+    case STORE_FOLLOWERS_CASE:
         return action.follower
 
     default:
