@@ -26,7 +26,10 @@ const Tweet = () => {
               </div>
             </div>
             <div className="tweet-post">
-              <p>mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</p>
+              <p>mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</p>
+            </div>
+            <div className="image-post">
+              <img src=""/>
             </div>
             <div className="tweet-interactions-container">
               <div className="tweet-interactions">
