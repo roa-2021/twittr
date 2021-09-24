@@ -1,5 +1,7 @@
 import React from 'react'
 
+import profilePic from '../../../styles/default-profile.png'
+
 const NavDock = () => {
   return (
     <section className="nav-panel">
@@ -121,8 +123,8 @@ const NavDock = () => {
               <a>
                 <div className="link-button bookmarks-button">
                   <div className="bookmarks-button svg-container">
-                    <svg 
-                    viewBox="0 0 24 24" aria-hidden="true" class="r-1fmj7o5 r-4qtqp9 r-yyyyoo r-lwhw9o r-dnmrzs r-bnwqim r-1plcrui r-lrvibr"><g><path d="M19.9 23.5c-.157 0-.312-.05-.442-.144L12 17.928l-7.458 5.43c-.228.164-.53.19-.782.06-.25-.127-.41-.385-.41-.667V5.6c0-1.24 1.01-2.25 2.25-2.25h12.798c1.24 0 2.25 1.01 2.25 2.25v17.15c0 .282-.158.54-.41.668-.106.055-.223.082-.34.082zM12 16.25c.155 0 .31.048.44.144l6.71 4.883V5.6c0-.412-.337-.75-.75-.75H5.6c-.413 0-.75.338-.75.75v15.677l6.71-4.883c.13-.096.285-.144.44-.144z"></path></g></svg>
+                    <svg
+                      viewBox="0 0 24 24" aria-hidden="true" class="r-1fmj7o5 r-4qtqp9 r-yyyyoo r-lwhw9o r-dnmrzs r-bnwqim r-1plcrui r-lrvibr"><g><path d="M19.9 23.5c-.157 0-.312-.05-.442-.144L12 17.928l-7.458 5.43c-.228.164-.53.19-.782.06-.25-.127-.41-.385-.41-.667V5.6c0-1.24 1.01-2.25 2.25-2.25h12.798c1.24 0 2.25 1.01 2.25 2.25v17.15c0 .282-.158.54-.41.668-.106.055-.223.082-.34.082zM12 16.25c.155 0 .31.048.44.144l6.71 4.883V5.6c0-.412-.337-.75-.75-.75H5.6c-.413 0-.75.338-.75.75v15.677l6.71-4.883c.13-.096.285-.144.44-.144z"></path></g></svg>
                   </div>
                   <div className="bookmarks-button span-container">
                     <span>
@@ -217,32 +219,48 @@ const NavDock = () => {
           </div>
         </div>
         {/* PROFILE BADGE */}
-        <div className="nav-profile-badge-container">
-          <div className="nav-profile-badge-content">
-            <div>
+        <div>
+          <div className="nav-profile-badge-container">
+            <div className="nav-profile-badge-content">
               <div> {/* profile icon */}
-                <div className="nav-profile-badge_img-container">
-                  <img src="default_image.png" />
+                <div className="nav-profile-badge_profile-img-container">
+                  <img src={profilePic} />
                 </div>
               </div>
               <div className="nav-profile-badge_tag-container"> {/* name and handle */}
-                <div className="nav-profile-badge_name-tag-container">
-                  <p>
-                    Gordon Fong {/* to be req from server */}
-                  </p>
-                </div>
-                <div className="nav-profile-badge_handle-tag-container">
-                  <p>
-                    @LittleRocketDev {/* to be req from server */}
-                  </p>
+                <div className="nav-profile-badge_tag-content">
+                  <div className="nav-profile-badge_name-tag-container">
+                    <p>
+                      Gordon Fong {/* to be req from server */}
+                    </p>
+                  </div>
+                  <div className="nav-profile-badge_handle-tag-container">
+                    <p>
+                      @LittleRocketDev {/* to be req from server */}
+                    </p>
+                  </div>
                 </div>
               </div>
               <div> {/* more svg */}
-
+                <div className="nav-profile-badge_svg-container">
+                  <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    class="
+    r-4qtqp9 r-yyyyoo r-1xvli5t r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-1hdv0qi
+  "
+                  >
+                    <g>
+                      <circle cx="5" cy="12" r="2"></circle>
+                      <circle cx="12" cy="12" r="2"></circle>
+                      <circle cx="19" cy="12" r="2"></circle>
+                    </g>
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
-        </div> 
+        </div>
       </div>
     </section>
   )
