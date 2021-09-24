@@ -1,7 +1,7 @@
 import request from "superagent"
 
-export const getFollower = followerID => {
+export const getUsersFollowersAPI = usersID => {
   return request
-    .get(`/api/v1/followers/${followerID}`)
+    .get(`/api/v1/followers/${usersID}`)
     .then(res => res.body)
 }

@@ -1,12 +1,12 @@
 import request from "superagent";
 
-export const getFollowing = userId => {
+export const getWhoUserIsFollowingAPI = userId => {
     return request
     .get(`/api/v1/following/${userId}`)
     .then(res => res.body)
 }
 
-export const addFollowing = (userId, followingId) => {
+export const userFollowAPI = (userId, followingId) => {
     console.log('followingAPI.js + ' + followingId)
     return request
     .post(`/api/v1/following/${userId}`)
@@ -14,7 +14,7 @@ export const addFollowing = (userId, followingId) => {
     .then(res => res.body)
 }
 
-export const deleteFollowing = (userId, followingId) => {
+export const userUnfollowAPI = (userId, followingId) => {
     return request
         .del(`/api/v1/following/${userId}`)
         .send({followingId})

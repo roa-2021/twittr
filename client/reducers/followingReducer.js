@@ -1,10 +1,10 @@
-import {RECEIVE_FOLLOWING} from '../actions/followingActions'
+import { STORE_FOLLOWING_CASE } from '../actions/followingActions'
 
 const initialState = []
 
 const followingReducer = (state = initialState, action) => {
     switch(action.type) {
-        case RECEIVE_FOLLOWING:
+        case STORE_FOLLOWING_CASE:
             return action.following
         default:
             return state
