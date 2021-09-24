@@ -2,13 +2,14 @@ import React from 'react'
 
 import Feed from './feed/Feed'
 import NavDock from './nav/NavDock'
+import SideDock from './side/sideDock'
 
 const Home = () => {
   return (
     <div className="wall-container">
       <NavDock />
       <Feed />
-      <section className="side-panel"></section>
+      <SideDock />
     </div>
   )
 }
