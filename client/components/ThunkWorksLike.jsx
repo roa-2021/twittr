@@ -3,10 +3,12 @@ import { connect } from 'react-redux'
 
 import { createUser, getUserDetails, updateUser } from '../actions/userActions'
 import { createTweet, retrieveUserTweets, removeTweet } from '../actions/tweetsActions'
+import { retrieveFollowers } from '../actions/followersActions'
+import { getUserFollowing, addUserFollowing, deleteAFollowing } from '../actions/followingActions'
 
 function App ({ dispatch }) {
   // USERS_THUNK TESTING
-  const userId =  1
+  const userIdUSERS =  1
   const newUser = {
     name: 'Yo Maaaama',
     nickname:'babyboo123',
@@ -49,7 +51,7 @@ function App ({ dispatch }) {
     retweet_count: 6969,
     quote_count: 1000000
   }
-  const userID = 3
+  const userIDTWEET = 3
   const tweetDeleteID = 6 
 
   const createATweet = tweet => {
@@ -63,15 +65,58 @@ function App ({ dispatch }) {
   }
   // TWEETS_THUNK TESTING
 
+  // FOLLOWER/FOLLOWING_THUNK TESTING
+  const aFollowersID = 3
+
+  const getGetFollowersForUser = followerID => {
+    dispatch(retrieveFollowers(followerID))
+  }
+
+  const getWhoUserIsFollowing = userID => {
+    dispatch(getUserFollowing(userID))
+  }
+
+  const deleteUserFollowing = (userID, followingID) => {
+    dispatch(deleteAFollowing(userID, followingID))
+  }
+
+  const followANewUser = (userID, followingID) => {
+    console.log('App.jsx ' + followingID)
+    dispatch(addUserFollowing(userID, followingID))
+  }
+
+  const userIDFOLLOW = 4
+  const newFollowing = 1220
+
+  const addFollowingObj = {
+    userIDFOLLOW,
+    followingID: 1
+  }
+
+  const deleteFollowingObj = {
+    userIDFOLLOW,
+    followingID: 1
+  }
+  // FOLLOWER/FOLLOWING_THUNK TESTING
+  
+
   return (
     <>
+      {/* user thunks */}
       <button onClick={() => createUserYo(newUser)}>CREATE USER</button>
-      <button onClick={() => requestSpecificUserYo(userId)}>REQ SPECF USER</button>
+      <button onClick={() => requestSpecificUserYo(userIdUSERS)}>REQ SPECF USER</button>
       <button onClick={() => updateSpecificUser(updatedUser)}>UPDATE USER DETAILS</button>
 
+      {/* tweet thunks */}
       <button onClick={() => createATweet(tweet)}>CREATE TWEET</button>
-      <button onClick={() => retrieveTweets(userID)}>RETRIEVE USERS TWEETS</button>
+      <button onClick={() => retrieveTweets(userIDTWEET)}>RETRIEVE USERS TWEETS</button>
       <button onClick={() => deleteTweet(tweetDeleteID)}>REMOVE TWEET</button>
+
+      {/* followers/following thunks */}
+      <button onClick={() => getGetFollowersForUser(aFollowersID)}>getGetFollowersForUser</button>
+      <button onClick={() => getWhoUserIsFollowing(userIDFOLLOW)}>Get who user is following</button>
+      <button onClick={() => followANewUser(addFollowingObj.userIDFOLLOW, addFollowingObj.followingID)}>Follow a new user</button>
+      <button onClick={() => deleteUserFollowing(deleteFollowingObj.userIDFOLLOW, deleteFollowingObj.followingID)}>deleteUserFollowing</button>
     </>
   )
 }
