@@ -90,11 +90,16 @@ const Feed = () => {
                   <div className="profile-image">
                     <img src="default_image.png" />
                   </div>
-                  <div className="user-info">
-                    <a href="">
-                    <span className="user-name">BigRig</span>
-                    <span className="user-handle"> @BigRig12345678</span>
-                    </a>
+                  <div className="post-content">
+                    <div className="user-info">
+                      <a href="">
+                      <span className="user-name">BigRig</span>
+                      <span className="user-handle"> @BigRig12345678</span>
+                      </a>
+                    </div>
+                    <div className="tweet-contnet">
+                      <p>HELLO</p>
+                    </div>
                   </div>
                 </div>
               </div>

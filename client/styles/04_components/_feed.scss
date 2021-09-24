@@ -218,3 +218,8 @@
     cursor: pointer;
   }
 }
+
+.post-content {
+  display: flex;
+  flex-direction: column;
+}
