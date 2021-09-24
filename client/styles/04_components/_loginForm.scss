@@ -1,8 +1,102 @@
 .login-form__close {
-    width: 40px;
-    height: 40px;
+  width: 20px;
+  height: 20px;
 }
 .login-form--logo {
-    width: 40px;
-    height: 40px;
+  width: 40.27px;
+  height: 30.61px;
+  fill: rgb(29, 155, 240);
+  margin-left: 42%;
+}
+
+.login-form--container {
+  width: 536px;
+  height: 800px;
+  padding: 8px 32px;
+  background-color: white;
+  border-radius: 16px;
+  color: #0f1419;
+
+  border: red solid 1px; //  delete this <-----------
+}
+
+.login-form--title {
+  font-size: 23px;
+  margin-top: 24px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  a {
+    color: #1b95e0;
+    font-size: 15px;
+    margin: 40px 0px;
+  }
+  input {
+    width: 534px;
+    height: 56px;
+    border: none;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    text-indent: 8px;
+    font-size: 15px;
+    margin-top: 24px;
+  }
+  button {
+    background-color: #9bcef8;
+    width: 536px;
+    height: 44px;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 48px;
+  }
+  .date-title {
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: bold;
+  }
+  .date-text {
+    font-size: 15px;
+    color: #536471;
+    line-height: 20px;
+  }
+  .login-form--month {
+    width: 258px;
+    height: 58px;
+
+    border: none;
+    border: solid 1px #aaa;
+    font-size: 15px;
+    color: #536471;
+    padding-left: 4px;
+    border-radius: 4px;
+  }
+  .login-form--day {
+    width: 115px;
+    height: 58px;
+    border: solid 1px #aaa;
+    font-size: 15px;
+    color: #536471;
+    padding-left: 4px;
+    border-radius: 4px;
+    margin: 0px 12px;
+  }
+  .login-form--year {
+    width: 137px;
+    height: 58px;
+    border: solid 1px #aaa;
+    font-size: 15px;
+    color: #536471;
+    padding-left: 4px;
+    border-radius: 4px;
+  }
+  .login-select--wrapper {
+    display: flex;
+    flex-direction: row;
+    margin: 18px 0px;
+  }
 }
