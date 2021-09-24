@@ -5,7 +5,7 @@ import tweetsReducer from './tweetsReducer'
 import authReducer from './authReducer'
 
 export default combineReducers({
-  userReducer,
-  tweetsReducer,
-  authReducer
+  user: userReducer,
+  tweet: tweetsReducer,
+  auth: authReducer
 })
