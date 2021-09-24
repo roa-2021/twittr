@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 // USERSREDUCER
-import { createUser, getUserDetails, updateUser } from '../actions/userActions'
+import { createAUserTHUNK, getAUsersDetailsTHUNK, updateAUserTHUNK } from '../actions/userActions'
 // TWEETSREDUCER
 import { createANewTweetTHUNK, retrieveAUsersTweetsTHUNK, removeATweetByIDTHUNK } from '../actions/tweetsActions'
 // FOLLOWERSREDUCER
@@ -38,13 +38,13 @@ function App ({ dispatch }) {
   }
 
   const createUserYo = newUser => {
-    dispatch(createUser(newUser)) // takes an obj of newUser (as above)
+    dispatch(createAUserTHUNK(newUser)) // takes an obj of newUser (as above)
   }
   const requestSpecificUserYo = specificID => {
-    dispatch(getUserDetails(specificID)) // takes an userID + gets details
+    dispatch(getAUsersDetailsTHUNK(specificID)) // takes an userID + gets details
   }
   const updateSpecificUser = updatedUser => {
-    dispatch(updateUser(updatedUser)) // // takes obj of updatedUser (as above)
+    dispatch(updateAUserTHUNK(updatedUser)) // // takes obj of updatedUser (as above)
   }
   // USERS_THUNK TESTING
 
