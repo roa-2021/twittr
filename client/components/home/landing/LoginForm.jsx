@@ -7,8 +7,7 @@ const LoginForm = props => {
   const { auth, dispatch } = props
 
   const [formData, setFormData] = useState({
-    username: '',
-    contact_details: '',
+    name: '',
     email_address: '',
     password: '',
     confirm_password: '',
@@ -30,7 +29,8 @@ const LoginForm = props => {
   const handleSubmit = e => {
     e.preventDefault()
     e.target.reset()
-    // props.history.push('/listings')
+    
+    // console.log(formData);
 
     let { password, confirm_password } = formData
 
@@ -45,6 +45,7 @@ const LoginForm = props => {
       dispatch(registerUserRequest(userInfo, confirmSuccess))
     }
   }
+
   return (
     <div className="login-form--container">
       <div className="login-form--header">
@@ -71,13 +72,14 @@ const LoginForm = props => {
       </div>
       <h2 className="login-form--title">Create your account</h2>
       <form action="" className="login-form" onSubmit={handleSubmit}>
-        <input type="text" className="name" placeholder="Name" />
-        <input type="text" className="email" placeholder="Email" />
-        <input type="text" className="password" placeholder="Password" />
+        <input type="text" className="name" placeholder="Name" name="name" autoComplete="name" onChange={handleChange} value={formData.name}/>
+        <input type="text" className="email" placeholder="Email" name="email_address" autoComplete="email" onChange={handleChange} value={formData.email_address} />
+        <input type="text" className="password" placeholder="Password" name="password" autoComplete="password" onChange={handleChange} value={formData.password}/>
         <input
           type="text"
           className="confirm-password"
           placeholder="Confirm Password"
+          name="confirm_password" autoComplete="password" onChange={handleChange} value={formData.confirm_password}
         />
         <a href="">Use email instead</a>
         <p className="date-title">Date of birth</p>
