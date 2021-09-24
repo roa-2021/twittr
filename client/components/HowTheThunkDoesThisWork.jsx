@@ -8,7 +8,7 @@ import { createTweet, retrieveUserTweets, removeTweet } from '../actions/tweetsA
 // FOLLOWERSREDUCER
 import { retrieveFollowers } from '../actions/followersActions'
 // FOLLOWINGREDUCER
-import { getUserFollowing, addUserFollowing, deleteAFollowing } from '../actions/followingActions'
+import { getWhoUserIsFollowingTHUNK, userWantsToFollowTHUNK, userWantsToUnfollowTHUNK } from '../actions/followingActions'
 // COMMENTSREDUCER
 import { retrieveCommentsTHUNK, createCommentsTHUNK } from '../actions/commentsAction'
 
@@ -79,16 +79,16 @@ function App ({ dispatch }) {
   }
 
   const getWhoUserIsFollowing = userID => {
-    dispatch(getUserFollowing(userID))
+    dispatch(getWhoUserIsFollowingTHUNK(userID))
   }
 
   const deleteUserFollowing = (userID, followingID) => {
-    dispatch(deleteAFollowing(userID, followingID))
+    dispatch(userWantsToUnfollowTHUNK(userID, followingID))
   }
 
   const followANewUser = (userID, followingID) => {
     console.log('App.jsx ' + followingID)
-    dispatch(addUserFollowing(userID, followingID))
+    dispatch(userWantsToFollowTHUNK(userID, followingID))
   }
 
   const userIDFOLLOW = 4
