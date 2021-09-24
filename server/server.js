@@ -1,5 +1,8 @@
 const express = require('express')
 const path = require('path')
+
+const authRoutes = require('./routes/auth')
+
 const server = express()
 
 const usersRoute = require('./routes/users')
@@ -14,5 +17,7 @@ server.use('/api/v1/users',usersRoute)
 server.use('/api/v1/tweets',tweetsRoute)
 server.use('/api/v1/followers',followerRoute)
 server.use('/api/v1/following',followingRoute)
+server.use('/api/v1/auth', authRoutes)
+
 
 module.exports = server
