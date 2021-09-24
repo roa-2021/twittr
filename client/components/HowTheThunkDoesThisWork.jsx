@@ -6,7 +6,7 @@ import { createUser, getUserDetails, updateUser } from '../actions/userActions'
 // TWEETSREDUCER
 import { createTweet, retrieveUserTweets, removeTweet } from '../actions/tweetsActions'
 // FOLLOWERSREDUCER
-import { retrieveFollowers } from '../actions/followersActions'
+import { getFollowersOfUserTHUNK } from '../actions/followersActions'
 // FOLLOWINGREDUCER
 import { getWhoUserIsFollowingTHUNK, userWantsToFollowTHUNK, userWantsToUnfollowTHUNK } from '../actions/followingActions'
 // COMMENTSREDUCER
@@ -72,10 +72,10 @@ function App ({ dispatch }) {
   // TWEETS_THUNK TESTING
 
   // FOLLOWER/FOLLOWING_THUNK TESTING
-  const aFollowersID = 3
+  const aUsersID = 6 // should have 3 followers
 
   const getGetFollowersForUser = followerID => {
-    dispatch(retrieveFollowers(followerID))
+    dispatch(getFollowersOfUserTHUNK(followerID))
   }
 
   const getWhoUserIsFollowing = userID => {
@@ -138,7 +138,7 @@ function App ({ dispatch }) {
 
       {/* FOLLOWERS THUNKS BUTTONS */}
       <h1 style={{color: "white"}}>SOME TEXT TO SEPARATE SOME THINGS</h1>
-      <button onClick={() => getGetFollowersForUser(aFollowersID)}>GETGETFOLLOWERSFORUSER</button>
+      <button onClick={() => getGetFollowersForUser(aUsersID)}>GETFOLLOWERSFORUSER</button>
 
       {/* FOLLOWING THUNKS BUTTONS */}
       <h1 style={{color: "white"}}>SOME TEXT TO SEPARATE SOME THINGS</h1>
