@@ -1,4 +1,4 @@
-import { getUser } from '../apis/followersAPI'
+import { getFollower } from '../apis/followersAPI'
 
 // ---- CASE ----
 export const RECEIVE_FOLLOWER = 'RECEIVED_FOLLOWER_DETAILS'
@@ -12,13 +12,11 @@ export const receiveFollower = follower => {
 }
 
 // ---- ACTION ----
-export const retrieveFollower = followerID => {
+export const retrieveFollowers = followerID => {
   return dispatch => {
-    getUser(followerID)
-      .then(res => {
-        const retrievedFollower = res[0]
-        console.log(retrievedFollower)
-        // dispatch(receiveUser(createdUserObj))
+    getFollower(followerID)
+      .then(retrievedFollowers => {
+        dispatch(receiveFollower(retrievedFollowers))
       })
       // .catch(err => console.log(err))
   }
