@@ -1,6 +1,7 @@
-.landing-login-container {
-  height: 100vh;
-}
+:focus {outline:0 !important;}
+:hover {cursor: pointer;}
+
+.landing-login-container { height: 100vh; }
 
 .image-panel {
   background-image: url('landing-background-image.png');

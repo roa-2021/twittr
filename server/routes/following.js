@@ -11,10 +11,10 @@ router.get('/:id',(req,res)=>{
   .catch(err => res.status(500).json({ message: err.message }))
 })
 
-router.post('/:id',(req,res)=>{
-  userID=req.params.id;
-  followingID = parseInt(req.body)
-  db.addFollowing(userID,followingID)
+router.post('/:id', (req, res)=>{
+  const userID=req.params.id;
+  const newFollowID = req.body.followingId
+  db.addFollowing(userID, newFollowID)
   .then(result=>{
       res.json(result)
     })
@@ -22,9 +22,9 @@ router.post('/:id',(req,res)=>{
 })
 
 router.delete('/:id',(req,res)=>{
-  userID=req.params.id
-  followingID = parseInt(req.body)
-  db.deleteFollowing(userID,followingID)
+  const userID=req.params.id
+  const deleteFollowID = req.body.followingId
+  db.deleteFollowing(userID, deleteFollowID)
   .then(result=>{
     res.json(result)
   })
