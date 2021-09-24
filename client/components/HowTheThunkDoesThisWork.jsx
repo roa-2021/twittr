@@ -1,10 +1,16 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+// USERSREDUCER
 import { createUser, getUserDetails, updateUser } from '../actions/userActions'
+// TWEETSREDUCER
 import { createTweet, retrieveUserTweets, removeTweet } from '../actions/tweetsActions'
+// FOLLOWERSREDUCER
 import { retrieveFollowers } from '../actions/followersActions'
+// FOLLOWINGREDUCER
 import { getUserFollowing, addUserFollowing, deleteAFollowing } from '../actions/followingActions'
+// COMMENTSREDUCER
+import { retrieveComments, createComments } from '../actions/commentsAction'
 
 function App ({ dispatch }) {
   // USERS_THUNK TESTING
@@ -98,25 +104,52 @@ function App ({ dispatch }) {
     followingID: 1
   }
   // FOLLOWER/FOLLOWING_THUNK TESTING
-  
+
+  // COMMENTS_THUNK TESTING
+  const tweetID = 1 // has 2 comments
+  const newComment = {
+    publisher: 1, 
+    tweet_id: 1, 
+    publish_date: '06-06-2069 00:00:00', 
+    content: 'MAN THATS SHIT! Love Lil Wayne'
+  }
+
+  const getSomeTweetComments = tweetID => {
+    dispatch(retrieveComments(tweetID))
+  } 
+  const createAComment = newComment => {
+    dispatch(createComments(newComment))
+  }
+  // COMMENTS_THUNK TESTING
 
   return (
     <>
-      {/* user thunks */}
+      {/* USER THUNKS BUTTONS */}
+      <h1 style={{color: "white"}}>SOME TEXT TO SEPARATE SOME THINGS</h1>
       <button onClick={() => createUserYo(newUser)}>CREATE USER</button>
       <button onClick={() => requestSpecificUserYo(userIdUSERS)}>REQ SPECF USER</button>
       <button onClick={() => updateSpecificUser(updatedUser)}>UPDATE USER DETAILS</button>
 
-      {/* tweet thunks */}
+      {/* TWEET THUNKS BUTTONS */}
+      <h1 style={{color: "white"}}>SOME TEXT TO SEPARATE SOME THINGS</h1>
       <button onClick={() => createATweet(tweet)}>CREATE TWEET</button>
       <button onClick={() => retrieveTweets(userIDTWEET)}>RETRIEVE USERS TWEETS</button>
       <button onClick={() => deleteTweet(tweetDeleteID)}>REMOVE TWEET</button>
 
-      {/* followers/following thunks */}
-      <button onClick={() => getGetFollowersForUser(aFollowersID)}>getGetFollowersForUser</button>
-      <button onClick={() => getWhoUserIsFollowing(userIDFOLLOW)}>Get who user is following</button>
-      <button onClick={() => followANewUser(addFollowingObj.userIDFOLLOW, addFollowingObj.followingID)}>Follow a new user</button>
-      <button onClick={() => deleteUserFollowing(deleteFollowingObj.userIDFOLLOW, deleteFollowingObj.followingID)}>deleteUserFollowing</button>
+      {/* FOLLOWERS THUNKS BUTTONS */}
+      <h1 style={{color: "white"}}>SOME TEXT TO SEPARATE SOME THINGS</h1>
+      <button onClick={() => getGetFollowersForUser(aFollowersID)}>GETGETFOLLOWERSFORUSER</button>
+
+      {/* FOLLOWING THUNKS BUTTONS */}
+      <h1 style={{color: "white"}}>SOME TEXT TO SEPARATE SOME THINGS</h1>
+      <button onClick={() => getWhoUserIsFollowing(userIDFOLLOW)}>GET WHO USER IS FOLLOWING</button>
+      <button onClick={() => followANewUser(addFollowingObj.userIDFOLLOW, addFollowingObj.followingID)}>FOLLOW A NEW USER</button>
+      <button onClick={() => deleteUserFollowing(deleteFollowingObj.userIDFOLLOW, deleteFollowingObj.followingID)}>DELETEUSERFOLLOWING</button>
+
+      {/* COMMENTS THUNKS BUTTONS */}
+      <h1 style={{color: "white"}}>SOME TEXT TO SEPARATE SOME THINGS</h1>
+      <button onClick={() => getSomeTweetComments(tweetID)}>GET COMMENTS</button>
+      <button onClick={() => createAComment(newComment)}>CREATE COMMENT</button>
     </>
   )
 }

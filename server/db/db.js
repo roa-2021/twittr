@@ -94,7 +94,7 @@ function getComments(tweetID)
   .where('tweet_id',tweetID)
 }
 
-function creatComment(comment)
+function createComment(comment)
 {
   return db('comments')
   .insert(comment)
@@ -113,7 +113,7 @@ module.exports = {
   addFollowing,
   deleteFollowing,
   getComments,
-  creatComment,
+  createComment,
   getFollowingNum,
   getFollowerNum,
 }
