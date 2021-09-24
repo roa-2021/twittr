@@ -1,49 +1,49 @@
-import { addUser, getUser, updateUserDetails } from '../apis/userAPI'
+import { addAUserAPI, getAUserByIdAPI, updateAUsersDetailsAPI } from '../apis/userAPI'
 
 // ---- CASE ----
-export const RECEIVE_USER = 'RECEIVED_USER_DETAILS'
+export const STORE_USER_CASE = 'STORED_USER_DETAILS'
 
 // ---- ACTION ----
-export const receiveUser = user => {
+export const storeUserACTION = user => {
   return {
-    type: RECEIVE_USER,
+    type: STORE_USER_CASE,
     user
   }
 }
 
 // ---- THUNKS ----
-export const createUser = newUser => {
+export const createAUserTHUNK = newUser => {
   return dispatch => {
-    addUser(newUser)
+    addAUserAPI(newUser)
       .then(res => {
         const createdUserId = res[0]
         const createdUserObj = {
           id: createdUserId,
           ...newUser
         }
-        dispatch(receiveUser(createdUserObj))
+        dispatch(storeUserACTION(createdUserObj))
       })
       // .catch(err => console.log(err))
   }
 }
 
-export const getUserDetails = id => {{
+export const getAUsersDetailsTHUNK = usersId => {{
   return dispatch => {
-    getUser(id)
+    getAUserByIdAPI(usersId)
       .then(res => {
         const requestedUser = res[0]
-        dispatch(receiveUser(requestedUser))
+        dispatch(storeUserACTION(requestedUser))
       })
       // .catch(err => console.log(err))
   }
 }}
 
-export const updateUser = userDetails => {
+export const updateAUserTHUNK = usersNewDetailsObj => {
   return dispatch => {{
-    return updateUserDetails(userDetails)
+    return updateAUsersDetailsAPI(usersNewDetailsObj)
     .then(res => {
       const upToDateUser = res[0]
-      dispatch(receiveUser(upToDateUser))
+      dispatch(storeUserACTION(upToDateUser))
     })
       // .catch(err => console.log(err))
   }}
