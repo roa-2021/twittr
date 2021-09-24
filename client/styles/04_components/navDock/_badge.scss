@@ -1,0 +1,50 @@
+.nav-profile-badge-container {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  padding-bottom: 16px;
+
+  :hover {
+    border-radius: 50px;
+    background-color: #eee;
+  }
+}
+
+.nav-profile-badge-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-profile-badge_profile-img-container {
+  padding: 10px;
+  img {
+    width: 45px;
+    border-radius: 50%;
+  }
+}
+
+.nav-profile-badge_tag-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav-profile-badge_tag-content {
+  padding: 0px;
+  .nav-profile-badge_name-tag-container p {
+    font-weight: 900;
+    font-size: 0.85rem;
+  }
+  .nav-profile-badge_handle-tag-container p {
+    color: #ccc;
+    font-size: 0.95rem;
+  }
+}
+
+.nav-profile-badge_svg-container {
+  padding: 16px;
+
+  svg {
+    width: 20px;
+  }
+}
