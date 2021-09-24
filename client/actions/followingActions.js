@@ -1,43 +1,43 @@
-import { getFollowing, addFollowing, deleteFollowing } from '../apis/followingAPI'
+import { getWhoUserIsFollowingAPI, userFollowAPI, userUnfollowAPI } from '../apis/followingAPI'
 
 // ---- CASE ----
-export const RECEIVE_FOLLOWING = 'RECEIVE_FOLLOWING'
+export const STORE_FOLLOWING_CASE = 'STORE_FOLLOWING_CASE'
 
 // ---- ACTION ----
-export const receiveFollowing = following => {
+export const storeFollowingACTION = following => {
   return {
-    type: RECEIVE_FOLLOWING,
+    type: STORE_FOLLOWING_CASE,
     following
   }
 }
 
 // ---- THUNKS ----
-export const getUserFollowing = userId => {
+export const getWhoUserIsFollowingTHUNK = userId => {
   return dispatch => {
-    getFollowing(userId)
+    getWhoUserIsFollowingAPI(userId)
     .then(res => {
         const userFollowing = res
         console.log(userFollowing)
-        dispatch(receiveFollowing(userFollowing))
+        dispatch(storeFollowingACTION(userFollowing))
     })
   }
 }
 
-export const addUserFollowing = (userId, followingId) => {
+export const userWantsToFollowTHUNK = (userId, followingId) => {
   return dispatch => {
     console.log('followingAction.js ' + followingId)
-    addFollowing(userId, followingId)
+    userFollowAPI(userId, followingId)
     .then(res => {
         const newFollowing = res
         console.log(newFollowing)
-        dispatch(receiveFollowing(newFollowing))
+        dispatch(storeFollowingACTION(newFollowing))
     })
   }
 }
 
-export const deleteAFollowing = (userID, followingID) => {
+export const userWantsToUnfollowTHUNK = (userID, followingID) => {
   return dispatch => {
-    deleteFollowing(userID, followingID)
+    userUnfollowAPI(userID, followingID)
       .then(res => {
         const deleteStatus = res[0]
         console.log(deleteStatus)
