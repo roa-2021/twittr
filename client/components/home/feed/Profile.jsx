@@ -60,7 +60,12 @@ const Profile = () => {
           <p><span>0 </span>Followers</p>
         </div>
       </div>
-      <div></div>
+      <div className="profile-menu-cont">
+        <button>Tweet</button>
+        <button>Tweets &amp; replies</button>
+        <button>Media</button>
+        <button>Likes</button>
+      </div>
     </div>
   )
 }

@@ -122,8 +122,6 @@
     font-size: 0.6rem;
     border-radius: 25px;
   }
-  button:disabled {
-  }
 }
 
 // user tweet
@@ -173,9 +171,6 @@
   }
   .user-handle {
     color: #666;
-  }
-  .wtf-more {
-
   }
 }
 
@@ -427,5 +422,21 @@
   }
   span {
     color: #000;
+  }
+}
+
+.profile-menu-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 53px;
+  padding: 0px 50px;
+  border-bottom: #EEE solid 1px;
+  button {
+    border: none;
+    background-color: #fff;
+  }
+  button:hover {
+    border-bottom: 2px solid blue;
   }
 }
