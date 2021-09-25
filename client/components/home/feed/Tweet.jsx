@@ -7,7 +7,7 @@ import profileImage from '../../../styles/default-profile.png';
 import { retrieveAUsersTweetsTHUNK } from '../../../actions/tweetsActions'
 
 const Tweet = ({ dispatch, tweets }) => {
-  const userId = 5
+  const userId = 1
 
   useEffect(() => {
     dispatch(retrieveAUsersTweetsTHUNK(userId))
