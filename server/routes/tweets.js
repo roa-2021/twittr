@@ -4,7 +4,7 @@ const router = express.Router()
 
 router.post('/', (req,res)=>{
   tweet=req.body
-  db.creatTweet(tweet)
+  db.createTweet(tweet)
   .then(result=>{
     res.json(result)
   })
