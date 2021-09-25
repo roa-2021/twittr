@@ -25,7 +25,6 @@ export const retrieveCommentsTHUNK = tweetID => {
       .then(comments => {
         dispatch(storeCommentsACTION(comments))
       })
-      // .catch(err => console.log(err))
   }
 }
 
@@ -39,6 +38,5 @@ export const createCommentTHUNK = commentObj => {
         }
         dispatch(storeNewCommentACTION(fullyFormedCommentSan))
       })
-      // .catch(err => console.log(err))
   }
 }
