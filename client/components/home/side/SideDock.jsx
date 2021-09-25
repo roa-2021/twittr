@@ -5,6 +5,7 @@ import mac from '../../../styles/MAC.png';
 
 const SideDock = () => {
     return (
+        <div className="sideDock-container">
         <div className="sideDock">
             <div className="sideDock--search">
                 <form className="sideDock-form">
@@ -74,6 +75,7 @@ const SideDock = () => {
             <div className="sideDock--footer">
                 <div className="footer--wrapper">
                 <a href="">Terms of Service</a><a href="">Privacy Policy</a><a href="">Cookie Policy</a><a href="">Ads info</a><a href="">More ...</a><a href="">&copy; 2021 Twitter, Inc.</a>
+                </div>
                 </div>
             </div>
         </div>

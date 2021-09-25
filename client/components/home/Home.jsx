@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Feed from './feed/Feed'
+import FeedDock from './feed/FeedDock'
 import NavDock from './nav/NavDock'
 import SideDock from './side/SideDock'
 
@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div className="wall-container">
       <NavDock />
-      <Feed />
+      <FeedDock />
       <SideDock />
     </div>
   )

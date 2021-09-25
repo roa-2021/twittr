@@ -32,7 +32,7 @@ export function loginUser (creds, confirmSuccess) {
     dispatch(requestLogin())
     return login(creds)
       .then(userInfo => {
-        dispatch(receiveLogin(userInfo.nickname))
+        dispatch(receiveLogin(userInfo.username))
         confirmSuccess()
       })
       .catch(err => {

@@ -3,18 +3,22 @@ import Tweet from './Tweet'
 import Wtf from './Wtf'
 import PostTweet from './PostTweet'
 import HomeHeader from './HomeHeader'
+import Profile from './Profile'
 
-const Feed = () => {
+const FeedDock = () => {
+
+
   return (
     <>
       <section className="feed-panel">
+        {/* <Profile /> */}
         <HomeHeader />
         <PostTweet />
         <Tweet />
-        <Wtf />
+        {/* <Wtf /> */}
       </section>
     </>
   )
 }
 
-export default Feed
+export default FeedDock

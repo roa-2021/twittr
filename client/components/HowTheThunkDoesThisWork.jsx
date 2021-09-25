@@ -2,15 +2,15 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 // USERSREDUCER
-import { createUser, getUserDetails, updateUser } from '../actions/userActions'
+import { createAUserTHUNK, getAUsersDetailsTHUNK, updateAUserTHUNK } from '../actions/userActions'
 // TWEETSREDUCER
-import { createTweet, retrieveUserTweets, removeTweet } from '../actions/tweetsActions'
+import { createANewTweetTHUNK, retrieveAUsersTweetsTHUNK, removeATweetByIDTHUNK } from '../actions/tweetsActions'
 // FOLLOWERSREDUCER
-import { retrieveFollowers } from '../actions/followersActions'
+import { getFollowersOfUserTHUNK } from '../actions/followersActions'
 // FOLLOWINGREDUCER
-import { getUserFollowing, addUserFollowing, deleteAFollowing } from '../actions/followingActions'
+import { getWhoUserIsFollowingTHUNK, userWantsToFollowTHUNK, userWantsToUnfollowTHUNK } from '../actions/followingActions'
 // COMMENTSREDUCER
-import { retrieveComments, createComments } from '../actions/commentsAction'
+import { retrieveCommentsTHUNK, createCommentTHUNK } from '../actions/commentsAction'
 
 function App ({ dispatch }) {
   // USERS_THUNK TESTING
@@ -38,13 +38,13 @@ function App ({ dispatch }) {
   }
 
   const createUserYo = newUser => {
-    dispatch(createUser(newUser)) // takes an obj of newUser (as above)
+    dispatch(createAUserTHUNK(newUser)) // takes an obj of newUser (as above)
   }
   const requestSpecificUserYo = specificID => {
-    dispatch(getUserDetails(specificID)) // takes an userID + gets details
+    dispatch(getAUsersDetailsTHUNK(specificID)) // takes an userID + gets details
   }
   const updateSpecificUser = updatedUser => {
-    dispatch(updateUser(updatedUser)) // // takes obj of updatedUser (as above)
+    dispatch(updateAUserTHUNK(updatedUser)) // // takes obj of updatedUser (as above)
   }
   // USERS_THUNK TESTING
 
@@ -58,37 +58,37 @@ function App ({ dispatch }) {
     quote_count: 1000000
   }
   const userIDTWEET = 3
-  const tweetDeleteID = 6 
+  const tweetDeleteID = 10 
 
   const createATweet = tweet => {
-    dispatch(createTweet(tweet)) // takes an obj of tweet (as above)
+    dispatch(createANewTweetTHUNK(tweet)) // takes an obj of tweet (as above)
   }
   const retrieveTweets = userID => {
-    dispatch(retrieveUserTweets(userID)) // takes userID + gets their tweets 
+    dispatch(retrieveAUsersTweetsTHUNK(userID)) // takes userID + gets their tweets 
   }
   const deleteTweet = tweetID => {
-    dispatch(removeTweet(tweetID)) // takes ID of tweet to del
+    dispatch(removeATweetByIDTHUNK(tweetID)) // takes ID of tweet to del
   }
   // TWEETS_THUNK TESTING
 
   // FOLLOWER/FOLLOWING_THUNK TESTING
-  const aFollowersID = 3
+  const aUsersID = 6 // should have 3 followers
 
   const getGetFollowersForUser = followerID => {
-    dispatch(retrieveFollowers(followerID))
+    dispatch(getFollowersOfUserTHUNK(followerID))
   }
 
   const getWhoUserIsFollowing = userID => {
-    dispatch(getUserFollowing(userID))
+    dispatch(getWhoUserIsFollowingTHUNK(userID))
   }
 
   const deleteUserFollowing = (userID, followingID) => {
-    dispatch(deleteAFollowing(userID, followingID))
+    dispatch(userWantsToUnfollowTHUNK(userID, followingID))
   }
 
   const followANewUser = (userID, followingID) => {
     console.log('App.jsx ' + followingID)
-    dispatch(addUserFollowing(userID, followingID))
+    dispatch(userWantsToFollowTHUNK(userID, followingID))
   }
 
   const userIDFOLLOW = 4
@@ -106,7 +106,7 @@ function App ({ dispatch }) {
   // FOLLOWER/FOLLOWING_THUNK TESTING
 
   // COMMENTS_THUNK TESTING
-  const tweetID = 1 // has 2 comments
+  const tweetID = 2 // has 2 comments
   const newComment = {
     publisher: 1, 
     tweet_id: 1, 
@@ -115,10 +115,10 @@ function App ({ dispatch }) {
   }
 
   const getSomeTweetComments = tweetID => {
-    dispatch(retrieveComments(tweetID))
+    dispatch(retrieveCommentsTHUNK(tweetID))
   } 
   const createAComment = newComment => {
-    dispatch(createComments(newComment))
+    dispatch(createCommentTHUNK(newComment))
   }
   // COMMENTS_THUNK TESTING
 
@@ -138,7 +138,7 @@ function App ({ dispatch }) {
 
       {/* FOLLOWERS THUNKS BUTTONS */}
       <h1 style={{color: "white"}}>SOME TEXT TO SEPARATE SOME THINGS</h1>
-      <button onClick={() => getGetFollowersForUser(aFollowersID)}>GETGETFOLLOWERSFORUSER</button>
+      <button onClick={() => getGetFollowersForUser(aUsersID)}>GETFOLLOWERSFORUSER</button>
 
       {/* FOLLOWING THUNKS BUTTONS */}
       <h1 style={{color: "white"}}>SOME TEXT TO SEPARATE SOME THINGS</h1>

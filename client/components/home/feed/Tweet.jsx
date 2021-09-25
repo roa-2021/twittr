@@ -1,9 +1,22 @@
-import React from 'react'
-import profileImage from '../../../styles/default-profile.png';
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
 
-const Tweet = () => {
+import profileImage from '../../../styles/default-profile.png';
+// import meme from '../../../styles/meme.png'
+
+import { retrieveAUsersTweetsTHUNK } from '../../../actions/tweetsActions'
+
+const Tweet = ({ dispatch, tweets }) => {
+  const userId = 1
+
+  useEffect(() => {
+    dispatch(retrieveAUsersTweetsTHUNK(userId))
+  }, [])
+
   return (
-    <div>
+    tweets.map(tweet => {
+      return (
+        <div>
       <div className="tweet-container">
         <div className="tweet">
           <div className="profile-image">
@@ -12,8 +25,8 @@ const Tweet = () => {
           <div className="post-content">
             <div className="user-info">
               <a href="">
-              <span className="user-name">BigRig</span>
-              <span className="user-handle"> @BigRig12345678</span>
+              <span className="user-name">{tweet.publisher}</span>
+              <span className="user-handle"> @{tweet.publisher}</span>
               </a>
               <div className="tweet-more">
                 <svg viewBox="0 0 24 24" aria-hidden="true" className="more">
@@ -26,7 +39,10 @@ const Tweet = () => {
               </div>
             </div>
             <div className="tweet-post">
-              <p>mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</p>
+              <p>{tweet.content}</p>
+            </div>
+            <div className="image-post">
+              {/* <img src={null}/> */}
             </div>
             <div className="tweet-interactions-container">
               <div className="tweet-interactions">
@@ -68,7 +84,11 @@ const Tweet = () => {
         </div>
       </div>
     </div>
+      )
+    })
   )
 }
 
-export default Tweet
+const mapStateToProps = store => ({ tweets: store.tweet })
+
+export default connect(mapStateToProps)(Tweet)
