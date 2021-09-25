@@ -4,6 +4,9 @@
   "description": "Full Stack",
   "repository": "https://https://github.com/roa-2021/twittr",
   "main": "server/index.js",
+  "engines": {
+    "node": "14.x"
+},
   "scripts": {
     "build": "run-p build:client build:server",
     "build:client": "npm run webpack -- --mode production",
