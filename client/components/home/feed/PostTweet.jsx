@@ -1,7 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { connect } from 'react-redux'
+
 import profileImage from '../../../styles/default-profile.png';
 
-const PostTweet = () => {
+import { createANewTweetTHUNK, retrieveAUsersTweetsTHUNK, removeATweetByIDTHUNK } from '../../../actions/tweetsActions'
+
+
+const PostTweet = ({ dispatch }) => {
+
+  const [formContent, setFormContent] = useState('')
+
+  const changeHandler = (e) => {
+    setFormContent(e.target.value)
+  }
+
+  const tweet = {
+    publisher: 1, 
+    publish_time: Date.now(),
+    content: formContent,
+    like_count: 0,
+    retweet_count: 0,
+    quote_count: 0
+  }
+
+  const postATweet = (e, tweet) => {
+    e.preventDefault()
+    console.log('posting tweet: ', tweet)
+    dispatch(createANewTweetTHUNK(tweet))
+    setFormContent('')
+  }
+
   return (
     <div>
       <div className="make-tweet-card">
@@ -10,8 +38,9 @@ const PostTweet = () => {
             <img src={profileImage} />
           </div>
           <div className="tweet-content">
+            <form onSubmit={(e) => postATweet(e, tweet)}>
             <div className="tweet-input">
-              <input type="text" placeholder="What's happening?"/>
+              <input type="text" placeholder="What's happening?" onChange={changeHandler} value={formContent}/>
             </div>
             <div className="interactions">
               <div className="reactions">
@@ -63,9 +92,10 @@ const PostTweet = () => {
                 </svg>
               </div>
               <div className="submit-tweet">
-                <button><h2>Tweet</h2></button>
+                <button type='submit'><h2>Tweet</h2></button>
               </div>
             </div>
+            </form>
           </div>
         </div>
       </div>
@@ -73,4 +103,4 @@ const PostTweet = () => {
   )
 }
 
-export default PostTweet
+export default connect()(PostTweet)
