@@ -3,6 +3,7 @@ import Tweet from './Tweet'
 import Wtf from './Wtf'
 import PostTweet from './PostTweet'
 import HomeHeader from './HomeHeader'
+import Profile from './Profile'
 
 const FeedDock = () => {
 
@@ -10,8 +11,9 @@ const FeedDock = () => {
   return (
     <>
       <section className="feed-panel">
-        <HomeHeader />
-        <PostTweet />
+        <Profile />
+        {/* <HomeHeader />
+        <PostTweet /> */}
         <Tweet />
         <Wtf />
       </section>
