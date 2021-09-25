@@ -21,7 +21,7 @@ export const createANewTweetTHUNK = newTweet => {
         id: createdTweetId,
         ...newTweet
       }
-      dispatch(storeTweetACTION(createdTweetObj))
+      dispatch(storeTweetACTION([createdTweetObj]))
     })
     // .catch(err => console.log(err))
   }

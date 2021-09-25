@@ -11,11 +11,11 @@ const FeedDock = () => {
   return (
     <>
       <section className="feed-panel">
-        <Profile />
-        {/* <HomeHeader />
-        <PostTweet /> */}
+        {/* <Profile /> */}
+        <HomeHeader />
+        <PostTweet />
         <Tweet />
-        <Wtf />
+        {/* <Wtf /> */}
       </section>
     </>
   )
