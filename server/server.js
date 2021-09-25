@@ -21,5 +21,4 @@ server.use('/api/v1/following',followingRoute)
 server.use('/api/v1', authRoutes)
 server.use('/api/v1/comments', commentsRoute)
 
-
 module.exports = server

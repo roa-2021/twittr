@@ -7,11 +7,6 @@ function getUser(userID)
   .where('id',userID)
 }
 
-function creatUser(newUser)
-{
-  return db('users')
-  .insert(newUser)
-}
 
 function updateUser(userID,newUser)
 {
@@ -27,7 +22,7 @@ function getTweets(userID)
   .where('publisher',userID)
 }
 
-function creatTweet(tweet)
+function createTweet(tweet)
 {
   return db('tweets')
   .insert(tweet)
@@ -103,10 +98,9 @@ function createComment(comment)
 //export********************************************
 module.exports = {
   getUser,
-  creatUser,
   updateUser,
   getTweets,
-  creatTweet,
+  createTweet,
   deleteTweet,
   getFollower,
   getFollowing,

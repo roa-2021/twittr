@@ -7,8 +7,8 @@ exports.up = function(knex) {
     table.foreign('id').references('followers.follower')
     table.foreign('id').references('followers.following')
     table.string('name')
-    table.string('nickname');
-    table.string('email');
+    table.string('username');
+    table.string('email_address');
     table.string('hash');
     table.string('profile_image');
     table.string('varified');
