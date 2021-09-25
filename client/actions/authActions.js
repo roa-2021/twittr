@@ -32,7 +32,7 @@ export function loginUser (creds, confirmSuccess) {
     dispatch(requestLogin())
     return login(creds)
       .then(userInfo => {
-        dispatch(receiveLogin(userInfo))
+        dispatch(receiveLogin(userInfo.nickname))
         confirmSuccess()
       })
       .catch(err => {
@@ -67,10 +67,12 @@ export function logoutUser (confirmSuccess) {
 }
 
 export function registerUserRequest (creds, confirmSuccess) {
+  console.log(creds, 'register auth action');
   return (dispatch) => {
     register(creds)
       .then(userInfo => {
-        dispatch(receiveLogin(userInfo))
+       
+        dispatch(receiveLogin())
         confirmSuccess()
       })
       .catch(err => dispatch(loginError(err)))

@@ -7,6 +7,8 @@ const errorMessages = {
   }
   
   export function register (creds) {
+    //creds is sweet
+    console.log(creds, 'register')
     return authRegister(creds, { baseUrl })
       .catch(err => {
         throw errorMessages[err.message]

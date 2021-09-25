@@ -8,6 +8,7 @@ const LoginForm = props => {
 
   const [formData, setFormData] = useState({
     name: '',
+    username: '',
     email_address: '',
     password: '',
     confirm_password: '',
@@ -37,9 +38,7 @@ const LoginForm = props => {
     if (confirm_password != password) {
       dispatch(loginError("Passwords don't match"))
     } else {
-      const confirmSuccess = () => {
-        props.history.push('/')
-      }
+      const confirmSuccess = () => { props.history.push('/') }
       const userInfo = { ...formData }
       delete userInfo.confirm_password
       dispatch(registerUserRequest(userInfo, confirmSuccess))
@@ -72,9 +71,11 @@ const LoginForm = props => {
       </div>
       <h2 className="login-form--title">Create your account</h2>
       <form action="" className="login-form" onSubmit={handleSubmit}>
+      {auth.errorMessage && <span className="has-text-danger is-large">{auth.errorMessage}</span>}
         <input type="text" className="name" placeholder="Name" name="name" autoComplete="name" onChange={handleChange} value={formData.name}/>
+        <input type="text" className="username" placeholder="username" name="username" autoComplete="username" onChange={handleChange} value={formData.username}/>
         <input type="text" className="email" placeholder="Email" name="email_address" autoComplete="email" onChange={handleChange} value={formData.email_address} />
-        <input type="text" className="password" placeholder="Password" name="password" autoComplete="password" onChange={handleChange} value={formData.password}/>
+        <input type="text" className="password" placeholder="Password" name="password" autoComplete="password" onChange={handleChange} value={formData.password} />
         <input
           type="text"
           className="confirm-password"
