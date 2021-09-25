@@ -8,8 +8,8 @@ function App () {
   return (
     <>
       {/* <Landing /> */}
-      {/* <Home /> */}
-      <Logout />
+      <Home />
+      {/* <Logout /> */}
     </>
   )
 }
