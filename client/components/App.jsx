@@ -7,7 +7,7 @@ import {connect} from 'react-redux'
 
 
 
-function App (props) {
+function App () {
   return (
     <>
       <Route exact path='/' component={Landing}/>

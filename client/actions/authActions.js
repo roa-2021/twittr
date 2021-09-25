@@ -71,7 +71,8 @@ export function registerUserRequest (creds, confirmSuccess) {
     register(creds)
       .then(userInfo => {
         dispatch(receiveLogin(userInfo))
-        confirmSuccess(userInfo.id)
+        console.log(userInfo)
+        confirmSuccess(userInfo)
       })
       .catch(err => dispatch(loginError(err)))
   }
