@@ -15,7 +15,7 @@ const PostTweet = ({ dispatch }) => {
   }
 
   const tweet = {
-    publisher: 1, 
+    publisher: 5, 
     publish_time: Date.now(),
     content: formContent,
     like_count: 0,
