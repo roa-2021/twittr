@@ -2,7 +2,7 @@ const express = require('express')
 const db = require('../db/db')
 const router = express.Router()
 
-router.post('/',(req,res)=>{
+router.post('/', (req,res)=>{
   tweet=req.body
   db.creatTweet(tweet)
   .then(result=>{
@@ -28,6 +28,5 @@ router.delete('/:id',(req,res)=>{
   })
   .catch(err => res.status(500).json({ message: err.message }))
 })
-
 
 module.exports=router
