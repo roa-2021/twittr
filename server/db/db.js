@@ -95,6 +95,28 @@ function createComment(comment)
   .insert(comment)
 }
 
+//like****************************************
+function getLikes(tweetID)
+{
+  return db('like')
+  .count('like as likesNum')
+  .where(
+  {tweet_id:tweetID,
+    like:true
+  })
+}
+
+function isLiked(tweetID,userID)
+{
+  return db('like')
+  .count('')
+  .where(
+  {tweet_id:tweetID,
+    user_id:userID,
+    like:true
+  })
+}
+
 //export********************************************
 module.exports = {
   getUser,
@@ -110,4 +132,6 @@ module.exports = {
   createComment,
   getFollowingNum,
   getFollowerNum,
+  getLikes,
+  isLiked,
 }

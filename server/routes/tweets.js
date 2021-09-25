@@ -15,7 +15,12 @@ router.get('/:id',(req,res)=>{
   userID=req.params.id;
   db.getTweets(userID)
   .then(tweets=>{
-    res.json(tweets)
+    db.getLikes(userID)
+    .then(likes=>{
+      tweets[0].likesNum = likes[0].likesNum
+      res.json(tweets)
+    })
+   
   })
   .catch(err => res.status(500).json({ message: err.message }))
 })

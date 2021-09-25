@@ -6,9 +6,6 @@ exports.up = function(knex) {
     table.string('publisher')
     table.datetime('publish_time')
     table.string('content')
-    table.integer('like_count')
-    table.integer('retweet_count')
-    table.integer('quote_count')
   })
 };
 
