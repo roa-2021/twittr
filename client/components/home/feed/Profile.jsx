@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
 import profileImage from '../../../styles/default-profile.png';
 
-const Profile = () => {
+import {getAUsersDetailsTHUNK} from '../../../actions/userActions'
+
+const Profile = ({dispatch, user}) => {
+
+  const userId = 1;
+
+  useEffect(() => {
+    dispatch(getAUsersDetailsTHUNK(userId))
+  }, [])
+
   return (
     <div className="feed-panel-container">
       <div className="profile-container">
@@ -16,7 +26,7 @@ const Profile = () => {
               </svg>
             </div>
             <a href="#">
-              <h2 className="profile-username">BigRig</h2>
+              <h2 className="profile-username">{user.name}</h2>
               <p className="tweet-count">6 Tweets</p>
             </a>
           </div>
@@ -28,8 +38,10 @@ const Profile = () => {
           <img src={profileImage}></img>
           <button>Set up profile</button>
         </div>
-        <h1>BigRig</h1>
-        <p>@BigRig12345678</p>
+        <h1>{user.name}</h1>
+        <p>@{user.username}</p>
+        {/* Bio Div needed */}
+        <p>{user.bio}</p>
         <div className="joined">
           <svg viewBox="0 0 24 24" aria-hidden="true" class="calender">
             <g>
@@ -56,8 +68,8 @@ const Profile = () => {
           <p>Joined December 2020</p>
         </div>
         <div className="profile-follows">
-          <p><span>0 </span>Following</p>
-          <p><span>0 </span>Followers</p>
+          <p><span>{user.followingNum} </span>Following</p>
+          <p><span>{user.followerNum} </span>Followers</p>
         </div>
       </div>
       <div className="profile-menu-cont">
@@ -70,4 +82,6 @@ const Profile = () => {
   )
 }
 
-export default Profile
+const mapStateToProps = store => ({user : store.user})
+
+export default connect(mapStateToProps)(Profile)
