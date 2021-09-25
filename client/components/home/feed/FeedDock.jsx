@@ -14,7 +14,7 @@ const FeedDock = () => {
         {/* <Profile /> */}
         <HomeHeader />
         <PostTweet />
-        {/* <Tweet /> */}
+        <Tweet />
         {/* <Wtf /> */}
       </section>
     </>
