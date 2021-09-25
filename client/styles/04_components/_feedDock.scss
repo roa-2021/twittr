@@ -107,6 +107,12 @@
   width: 20px;
   height: 20px;
   padding: 10px;
+  border-radius: 50%;
+  transition: 0.4s;
+}:hover {
+  background-color: #d5eff8;
+  border-radius: 50%;
+  transition: 0.4s;
   }
 }
 
@@ -121,6 +127,10 @@
     font-family: inherit;
     font-size: 0.6rem;
     border-radius: 25px;
+  }
+  button:hover {
+    cursor: pointer;
+    filter: brightness(0.9);
   }
 }
 
@@ -284,7 +294,7 @@
     transition-duration: 0.2s;
   }
   :hover {
-    background-color: lightcyan;
+    background-color: #d5eff8;
     fill: rgb(28, 155, 239);
     border-radius: 50%;
     transition-duration: 0.2s;
