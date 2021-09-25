@@ -1,4 +1,5 @@
 .sideDock {
+    position: fixed;
     padding-left: 28px;
 }
     .sideDock--search {
@@ -123,9 +124,9 @@
     }
 
     
-    .happening--footer {
+    // .happening--footer {
        
-    }
+    // }
     
     // .happening--footer:hover {
     //     background-color: #EEF1F1;
