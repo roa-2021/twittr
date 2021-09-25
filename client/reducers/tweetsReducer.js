@@ -5,7 +5,7 @@ const initialState = []
 const tweetsReducer = (state = initialState, action) => {
   switch(action.type) {
     case STORE_TWEETS_CASE:
-      return action.tweet
+      return [...action.tweet, ...state]
 
     default:
       return state
