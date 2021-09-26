@@ -11,9 +11,9 @@ function App () {
     <>
       {/* <Landing /> */}
       {/* <Home /> */}
-      {/* <Logout /> */}
+      <Logout />
 
-      <CardTestEnvironment />
+      {/* <CardTestEnvironment /> */}
     </>
   )
 }
