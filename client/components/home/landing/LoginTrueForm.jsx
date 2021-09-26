@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
-
+import { useHistory } from 'react-router'
 import { loginError, loginUser } from '../../../actions/authActions'
 
 const LoginTrueForm = props => {
+  let history = useHistory()
+
   const { auth, dispatch, show } = props
 
   const [formData, setFormData] = useState({
@@ -28,7 +30,7 @@ const LoginTrueForm = props => {
     e.preventDefault()
     // props.history.push('/listings')
     const confirmSuccess = () => {
-      props.history.push('/')
+      history.push('/home')
     }
     dispatch(loginUser(formData, confirmSuccess))
   }
