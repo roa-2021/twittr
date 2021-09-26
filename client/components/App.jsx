@@ -14,7 +14,7 @@ import LoginForm from './home/landing/LoginForm'
 function App (props) {
   return (
     <>
-      <LoginForm />
+      {/* <LoginForm /> */}
       {/* <Landing /> */}
 
       {/* <Home /> */}
