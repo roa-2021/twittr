@@ -6,8 +6,17 @@ import profileImage from '../../../styles/default-profile.png';
 
 import { retrieveAUsersTweetsTHUNK } from '../../../actions/tweetsActions'
 
+<<<<<<< HEAD
 const Tweet = ({ dispatch, tweets }) => {
   const userId = 1
+||||||| parent of b7a2774 (login)
+const Tweet = ({ dispatch, tweets }) => {
+  const userId = 5
+=======
+const Tweet = ({ dispatch, tweets,user}) => {
+  console.log(user)
+  const userId = user.id
+>>>>>>> b7a2774 (login)
 
   useEffect(() => {
     dispatch(retrieveAUsersTweetsTHUNK(userId))
@@ -25,8 +34,8 @@ const Tweet = ({ dispatch, tweets }) => {
           <div className="post-content">
             <div className="user-info">
               <a href="">
-              <span className="user-name">{tweet.publisher}</span>
-              <span className="user-handle"> @{tweet.publisher}</span>
+              <span className="user-name">{user.name}</span>
+              <span className="user-handle"> @{user.username}</span>
               </a>
               <div className="tweet-more">
                 <svg viewBox="0 0 24 24" aria-hidden="true" className="more">
@@ -89,6 +98,6 @@ const Tweet = ({ dispatch, tweets }) => {
   )
 }
 
-const mapStateToProps = store => ({ tweets: store.tweet })
+const mapStateToProps = store => {return { tweets: store.tweet , user:store.auth.user}}
 
 export default connect(mapStateToProps)(Tweet)

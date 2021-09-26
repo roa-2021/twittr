@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
-
+import { useHistory } from 'react-router'
 import { loginError, registerUserRequest } from '../../../actions/authActions'
 
 const LoginForm = props => {
-  const { auth, dispatch } = props
+  console.log(props)
+  const { auth, dispatch,user} = props
+  let history=useHistory()
 
   const [formData, setFormData] = useState({
     name: '',
@@ -38,11 +40,19 @@ const LoginForm = props => {
     if (confirm_password != password) {
       dispatch(loginError("Passwords don't match"))
     } else {
+<<<<<<< HEAD
       //  const confirmSuccess = () => { props.history.push('/') }
       const confirmSuccess = () => {
         console.log('registered')
       }
 
+||||||| parent of b7a2774 (login)
+      const confirmSuccess = () => { props.history.push('/') }
+=======
+      const confirmSuccess = (id) => { 
+        console.log(user.username)
+        history.push(`/home`) }
+>>>>>>> b7a2774 (login)
       const userInfo = { ...formData }
       delete userInfo.confirm_password
       dispatch(registerUserRequest(userInfo, confirmSuccess))
@@ -152,6 +162,7 @@ const LoginForm = props => {
 const mapStateToProps = globalState => {
   return {
     auth: globalState.auth,
+    user:globalState.user,
   }
 }
 
