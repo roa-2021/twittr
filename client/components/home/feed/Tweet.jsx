@@ -100,6 +100,10 @@ const Tweet = ({ dispatch, tweets,user}) => {
   )
 }
 
-const mapStateToProps = store => {return { tweets: store.tweet , user:store.auth.user}}
+const mapStateToProps = store => {
+  return {
+    tweets: store.tweet, 
+    user: store.auth.user
+}}
 
 export default connect(mapStateToProps)(Tweet)
