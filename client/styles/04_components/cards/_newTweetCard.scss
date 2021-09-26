@@ -1,11 +1,11 @@
-.tweet-card-container {
+.new-tweet-card-container {
   width: 600px;
   min-height: 278px;
   border-radius: 15px;
   background-color: white;
-  .tweet-card-container__header {
+  .new-tweet-card-container__header {
     padding: 15px;
-    .tweet-card-container__exit-svg-container {
+    .new-tweet-card-container__exit-svg-container {
       height: 20px;
       svg {
         width: 20px
@@ -14,24 +14,24 @@
   }
 }
 
-.tweet-card-container__content-container {
+.new-tweet-card-container__content-container {
   display: flex;
   flex-direction: row;
 
   padding: 10px 15px;
 
-  .tweet-card-container__left-column-container {
+  .new-tweet-card-container__left-column-container {
     padding-right: 15px;
-    .tweet-card-container__profilePic-container {
+    .new-tweet-card-container__profilePic-container {
       img {
         width: 48px;
         border-radius: 50%;
       }
     }
   }
-  .tweet-card-container__right-column-container {
+  .new-tweet-card-container__right-column-container {
     width: 100%;
-    .tweet-card-container__tweet-body-container {
+    .new-tweet-card-container__tweet-body-container {
       min-height: 120px;
       padding: 15px 0;
       span {
@@ -42,12 +42,12 @@
         color: #777;
       }
     }
-    .tweet-card-container__icon-button-container {
+    .new-tweet-card-container__icon-button-container {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       
-      .tweet-card-container__icon-tray {
+      .new-tweet-card-container__icon-tray {
         display: flex;
         flex-direction: row;
         
@@ -57,57 +57,57 @@
           fill: #1d9bf0;
           width: 20px;
         }
-        .tweet-card-container__media-icon {
+        .new-tweet-card-container__media-icon {
           width: 20px;
           height: 20px;
           padding: 10px;
           border-radius: 50%;
         }
-        .tweet-card-container__media-icon:hover {
+        .new-tweet-card-container__media-icon:hover {
           background-color: lightcyan;
         }
-        .tweet-card-container__gif-icon {
+        .new-tweet-card-container__gif-icon {
           width: 20px;
           height: 20px;
           padding: 10px;
           border-radius: 50%;
         }
-        .tweet-card-container__gif-icon:hover {
+        .new-tweet-card-container__gif-icon:hover {
           background-color: lightcyan;
         }
-        .tweet-card-container__poll-icon {
+        .new-tweet-card-container__poll-icon {
           width: 20px;
           height: 20px;
           padding: 10px;
           border-radius: 50%;
         }
-        .tweet-card-container__poll-icon:hover {
+        .new-tweet-card-container__poll-icon:hover {
           background-color: lightcyan;
         }
-        .tweet-card-container__emoji-icon {
+        .new-tweet-card-container__emoji-icon {
           width: 20px;
           height: 20px;
           padding: 10px;
           border-radius: 50%;
         }
-        .tweet-card-container__emoji-icon:hover {
+        .new-tweet-card-container__emoji-icon:hover {
           background-color: lightcyan;
         }
-        .tweet-card-container__schedule-icon {
+        .new-tweet-card-container__schedule-icon {
           width: 20px;
           height: 20px;
           padding: 10px;
           border-radius: 50%;
         }
-        .tweet-card-container__schedule-icon:hover {
+        .new-tweet-card-container__schedule-icon:hover {
           background-color: lightcyan;
         }
       }
-      .tweet-card-container__tweet-button-container {
+      .new-tweet-card-container__tweet-button-container {
         margin-top: 12px;
         
 
-        .tweet-card-container__tweet-button {
+        .new-tweet-card-container__tweet-button {
           padding: 8px 20px;
           border-radius: 50px;
           span {

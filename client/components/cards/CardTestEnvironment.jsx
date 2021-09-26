@@ -2,7 +2,7 @@
 import React from 'react'
 
 import BadgeCard from './BadgeCard'
-import TweetCard from './TweetCard'
+import NewTweetCard from './NewTweetCard'
 import LogoutCard from './LogoutCard'
 
 const CardTestEnvironment = () => {
@@ -15,7 +15,7 @@ const CardTestEnvironment = () => {
         <BadgeCard />
       </div>
       <div className="card-test-page__card-container">
-        <TweetCard />
+        <NewTweetCard />
       </div>
     </div>
   )

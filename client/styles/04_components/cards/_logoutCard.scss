@@ -1,15 +1,4 @@
-.logout-card-container {
-  display: flex;
-  flex-direction: column;
-
-  width: 256px;
-  height: 292px;
-  padding: 32px;
-  background-color: #fff;
-  border-radius: 16px;
-}
-
-.logo-svg {
+.logout-logo-svg {
   display: flex;
   align-self: center;
 
@@ -18,59 +7,4 @@
     fill: #1c9bef;
     padding-bottom: 10px;
   }
-}
-
-.header-text {
-  padding: 5px 0;
-
-  .header-text__text {
-    font-size: 1.12rem;
-    font-weight: 900;
-  }
-}
-
-.paragraph-text {
-  padding-bottom: 21px;
-  .paragraph-text__text {
-    font-size: 0.9rem;
-    color: #536471;
-  }
-}
-
-.logout-button-offset {
-  display: flex;
-  justify-content: center;
-
-  background-color: #0f1419;
-  padding: 13px;
-  border-radius: 50px;
-  
-  .logout-button__text {
-    color: #fff;  
-    font-size: 0.9rem;
-    font-weight: 900;
-  }  
-}
-
-.logout-button-offset:hover {
-  background-color: #272c30;
-}
-
-.cancel-button-offset {
-  display: flex;
-  justify-content: center;
-
-  margin-top: 12px;
-  padding: 12px;
-  border-radius: 50px;
-  border: solid 1px #cfd9de;
-
-  .cancel-button__text {
-    font-size: 0.9rem;
-    font-weight: 900;
-  }
-}
-
-.cancel-button-offset:hover {
-  background-color: #e4e4e4;
 }
