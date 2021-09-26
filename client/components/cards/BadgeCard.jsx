@@ -32,7 +32,7 @@ const BadgeCard = () => {
         </div>
         <div className="options-menu-container__button-container">
           <div className="options-menu-container__button-span">
-            <span>Log out</span>
+            <span>Log out&nbsp;</span>
             <span>@LittleRocketDev</span>
           </div>
         </div>
