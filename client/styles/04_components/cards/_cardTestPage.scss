@@ -1,0 +1,12 @@
+.card-test-page {
+  display: flex;
+  flex-flow: row wrap;
+
+  width: 100vw;
+  min-height: 100vh;
+  background-color: whitesmoke;
+}
+
+.card-test-page__card-container {
+  margin: 20px;
+}

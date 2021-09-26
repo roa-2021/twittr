@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { useHistory } from 'react-router'
-import { loginError, registerUserRequest } from '../../../actions/authActions'
+import { loginError, loginUser } from '../../../actions/authActions'
 
-const LoginForm = props => {
-  const { auth, dispatch, user } = props
+const LoginTrueForm = props => {
   let history = useHistory()
 
+  const { auth, dispatch, show } = props
+
   const [formData, setFormData] = useState({
-    name: '',
     username: '',
-    email_address: '',
     password: '',
-    confirm_password: '',
   })
 
   useEffect(() => {
@@ -30,24 +28,11 @@ const LoginForm = props => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    e.target.reset()
-
-    // console.log(formData);
-
-    let { password, confirm_password } = formData
-
-    if (confirm_password != password) {
-      dispatch(loginError("Passwords don't match"))
-    } else {
-
-      const confirmSuccess = id => {
-        history.push(`/home`)
-      }
-
-      const userInfo = { ...formData }
-      delete userInfo.confirm_password
-      dispatch(registerUserRequest(userInfo, confirmSuccess))
+    // props.history.push('/listings')
+    const confirmSuccess = () => {
+      history.push('/home')
     }
+    dispatch(loginUser(formData, confirmSuccess))
   }
 
   return (
@@ -74,20 +59,12 @@ const LoginForm = props => {
           </g>
         </svg>
       </div>
-      <h2 className="login-form--title">Create your account</h2>
+      <h2 className="login-form--title">Sign in</h2>
       <form action="" className="login-form" onSubmit={handleSubmit}>
         {auth.errorMessage && (
           <span className="has-text-danger is-large">{auth.errorMessage}</span>
         )}
-        <input
-          type="text"
-          className="name"
-          placeholder="Name"
-          name="name"
-          autoComplete="name"
-          onChange={handleChange}
-          value={formData.name}
-        />
+
         <input
           type="text"
           className="username"
@@ -99,15 +76,6 @@ const LoginForm = props => {
         />
         <input
           type="text"
-          className="email"
-          placeholder="Email"
-          name="email_address"
-          autoComplete="email"
-          onChange={handleChange}
-          value={formData.email_address}
-        />
-        <input
-          type="text"
           className="password"
           placeholder="Password"
           name="password"
@@ -115,36 +83,8 @@ const LoginForm = props => {
           onChange={handleChange}
           value={formData.password}
         />
-        <input
-          type="text"
-          className="confirm-password"
-          placeholder="Confirm Password"
-          name="confirm_password"
-          autoComplete="password"
-          onChange={handleChange}
-          value={formData.confirm_password}
-        />
-        <a href="">Use email instead</a>
-        <p className="date-title">Date of birth</p>
-        <p className="date-text">
-          This will not be shown publicly. Confirm your own age, even if this
-          account is for a business, a pet, or something else.
-        </p>
-        <div className="login-select--wrapper">
-          <select name="" id="" className="login-form--month">
-            <option value="#">Month</option>
-            <option value="#">Jan</option>
-          </select>
-          <select name="" id="" className="login-form--day">
-            <option value="#">Day</option>
-            <option value="#">1</option>
-          </select>
-          <select name="" id="" className="login-form--year">
-            <option value="#">Year</option>
-            <option value="#">1970</option>
-          </select>
-        </div>
-        <button>Sign up</button>
+
+        <button>Log in</button>
       </form>
     </div>
   )
@@ -153,8 +93,7 @@ const LoginForm = props => {
 const mapStateToProps = globalState => {
   return {
     auth: globalState.auth,
-    user: globalState.user,
   }
 }
 
-export default connect(mapStateToProps)(LoginForm)
+export default connect(mapStateToProps)(LoginTrueForm)

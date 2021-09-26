@@ -67,13 +67,13 @@ export function logoutUser (confirmSuccess) {
 }
 
 export function registerUserRequest (creds, confirmSuccess) {
-  console.log(creds, 'register auth action');
   return (dispatch) => {
     register(creds)
       .then(userInfo => {
-       
-        dispatch(receiveLogin())
-        confirmSuccess()
+        dispatch(receiveLogin(userInfo))
+
+        confirmSuccess(userInfo)
+      
       })
       .catch(err => dispatch(loginError(err)))
   }
