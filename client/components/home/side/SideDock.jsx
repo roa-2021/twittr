@@ -7,7 +7,16 @@ import { Link } from 'react-router-dom'
 
 import { IfAuthenticated, IfNotAuthenticated } from '../Authenticated'
 
+import OptionsSideBarMoreCard from '../../cards/OptionsSideBarMoreCard'
+
 const SideDock = () => {
+
+  const [moreVisibilty, setMoreVisibilty] = useState(false)
+
+  function toggleMore() {
+    setMoreVisibilty(!moreVisibilty)
+  }
+
   return (
     <div className="sideDock-container">
       <div className="sideDock">
@@ -85,12 +94,12 @@ const SideDock = () => {
             <a href="">Privacy Policy</a>
             <a href="">Cookie Policy</a>
             <a href="">Ads info</a>
-            <a href="">More ...</a>
+            <a  onClick={toggleMore}>More ...</a>
             <a href="">&copy; 2021 Twitter, Inc.</a>
-
             <IfAuthenticated>
               <Link to="/logout">Log off</Link>
             </IfAuthenticated>
+            {moreVisibilty && < OptionsSideBarMoreCard/>}
           </div>
         </div>
       </div>
