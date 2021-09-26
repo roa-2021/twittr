@@ -1,5 +1,5 @@
 import React from 'react'
-import profileImage from '../../../styles/default-profile.png';
+import profileImage from '../../../styles/default-profile.png'
 
 const Wtf = () => {
   return (
@@ -28,8 +28,8 @@ const Wtf = () => {
               <div className="user-info">
                 <div className="user-deets">
                   <a href="">
-                  <span className="user-name">BigRig</span>
-                  <span className="user-handle"> @BigRig12345678</span>
+                    <span className="user-name">BigRig</span>
+                    <span className="user-handle"> @BigRig12345678</span>
                   </a>
                 </div>
                 <div className="user-follow">
@@ -44,8 +44,8 @@ const Wtf = () => {
               <div className="user-info">
                 <div className="user-deets">
                   <a href="">
-                  <span className="user-name">BigRig</span>
-                  <span className="user-handle"> @BigRig12345678</span>
+                    <span className="user-name">BigRig</span>
+                    <span className="user-handle"> @BigRig12345678</span>
                   </a>
                 </div>
                 <div className="user-follow">
@@ -60,8 +60,8 @@ const Wtf = () => {
               <div className="user-info">
                 <div className="user-deets">
                   <a href="">
-                  <span className="user-name">BigRig</span>
-                  <span className="user-handle"> @BigRig12345678</span>
+                    <span className="user-name">BigRig</span>
+                    <span className="user-handle"> @BigRig12345678</span>
                   </a>
                 </div>
                 <div className="user-follow">
