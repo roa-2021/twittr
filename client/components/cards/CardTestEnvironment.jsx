@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react'
 
 import BadgeCard from './BadgeCard'
@@ -21,3 +22,19 @@ const CardTestEnvironment = () => {
 }
 
 export default CardTestEnvironment
+||||||| parent of 738a689 (resolve app.jsx conflicts)
+=======
+import React from 'react'
+
+import BadgeCard from './BadgeCard'
+
+const CardTestEnvironment = () => {
+  return (
+    <div>
+      <BadgeCard />
+    </div>
+  )
+}
+
+export default CardTestEnvironment
+>>>>>>> 738a689 (resolve app.jsx conflicts)

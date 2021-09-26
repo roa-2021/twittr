@@ -21,8 +21,7 @@ function App (props) {
       <Route exact path="/home" component={Home} />
       <Route exact path="/logout" component={Logout} />
 
-      {/* <CardTestEnvironment /> */}
-
+      <CardTestEnvironment />
     </>
   )
 }
