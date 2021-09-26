@@ -17,7 +17,7 @@ const Tweet = ({ dispatch, tweets,user}) => {
   return (
     tweets.map(tweet => {
       return (
-        <div>
+        <div key={tweet.id}>
       <div className="tweet-container">
         <div className="tweet">
           <div className="profile-image">
