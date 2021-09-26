@@ -6,16 +6,9 @@ import profileImage from '../../../styles/default-profile.png';
 
 import { retrieveAUsersTweetsTHUNK } from '../../../actions/tweetsActions'
 
-<<<<<<< HEAD
-const Tweet = ({ dispatch, tweets }) => {
-  const userId = 1
-||||||| parent of b7a2774 (login)
-const Tweet = ({ dispatch, tweets }) => {
-  const userId = 5
-=======
+
 const Tweet = ({ dispatch, tweets,user}) => {
   const userId = user.id
->>>>>>> b7a2774 (login)
 
   useEffect(() => {
     dispatch(retrieveAUsersTweetsTHUNK(userId))

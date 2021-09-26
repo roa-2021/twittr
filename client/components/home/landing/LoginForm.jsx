@@ -39,8 +39,11 @@ const LoginForm = props => {
     if (confirm_password != password) {
       dispatch(loginError("Passwords don't match"))
     } else {
-      const confirmSuccess = (id) => { 
-        history.push(`/home`) }
+
+      const confirmSuccess = id => {
+        history.push(`/home`)
+      }
+
       const userInfo = { ...formData }
       delete userInfo.confirm_password
       dispatch(registerUserRequest(userInfo, confirmSuccess))

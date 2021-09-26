@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import FeedDock from './feed/FeedDock'
 import NavDock from './nav/NavDock'
 import SideDock from './side/SideDock'
-<<<<<<< HEAD
+
 import Auth from '../../actions/authActions'
 import Comments from '../../actions/commentsAction'
 import Followers from '../../actions/FollowersAction'
@@ -11,22 +11,6 @@ import Following from '../../actions/FollowingAction'
 import Tweets from '../../actions/TweetsAction'
 import user from '../../actions/userAction'
 
-const Home = ({dispatch}) => {
-  useEffect(() => {
-    dispatch
-  }, [])
-||||||| parent of 7de8168 (load all stores when login)
-// import Auth from '../../actions/authActions'
-// import Comments from '../../actions/commentsAction'
-// import Followers from '../../actions/FollowersAction'
-// import Following from '../../actions/FollowingAction'
-// import Tweets from '../../actions/TweetsAction'
-// import user from '../../actions/userAction'
-
-const Home = ({dispatch}) => {
-
-=======
-import Auth from '../../actions/authActions'
 import {retrieveCommentsTHUNK} from '../../actions/commentsAction'
 import {getFollowersOfUserTHUNK} from '../../actions/FollowersActions'
 import {getWhoUserIsFollowingTHUNK} from '../../actions/FollowingActions'
@@ -43,7 +27,6 @@ const Home = ({dispatch,user}) => {
     dispatch(getAUsersDetailsTHUNK(id))
     dispatch(retrieveAUsersTweetsTHUNK(id))
   },[])
->>>>>>> 7de8168 (load all stores when login)
 
   return (
     <div className="wall-container">

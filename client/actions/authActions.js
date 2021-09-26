@@ -71,14 +71,9 @@ export function registerUserRequest (creds, confirmSuccess) {
     register(creds)
       .then(userInfo => {
         dispatch(receiveLogin(userInfo))
-<<<<<<< HEAD
-        confirmSuccess(userInfo.id)
-||||||| parent of 7de8168 (load all stores when login)
-        console.log(userInfo)
+
         confirmSuccess(userInfo)
-=======
-        confirmSuccess(userInfo)
->>>>>>> 7de8168 (load all stores when login)
+      
       })
       .catch(err => dispatch(loginError(err)))
   }

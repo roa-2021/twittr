@@ -2,7 +2,9 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 import Landing from './home/landing/Landing'
 import Home from './home/Home'
+
 import Logout from './home/Logout'
+
 import {connect} from 'react-redux'
 
 import CardTestEnvironment from './cards/CardTestEnvironment'
@@ -14,6 +16,7 @@ function App (props) {
     <>
       <LoginForm />
       {/* <Landing /> */}
+
       {/* <Home /> */}
       {/* <Logout /> */}
 
@@ -21,7 +24,7 @@ function App (props) {
       <Route exact path="/home" component={Home} />
       <Route exact path="/logout" component={Logout} />
 
-      <CardTestEnvironment />
+      {/*<CardTestEnvironment />*/}
     </>
   )
 }
