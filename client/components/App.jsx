@@ -4,17 +4,27 @@ import Landing from './home/landing/Landing'
 import Home from './home/Home'
 
 import Logout from './home/Logout'
-import { connect } from 'react-redux'
 
-function App() {
+import {connect} from 'react-redux'
+
+import CardTestEnvironment from './cards/CardTestEnvironment'
+import LoginTrueForm from './home/landing/LoginTrueForm'
+import LoginForm from './home/landing/LoginForm'
+
+function App (props) {
   return (
     <>
+      <LoginForm />
+      {/* <Landing /> */}
+
       {/* <Home /> */}
       {/* <Logout /> */}
 
       <Route exact path="/" component={Landing} />
       <Route exact path="/home" component={Home} />
       <Route exact path="/logout" component={Logout} />
+
+      {/*<CardTestEnvironment />*/}
     </>
   )
 }

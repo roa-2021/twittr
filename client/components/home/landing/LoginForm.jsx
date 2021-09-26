@@ -39,7 +39,6 @@ const LoginForm = props => {
     if (confirm_password != password) {
       dispatch(loginError("Passwords don't match"))
     } else {
-      //  const confirmSuccess = () => { props.history.push('/') }
 
       const confirmSuccess = id => {
         history.push(`/home`)

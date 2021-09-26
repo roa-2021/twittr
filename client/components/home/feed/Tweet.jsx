@@ -6,6 +6,7 @@ import profileImage from '../../../styles/default-profile.png';
 
 import { retrieveAUsersTweetsTHUNK } from '../../../actions/tweetsActions'
 
+
 const Tweet = ({ dispatch, tweets,user}) => {
   const userId = user.id
 

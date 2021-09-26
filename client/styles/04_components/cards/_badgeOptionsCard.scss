@@ -1,0 +1,77 @@
+.badge-options-card-container {
+  filter: drop-shadow(0 0 10px #ccc);
+  width: 300px;
+}
+
+.speech-bubble-container {
+  border-radius: 15px;
+  background-color: white;
+  padding: 10px 0;
+}
+
+.user-badge-header {
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+}
+
+.user-badge-header__img {
+  img {
+    border-radius: 50%;
+    width: 50px;
+  }
+}
+
+.user-badge-header-tags-status {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 0 0 0 15px;
+  justify-content: space-between;
+}
+
+.user-badge-header-tags-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .user-badge-header__name-text {
+    font-size: 0.9rem;
+  }
+  .user-badge-header__handle-text {
+    font-size: 0.9rem;
+  }
+}
+.user-badge-header__status-svg {
+  display: flex;
+  align-items: center;
+  svg {
+    fill: #1d9bf0;
+    width: 20px;
+  }
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+}
+
+.Add-account-element {
+  padding: 15px;
+}
+
+.Logout-element {
+  padding: 15px;
+}
+
+// .speech-tail-triangle {
+//   transform: rotate(180deg);
+
+// }
+
+// .speech-tail-triangle__svg {
+//   svg {
+//     fill: #fff;
+//     width: 20px;
+//   }
+// }
