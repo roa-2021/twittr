@@ -20,6 +20,7 @@ function App (props) {
       <Route exact path="/" component={Landing} />
       <Route exact path="/home" component={Home} />
       <Route exact path="/logout" component={Logout} />
+      {/* <Logout /> */}
 
       {/* <CardTestEnvironment /> */}
     </>
