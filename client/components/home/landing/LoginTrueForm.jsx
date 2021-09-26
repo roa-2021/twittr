@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { loginError, loginUser } from '../../../actions/authActions'
 
 const LoginTrueForm = props => {
-  const { auth, dispatch } = props
+  const { auth, dispatch, show } = props
 
   const [formData, setFormData] = useState({
     username: '',
@@ -24,12 +24,11 @@ const LoginTrueForm = props => {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault()
     // props.history.push('/listings')
-    const confirmSuccess = () => { 
-        console.log('hi logged in!')
-        props.history.push('/') 
+    const confirmSuccess = () => {
+      props.history.push('/')
     }
     dispatch(loginUser(formData, confirmSuccess))
   }
@@ -58,14 +57,31 @@ const LoginTrueForm = props => {
           </g>
         </svg>
       </div>
-      <h2 className="login-form--title">Create your account</h2>
+      <h2 className="login-form--title">Sign in</h2>
       <form action="" className="login-form" onSubmit={handleSubmit}>
-      {auth.errorMessage && <span className="has-text-danger is-large">{auth.errorMessage}</span>}
-        
-      <input type="text" className="username" placeholder="username" name="username" autoComplete="username" onChange={handleChange} value={formData.username}/>
-        <input type="text" className="password" placeholder="Password" name="password" autoComplete="password" onChange={handleChange} value={formData.password} />
-       
-      
+        {auth.errorMessage && (
+          <span className="has-text-danger is-large">{auth.errorMessage}</span>
+        )}
+
+        <input
+          type="text"
+          className="username"
+          placeholder="username"
+          name="username"
+          autoComplete="username"
+          onChange={handleChange}
+          value={formData.username}
+        />
+        <input
+          type="text"
+          className="password"
+          placeholder="Password"
+          name="password"
+          autoComplete="password"
+          onChange={handleChange}
+          value={formData.password}
+        />
+
         <button>Log in</button>
       </form>
     </div>
