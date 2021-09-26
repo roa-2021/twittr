@@ -10,6 +10,7 @@ import ConfirmationDeleteTweetCard from './ConfirmationDeleteTweetCard'
 import OptionsFollowingTweetCard from './OptionsFollowingTweetCard'
 import OptionsPersonalTweetCard from './OptionsPersonalTweetCard'
 import OptionsTrendCard from './OptionsTrendCard'
+import OptionsSideBarMoreCard from './OptionsSideBarMoreCard'
 
 const CardTestEnvironment = () => {
   return (
@@ -40,6 +41,9 @@ const CardTestEnvironment = () => {
       </div>
       <div className="card-test-page__card-container">
         <OptionsTrendCard />
+      </div>
+      <div className="card-test-page__card-container">
+        <OptionsSideBarMoreCard />
       </div>
     </div>
   )
