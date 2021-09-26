@@ -9,11 +9,11 @@ import CardTestEnvironment from './cards/CardTestEnvironment'
 function App () {
   return (
     <>
-      {/* <Landing /> */}
+      <Landing />
       {/* <Home /> */}
       {/* <Logout /> */}
 
-      <CardTestEnvironment />
+      {/* <CardTestEnvironment /> */}
     </>
   )
 }
