@@ -6,15 +6,15 @@ import SideDock from './side/SideDock'
 
 import Auth from '../../actions/authActions'
 import Comments from '../../actions/commentsAction'
-import Followers from '../../actions/FollowersAction'
-import Following from '../../actions/FollowingAction'
-import Tweets from '../../actions/TweetsAction'
+import Followers from '../../actions/followersAction'
+import Following from '../../actions/followingAction'
+import Tweets from '../../actions/tweetsAction'
 import user from '../../actions/userAction'
 
 import {retrieveCommentsTHUNK} from '../../actions/commentsAction'
-import {getFollowersOfUserTHUNK} from '../../actions/FollowersActions'
-import {getWhoUserIsFollowingTHUNK} from '../../actions/FollowingActions'
-import {retrieveAUsersTweetsTHUNK} from '../../actions/TweetsActions'
+import {getFollowersOfUserTHUNK} from '../../actions/followersActions'
+import {getWhoUserIsFollowingTHUNK} from '../../actions/followingActions'
+import {retrieveAUsersTweetsTHUNK} from '../../actions/tweetsActions'
 import {getAUsersDetailsTHUNK} from '../../actions/userActions'
 
 const Home = ({dispatch,user}) => {
