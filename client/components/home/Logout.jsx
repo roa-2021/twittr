@@ -1,4 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { logOff } from 'authenticare/client'
+
+import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
 
 const Logout = () => {
   return (
@@ -24,16 +28,22 @@ const Logout = () => {
             accounts, you can do that by adding an existing account.
           </span>
         </div>
-        <div className="logout-button">
-          <div className="logout-button-offset">
-            <span className="logout-button__text">Log out</span>
+        <IfAuthenticated>
+          <Link to="/" onClick={logOff}>
+            <div className="logout-button">
+              <div className="logout-button-offset">
+                <span className="logout-button__text">Log out</span>
+              </div>
+            </div>
+          </Link>
+        </IfAuthenticated>
+        <Link to="/home">
+          <div className="cancel-button">
+            <div className="cancel-button-offset">
+              <span className="cancel-button__text">Cancel</span>
+            </div>
           </div>
-        </div>
-        <div className="cancel-button">
-          <div className="cancel-button-offset">
-            <span className="cancel-button__text">Cancel</span>
-          </div>
-        </div>
+        </Link>
       </div>
     </div>
   )

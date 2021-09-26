@@ -3,9 +3,9 @@ import un from '../../../styles/UN.png'
 import setting from '../../../styles/SETTING.png'
 // import mac from '../../../styles/MAC.png'
 import { Link } from 'react-router-dom'
-import { logOff } from 'authenticare/client'
+// import { logOff } from '/authenticare/client'
 
-import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
+import { IfAuthenticated, IfNotAuthenticated } from '../Authenticated'
 
 const SideDock = () => {
   return (
@@ -89,9 +89,7 @@ const SideDock = () => {
             <a href="">&copy; 2021 Twitter, Inc.</a>
 
             <IfAuthenticated>
-              <Link to="/" onClick={logOff}>
-                Log off
-              </Link>
+              <Link to="/logout">Log off</Link>
             </IfAuthenticated>
           </div>
         </div>
