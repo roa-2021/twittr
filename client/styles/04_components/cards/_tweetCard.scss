@@ -1,0 +1,125 @@
+.tweet-card-container {
+  width: 600px;
+  min-height: 278px;
+  border-radius: 15px;
+  background-color: white;
+  .tweet-card-container__header {
+    padding: 15px;
+    .tweet-card-container__exit-svg-container {
+      height: 20px;
+      svg {
+        width: 20px
+      }
+    }
+  }
+}
+
+.tweet-card-container__content-container {
+  display: flex;
+  flex-direction: row;
+
+  padding: 10px 15px;
+
+  .tweet-card-container__left-column-container {
+    padding-right: 15px;
+    .tweet-card-container__profilePic-container {
+      img {
+        width: 48px;
+        border-radius: 50%;
+      }
+    }
+  }
+  .tweet-card-container__right-column-container {
+    width: 100%;
+    .tweet-card-container__tweet-body-container {
+      min-height: 120px;
+      padding: 15px 0;
+      span {
+        border: none;
+        width: 100%;
+        height: 100%;
+        // padding: 15px 15px 15px 0;
+        color: #777;
+      }
+    }
+    .tweet-card-container__icon-button-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      
+      .tweet-card-container__icon-tray {
+        display: flex;
+        flex-direction: row;
+        
+        margin-top: 10px;
+
+        svg {
+          fill: #1d9bf0;
+          width: 20px;
+        }
+        .tweet-card-container__media-icon {
+          width: 20px;
+          height: 20px;
+          padding: 10px;
+          border-radius: 50%;
+        }
+        .tweet-card-container__media-icon:hover {
+          background-color: lightcyan;
+        }
+        .tweet-card-container__gif-icon {
+          width: 20px;
+          height: 20px;
+          padding: 10px;
+          border-radius: 50%;
+        }
+        .tweet-card-container__gif-icon:hover {
+          background-color: lightcyan;
+        }
+        .tweet-card-container__poll-icon {
+          width: 20px;
+          height: 20px;
+          padding: 10px;
+          border-radius: 50%;
+        }
+        .tweet-card-container__poll-icon:hover {
+          background-color: lightcyan;
+        }
+        .tweet-card-container__emoji-icon {
+          width: 20px;
+          height: 20px;
+          padding: 10px;
+          border-radius: 50%;
+        }
+        .tweet-card-container__emoji-icon:hover {
+          background-color: lightcyan;
+        }
+        .tweet-card-container__schedule-icon {
+          width: 20px;
+          height: 20px;
+          padding: 10px;
+          border-radius: 50%;
+        }
+        .tweet-card-container__schedule-icon:hover {
+          background-color: lightcyan;
+        }
+      }
+      .tweet-card-container__tweet-button-container {
+        margin-top: 12px;
+        
+
+        .tweet-card-container__tweet-button {
+          padding: 8px 20px;
+          border-radius: 50px;
+          span {
+            font-size: 0.9rem;
+            font-weight: 900;;
+            color: #fff;
+          }
+
+          // background-color: #1d9bf0;
+          background-color: #8ecdf8;
+        }
+      }
+    }
+  }
+}
