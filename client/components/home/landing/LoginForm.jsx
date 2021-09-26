@@ -4,7 +4,6 @@ import { useHistory } from 'react-router'
 import { loginError, registerUserRequest } from '../../../actions/authActions'
 
 const LoginForm = props => {
-  console.log(props)
   const { auth, dispatch,user} = props
   let history=useHistory()
 
@@ -33,26 +32,13 @@ const LoginForm = props => {
     e.preventDefault()
     e.target.reset()
 
-    // console.log(formData);
-
     let { password, confirm_password } = formData
 
     if (confirm_password != password) {
       dispatch(loginError("Passwords don't match"))
     } else {
-<<<<<<< HEAD
-      //  const confirmSuccess = () => { props.history.push('/') }
-      const confirmSuccess = () => {
-        console.log('registered')
-      }
-
-||||||| parent of b7a2774 (login)
-      const confirmSuccess = () => { props.history.push('/') }
-=======
       const confirmSuccess = (id) => { 
-        console.log(user.username)
         history.push(`/home`) }
->>>>>>> b7a2774 (login)
       const userInfo = { ...formData }
       delete userInfo.confirm_password
       dispatch(registerUserRequest(userInfo, confirmSuccess))

@@ -18,6 +18,5 @@ export const getFollowersOfUserTHUNK = usersID => {
       .then(theUsersFollowers => {
         dispatch(storeFollowersACTION(theUsersFollowers))
       })
-      // .catch(err => console.log(err))
   }
 }

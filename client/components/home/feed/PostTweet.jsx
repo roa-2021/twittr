@@ -6,8 +6,7 @@ import profileImage from '../../../styles/default-profile.png';
 import { createANewTweetTHUNK, retrieveAUsersTweetsTHUNK, removeATweetByIDTHUNK } from '../../../actions/tweetsActions'
 
 
-const PostTweet = ({ dispatch }) => {
-
+const PostTweet = ({ dispatch ,user}) => {
   const [formContent, setFormContent] = useState('')
 
   const changeHandler = (e) => {
@@ -17,7 +16,8 @@ const PostTweet = ({ dispatch }) => {
   const timestamp = new Date();
 
   const tweet = {
-    publisher: 1,
+    publisher: user.id,
+    // publisher_name: user.name,
     publish_time: timestamp.toLocaleString('en-NZ'),
     content: formContent,
     like_count: 0,
@@ -104,5 +104,10 @@ const PostTweet = ({ dispatch }) => {
     </div>
   )
 }
-
-export default connect()(PostTweet)
+function mapStateToProps(state)
+{
+  return {
+    user:state.user,
+  }
+}
+export default connect(mapStateToProps)(PostTweet)
