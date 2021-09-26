@@ -1,6 +1,7 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-const Badge = ({ profilePic }) => {
+const Badge = ({ profilePic,user }) => {
   return (
     <div>
       <div className="nav-profile-badge-container">
@@ -14,12 +15,12 @@ const Badge = ({ profilePic }) => {
             <div className="nav-profile-badge_tag-content">
               <div className="nav-profile-badge_name-tag-container">
                 <p>
-                  Gordon Fong {/* to be req from server */}
+                  {user.name} {/* to be req from server */}
                 </p>
               </div>
               <div className="nav-profile-badge_handle-tag-container">
                 <p>
-                  @LittleRocketDev {/* to be req from server */}
+                  @{user.username} {/* to be req from server */}
                 </p>
               </div>
             </div>
@@ -46,5 +47,10 @@ const Badge = ({ profilePic }) => {
     </div>
   )
 }
-
-export default Badge
+function mapStateToProps(state)
+{
+  return {
+    user:state.user
+  }
+}
+export default connect(mapStateToProps)(Badge)
