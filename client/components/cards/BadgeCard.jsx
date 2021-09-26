@@ -25,12 +25,16 @@ const BadgeCard = () => {
           </div>
         </div>
         <div className="separator"></div>
-        <div className="Add-account-element">
-          <span>Add an existing account</span>
+        <div className="options-menu-container__button-container">
+          <div className="options-menu-container__button-span">
+            <span>Add an existing account</span>
+          </div>
         </div>
-        <div className="Logout-element">
-          <span>Log out </span>
-          <span>@LittleRocketDev</span>
+        <div className="options-menu-container__button-container">
+          <div className="options-menu-container__button-span">
+            <span>Log out</span>
+            <span>@LittleRocketDev</span>
+          </div>
         </div>
       </div>
       {/* <div className="speech-tail-triangle">
