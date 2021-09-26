@@ -17,4 +17,10 @@ const Landing = () => {
   )
 }
 
+const mapStateToProps = (globalState) => {
+  return {
+    auth: globalState.auth
+  }
+}
+
 export default Landing
