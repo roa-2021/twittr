@@ -9,6 +9,7 @@ import ConfirmationDiscardNewTweetDraftCard from './ConfirmationDiscardNewTweetD
 import ConfirmationDeleteTweetCard from './ConfirmationDeleteTweetCard'
 import OptionsFollowingTweetCard from './OptionsFollowingTweetCard'
 import OptionsPersonalTweetCard from './OptionsPersonalTweetCard'
+import OptionsTrendCard from './OptionsTrendCard'
 
 const CardTestEnvironment = () => {
   return (
@@ -36,6 +37,9 @@ const CardTestEnvironment = () => {
       </div>
       <div className="card-test-page__card-container">
         <OptionsPersonalTweetCard />
+      </div>
+      <div className="card-test-page__card-container">
+        <OptionsTrendCard />
       </div>
     </div>
   )
