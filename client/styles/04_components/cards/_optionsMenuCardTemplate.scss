@@ -1,0 +1,39 @@
+.options-menu-container {
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 6px;
+  background-color: #fff;
+  overflow: hidden; // hides the square edges on button hover
+  
+  filter: drop-shadow(0 0 10px #ccc);
+  
+  .options-menu-container__button-container {
+    display: flex;
+    flex-direction: row;
+    
+    height: 20px;
+    padding: 16px;
+    
+    .options-menu-container__button-svg {
+      margin-right: 12px;
+      svg {
+        fill: #536471;
+        width: 20px;
+      }
+    }
+    
+    .options-menu-container__button-span {
+      display: flex;
+      align-items: center;
+      
+      span {
+        font-size: 0.9rem;
+      }
+    }
+  }
+  .options-menu-container__button-container:hover {
+    background-color: #eee;
+  }
+}
+

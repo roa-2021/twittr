@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const SaveNewTweetDraftConfirmationCard = () => {
+const ConfirmationSaveNewTweetDraftCard = () => {
   return (
     <div className="popup-card-container">
       <div className="popup-card-container__header-text-container">
@@ -26,4 +26,4 @@ const SaveNewTweetDraftConfirmationCard = () => {
   )
 }
 
-export default SaveNewTweetDraftConfirmationCard
+export default ConfirmationSaveNewTweetDraftCard

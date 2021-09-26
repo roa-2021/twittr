@@ -4,9 +4,10 @@ import React from 'react'
 import BadgeCard from './BadgeCard'
 import NewTweetCard from './NewTweetCard'
 import LogoutCard from './LogoutCard'
-import SaveNewTweetDraftConfirmationCard from './SaveNewTweetDraftConfirmationCard'
-import DiscardNewTweetDraftConfirmationCard from './DiscardNewTweetDraftConfirmationCard'
-import DeleteTweetConfirmationCard from './DeleteTweetConfirmationCard'
+import ConfirmationSaveNewTweetDraftCard from './ConfirmationSaveNewTweetDraftCard'
+import ConfirmationDiscardNewTweetDraftCard from './ConfirmationDiscardNewTweetDraftCard'
+import ConfirmationDeleteTweetCard from './ConfirmationDeleteTweetCard'
+import OptionsFollowingTweetCard from './OptionsFollowingTweetCard'
 
 const CardTestEnvironment = () => {
   return (
@@ -21,13 +22,16 @@ const CardTestEnvironment = () => {
         <NewTweetCard />
       </div>
       <div className="card-test-page__card-container">
-        <SaveNewTweetDraftConfirmationCard />
+        <ConfirmationSaveNewTweetDraftCard />
       </div>
       <div className="card-test-page__card-container">
-        <DiscardNewTweetDraftConfirmationCard />
+        <ConfirmationDiscardNewTweetDraftCard />
       </div>
       <div className="card-test-page__card-container">
-        <DeleteTweetConfirmationCard />
+        <ConfirmationDeleteTweetCard />
+      </div>
+      <div className="card-test-page__card-container">
+        <OptionsFollowingTweetCard />
       </div>
     </div>
   )

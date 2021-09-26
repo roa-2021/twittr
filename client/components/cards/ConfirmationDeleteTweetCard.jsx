@@ -1,20 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const DiscardNewTweetDraftConfirmationCard = () => {
+
+const ConfirmationDeleteTweetCard = () => {
   return (
     <div className="popup-card-container">
       <div className="popup-card-container__header-text-container">
-        <span>Discard Tweet?</span>
+        <span>Delete Tweet?</span>
       </div>
       <div className="popup-card-container__paragraph-text-container">
         <span>
-          This can't be undone and you'll lose your draft.
+          This can’t be undone and it will be removed from your profile, the timeline of any accounts that follow you, and from Twitter search results. 
         </span>
       </div>
       <Link to="/home">
         <div className="popup-card-container__red-button">
-          <span>Discard</span>
+          <span>Delete</span>
         </div>
       </Link>
       <Link to="/home">
@@ -26,4 +27,4 @@ const DiscardNewTweetDraftConfirmationCard = () => {
   )
 }
 
-export default DiscardNewTweetDraftConfirmationCard
+export default ConfirmationDeleteTweetCard
