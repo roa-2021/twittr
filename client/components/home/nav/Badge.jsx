@@ -1,10 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { connect } from 'react-redux'
 
+import BadgeCard from '../../cards/BadgeCard'
+
 const Badge = ({ profilePic, user }) => {
+  const [popupVisibility, setPopupVisibility] = useState(false)
+
+  function togglePopupVis () {
+    setPopupVisibility (!popupVisibility)
+  }
+
   return (
     <div>
-      <div className="nav-profile-badge-container">
+      <div className="nav-profile-badge-container" onClick={togglePopupVis}>
         <div className="nav-profile-badge-content">
           <div>
             {' '}
@@ -50,6 +58,9 @@ const Badge = ({ profilePic, user }) => {
           </div>
         </div>
       </div>
+      {
+        popupVisibility && <BadgeCard />
+      }
     </div>
   )
 }
