@@ -4,6 +4,9 @@ import React from 'react'
 import BadgeCard from './BadgeCard'
 import NewTweetCard from './NewTweetCard'
 import LogoutCard from './LogoutCard'
+import SaveNewTweetDraftConfirmationCard from './SaveNewTweetDraftConfirmationCard'
+import DiscardNewTweetDraftConfirmationCard from './DiscardNewTweetDraftConfirmationCard'
+import DeleteTweetConfirmationCard from './DeleteTweetConfirmationCard'
 
 const CardTestEnvironment = () => {
   return (
@@ -16,6 +19,15 @@ const CardTestEnvironment = () => {
       </div>
       <div className="card-test-page__card-container">
         <NewTweetCard />
+      </div>
+      <div className="card-test-page__card-container">
+        <SaveNewTweetDraftConfirmationCard />
+      </div>
+      <div className="card-test-page__card-container">
+        <DiscardNewTweetDraftConfirmationCard />
+      </div>
+      <div className="card-test-page__card-container">
+        <DeleteTweetConfirmationCard />
       </div>
     </div>
   )

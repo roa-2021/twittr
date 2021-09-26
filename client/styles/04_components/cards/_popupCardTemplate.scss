@@ -54,6 +54,7 @@
   border: solid 1px #cfd9de;
 
   span {
+    color: #000;
     font-size: 0.9rem;
     font-weight: 900;
   }
@@ -61,4 +62,22 @@
 
 .popup-card-container__light-button:hover {
   background-color: #e4e4e4;
+}
+
+.popup-card-container__red-button {
+  display: flex;
+  justify-content: center;
+
+  background-color: #f4212e;
+  padding: 13px;
+  border-radius: 50px;
+  
+  span {
+    color: #fff;  
+    font-size: 0.9rem;
+    font-weight: 900;
+  }  
+}
+.popup-card-container__red-button:hover {
+  background-color: #dc1429;
 }
