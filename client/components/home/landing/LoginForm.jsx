@@ -4,8 +4,8 @@ import { useHistory } from 'react-router'
 import { loginError, registerUserRequest } from '../../../actions/authActions'
 
 const LoginForm = props => {
-  const { auth, dispatch,user} = props
-  let history=useHistory()
+  const { auth, dispatch, user } = props
+  let history = useHistory()
 
   const [formData, setFormData] = useState({
     name: '',
@@ -31,6 +31,8 @@ const LoginForm = props => {
   const handleSubmit = e => {
     e.preventDefault()
     e.target.reset()
+
+    // console.log(formData);
 
     let { password, confirm_password } = formData
 
@@ -148,7 +150,7 @@ const LoginForm = props => {
 const mapStateToProps = globalState => {
   return {
     auth: globalState.auth,
-    user:globalState.user,
+    user: globalState.user,
   }
 }
 
