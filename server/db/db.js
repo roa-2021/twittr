@@ -7,6 +7,12 @@ function getUser(userID)
   .where('id',userID)
 }
 
+function getUserNameByID(userID)
+{
+  return db('users')
+  .where('id',userID)
+  .select('name','username')
+}
 
 function updateUser(userID,newUser)
 {
@@ -19,7 +25,14 @@ function updateUser(userID,newUser)
 function getTweets(userID)
 {
   return db('tweets')
+  .join('users','users.id','tweets.publisher')
   .where('publisher',userID)
+  .select('tweets.id',
+  'tweets.publisher',
+  'tweets.content',
+  'users.name',
+  'users.username'
+  )
 }
 
 function getTweetByID(tweetID)
@@ -136,8 +149,8 @@ function likeInsert(tweet)
 {
   return db('like')
   .insert({
-    tweet_id:tweet.tweetID,
-    user_id:tweet.userID,
+    tweet_id:tweet.id,
+    user_id:tweet.user_id,
     like:true
   })
 }
@@ -148,8 +161,8 @@ function likeUpdate(tweet)
   .update('like.like',true)
   .where(
     {
-      tweet_id:tweet.tweetID,
-      user_id:tweet.userID,
+      tweet_id:tweet.id,
+      user_id:tweet.user_id,
     }
   )
 }
@@ -160,8 +173,8 @@ function unlikeUpdate(tweet)
   .update('like.like',false)
   .where(
     {
-      tweet_id:tweet.tweetID,
-      user_id:tweet.userID,
+      tweet_id:tweet.id,
+      user_id:tweet.user_id,
     }
   )
 }
@@ -169,6 +182,7 @@ function unlikeUpdate(tweet)
 //export********************************************
 module.exports = {
   getUser,
+  getUserNameByID,
   updateUser,
   getTweets,
   getTweetByID,

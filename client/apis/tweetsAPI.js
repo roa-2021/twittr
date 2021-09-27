@@ -23,7 +23,7 @@ export const deleteATweetAPI = tweetID => {
 
 export const addLikeAPI = tuID =>{
   return request
-        .post('/api/v1/like')
+        .post('/api/v1/tweets/like')
         .send(tuID)
         .then(res=>res.body)
 }
@@ -31,14 +31,14 @@ export const addLikeAPI = tuID =>{
 
 export const updateLikeAPI = tuID =>{
   return request
-        .patch('/api/v1/like')
+        .patch('/api/v1/tweets/like')
         .send(tuID)
         .then(res=>res.body)
 }
 
 export const updateUnLikeAPI = tuID =>{
   return request
-        .patch('/api/v1/unlike')
+        .patch('/api/v1/tweets/unlike')
         .send(tuID)
         .then(res=>res.body)
 }

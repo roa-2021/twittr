@@ -8,9 +8,9 @@ const tweetsReducer = (state = initialState, action) => {
       return [...action.tweet, ...state]
     case ADD_LIKE:
       state.map(tweet=>{
-        if(tweet.id=action.tweet.id)
+        if(tweet.id==action.tweet.id)
         {
-          return Object.assign({},tweet,{like:tweet.id+1})
+          return Object.assign({},tweet,{isliked:true,likesNum:(tweet.likesNum+1)})
         }
       })
       return state
@@ -18,7 +18,7 @@ const tweetsReducer = (state = initialState, action) => {
       state.map(tweet=>{
         if(tweet.id=action.tweet.id)
         {
-          return Object.assign({},tweet,{like:tweet.id+1})
+          return Object.assign({},tweet,action.tweet)
         }
       })
       return state
@@ -26,7 +26,7 @@ const tweetsReducer = (state = initialState, action) => {
       state.map(tweet=>{
         if(tweet.id=action.tweet.id)
         {
-          return Object.assign({},tweet,{like:tweet.id-1})
+          return Object.assign({},tweet,{likesNum:action.tweet.likesNum,isliked:action.tweet.isliked})
         }
       })
       return state

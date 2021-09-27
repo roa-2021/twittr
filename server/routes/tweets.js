@@ -51,7 +51,7 @@ router.patch('/unlike', (req,res)=>{
 router.get('/:id',(req,res)=>{
   userID=req.params.id;
   db.getTweets(userID)
-  .then(tweets=>{
+    .then(tweets=>{
       var promises = tweets.map(tweet=>{
          return db.getLikes(tweet.id)
           .then(likes=>{
