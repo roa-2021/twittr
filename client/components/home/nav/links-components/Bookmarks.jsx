@@ -1,9 +1,10 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const Bookmarks = () => {
   return (
     <div>
-      <a>
+      <Link to="/home">
         <div className="link-button bookmarks-button">
           <div className="bookmarks-button svg-container">
             <svg
@@ -20,7 +21,7 @@ const Bookmarks = () => {
             <span>Bookmarks</span>
           </div>
         </div>
-      </a>
+      </Link>
     </div>
   )
 }

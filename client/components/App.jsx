@@ -29,7 +29,7 @@ function App ({ auth, dispatch }) {
       {/* <Logout /> */}
 
       <Route exact path="/" component={Landing} />
-      <Route exact path="/home" component={Home} />
+      <Route path="/home" component={Home} />
       <Route exact path="/logout" component={Logout} />
 
       {/*<CardTestEnvironment />*/}

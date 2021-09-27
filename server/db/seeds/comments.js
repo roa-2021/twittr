@@ -7,59 +7,59 @@ exports.seed = function(knex) {
       return knex('comments').insert([
         {
           id: 1, 
-          publisher:3, 
-          tweet_id: 2, 
+          publisher: 3, 
+          tweet_id: 1, 
           publish_date: '06-06-2021 00:00:00', 
-          content: 'good tweet!'
+          content: 'something not as good as this!!'
         },
         {
           id: 2, 
           publisher:2, 
           tweet_id: 1, 
           publish_date: '06-06-2021 00:00:00', 
-          content: 'good tweet!'
+          content: 'a million devs who aren\'t as good as us 😅'
         },
         {
           id: 3, 
           publisher:4, 
           tweet_id: 3, 
           publish_date: '06-06-2021 00:00:00', 
-          content: 'good tweet!'
+          content: '...what though?!'
         },
         {
           id: 4, 
           publisher:3, 
-          tweet_id: 4, 
+          tweet_id: 2, 
           publish_date: '06-06-2021 00:00:00', 
-          content: 'good tweet!'
+          content: '🙌 you are a god man!'
         },
         {
           id: 5, 
           publisher:5, 
-          tweet_id: 2, 
+          tweet_id: 1, 
           publish_date: '06-06-2021 00:00:00', 
-          content: 'good tweet!'
+          content: 'some nice DBs! 😂'
         },
         {
           id: 6, 
-          publisher:8, 
+          publisher:1, 
           tweet_id: 3, 
           publish_date: '06-06-2021 00:00:00', 
-          content: 'good tweet!'
+          content: 'damn right!!'
         },
         {
           id: 7, 
           publisher:6, 
-          tweet_id: 4, 
+          tweet_id: 1, 
           publish_date: '06-06-2021 00:00:00', 
-          content: 'good tweet!'
+          content: 'potentially a lot more bugs than we do!!'
         },
         {
           id: 8, 
           publisher:1, 
-          tweet_id: 1, 
+          tweet_id: 2, 
           publish_date: '06-06-2021 00:00:00', 
-          content: 'good tweet!'
+          content: '🤜🤛'
         },
       ]);
     });
