@@ -153,7 +153,6 @@ const LoginForm = props => {
 const mapStateToProps = globalState => {
   return {
     auth: globalState.auth,
-    user: globalState.user,
   }
 }
 

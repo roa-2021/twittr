@@ -66,7 +66,7 @@ const Badge = ({ profilePic, user }) => {
 }
 function mapStateToProps(state) {
   return {
-    user: state.user,
+    user: state.auth.user,
   }
 }
 export default connect(mapStateToProps)(Badge)
