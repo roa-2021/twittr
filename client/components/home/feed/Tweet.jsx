@@ -93,9 +93,9 @@ const Tweet = ({ dispatch, tweets, user }) => {
         </div>
       </div>
     </div>
-          {if (moreVisibility && something!) { //something else in there to check if id === to the post's button id
+          {/* {if (moreVisibility && something!) { //something else in there to check if id === to the post's button id
             return <OptionsPersonalTweetCard />
-          }}
+          }} */}
           </div>
       )
     })
