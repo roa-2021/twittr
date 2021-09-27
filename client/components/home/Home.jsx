@@ -13,14 +13,16 @@ import { getAUsersDetailsTHUNK } from '../../actions/userActions'
 
 const Home = ({ dispatch, user }) => {
   const id = user.id
-  useEffect(()=>{
+  
+  if(user.id){
     dispatch(retrieveCommentsTHUNK(id))
     dispatch(getFollowersOfUserTHUNK(id))
     dispatch(retrieveCommentsTHUNK(id))
     dispatch(getWhoUserIsFollowingTHUNK(id))
     dispatch(getAUsersDetailsTHUNK(id))
     dispatch(retrieveAUsersTweetsTHUNK(id))
-  }, [])
+  }
+  
 
   return (
     <div className="wall-container">

@@ -17,10 +17,6 @@ const Tweet = ({ dispatch, tweets,user}) => {
     setMoreVisibilty(!moreVisibility)
   }
 
-  useEffect(() => {
-    dispatch(retrieveAUsersTweetsTHUNK(userId))
-  }, [])
-
   return (
     tweets.map(tweet => {
       return (
