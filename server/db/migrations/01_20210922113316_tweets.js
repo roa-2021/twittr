@@ -2,7 +2,8 @@
 exports.up = function(knex) {
   return knex.schema.createTable('tweets',function(table){
     table.increments('id').primary()
-    table.string('publisher')
+    table.integer('publisher')
+    table.foreign('publisher').references('users.id')
     table.datetime('publish_time')
     table.string('content')
     table.integer('like_count')
