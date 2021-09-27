@@ -4,13 +4,49 @@ const router = express.Router()
 
 router.post('/', (req,res)=>{
   tweet=req.body
-  console.log(tweet)
   db.createTweet(tweet)
   .then(result=>{
     res.json(result)
   })
   .catch(err => res.status(500).json({ message: err.message }))
 })
+
+router.get('/like', (req,res)=>{
+  tweet=req.body
+  db.likeRowExist(tweet)
+  .then(result=>{
+    res.json(result)
+  })
+  .catch(err => res.status(500).json({ message: err.message }))
+})
+
+router.post('/like', (req,res)=>{
+  tweet=req.body
+  db.likeInsert(tweet)
+  .then(result=>{
+    res.json(result)
+  })
+  .catch(err => res.status(500).json({ message: err.message }))
+})
+
+router.patch('/like', (req,res)=>{
+  tweet=req.body
+  db.likeUpdate(tweet)
+  .then(result=>{
+    res.json(result)
+  })
+  .catch(err => res.status(500).json({ message: err.message }))
+})
+
+router.patch('/unlike', (req,res)=>{
+  tweet=req.body
+  db.unlikeUpdate(tweet)
+  .then(result=>{
+    res.json(result)
+  })
+  .catch(err => res.status(500).json({ message: err.message }))
+})
+
 
 router.get('/:id',(req,res)=>{
   userID=req.params.id;
@@ -19,8 +55,17 @@ router.get('/:id',(req,res)=>{
       var promises = tweets.map(tweet=>{
          return db.getLikes(tweet.id)
           .then(likes=>{
-            tweet.likesNum=likes[0].likesNum
-              return tweet
+              return db.likeRowExist(tweet.id,userID)
+              .then(row=>{
+                return db.isLiked(tweet.id,userID)
+                .then(liked=>{
+                  tweet.likeExist = row[0].likeExist
+                  tweet.likesNum=likes[0].likesNum
+                  tweet.isliked =liked[0].isliked
+                  return tweet
+              })    
+              })
+
        })
     })
     Promise.all(promises).then((tweets)=>

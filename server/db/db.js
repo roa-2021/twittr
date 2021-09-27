@@ -115,12 +115,55 @@ function getLikes(tweetID)
 function isLiked(tweetID,userID)
 {
   return db('like')
-  .count('')
+  .count('like as isliked')
   .where(
   {tweet_id:tweetID,
     user_id:userID,
     like:true
   })
+}
+
+function likeRowExist(tweetID,userID)
+{
+  return db('like')
+  .count('like as likeExist')
+  .where({tweet_id:tweetID,
+    user_id:userID,
+  })
+}
+
+function likeInsert(tweet)
+{
+  return db('like')
+  .insert({
+    tweet_id:tweet.tweetID,
+    user_id:tweet.userID,
+    like:true
+  })
+}
+
+function likeUpdate(tweet)
+{
+  return db('like')
+  .update('like.like',true)
+  .where(
+    {
+      tweet_id:tweet.tweetID,
+      user_id:tweet.userID,
+    }
+  )
+}
+
+function unlikeUpdate(tweet)
+{
+  return db('like')
+  .update('like.like',false)
+  .where(
+    {
+      tweet_id:tweet.tweetID,
+      user_id:tweet.userID,
+    }
+  )
 }
 
 //export********************************************
@@ -141,4 +184,8 @@ module.exports = {
   getFollowerNum,
   getLikes,
   isLiked,
+  likeInsert,
+  likeUpdate,
+  unlikeUpdate,
+  likeRowExist,
 }

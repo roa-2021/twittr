@@ -6,6 +6,7 @@ exports.up = function(knex) {
     table.foreign('id').references('comments.publisher')
     table.foreign('id').references('followers.follower')
     table.foreign('id').references('followers.following')
+    table.foreign('id').references('like.user_id')
     table.string('name')
     table.string('username');
     table.string('email_address');
