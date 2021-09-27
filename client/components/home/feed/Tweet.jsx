@@ -12,13 +12,27 @@ const Tweet = ({ dispatch, tweets, user }) => {
   const userId = user.id
 
   const [moreVisibility, setMoreVisibilty] = useState(false)
+  const [targetTweet, setTargetTweet] = useState(undefined)
   
-  function toggleMore() {
+  function toggleMore(e, i) {
+    setTargetTweet(e.target.id)
     setMoreVisibilty(!moreVisibility)
   }
 
+  const shouldToggleMore = i => {
+    if(moreVisibility && i == targetTweet){
+      return true
+    }
+    return false
+  }
+
+  useEffect(() => {
+    dispatch(retrieveAUsersTweetsTHUNK(userId))
+  }, [])
+
   return (
     tweets.map((tweet, i) => {
+    
       return (
         <div key={i}>
         <div>
@@ -34,7 +48,7 @@ const Tweet = ({ dispatch, tweets, user }) => {
               <span className="user-handle"> @{user.username}</span>
               </a>
               <div className="tweet-more">
-                <svg viewBox="0 0 24 24" aria-hidden="true" className="more" onClick={toggleMore}>
+                      <svg viewBox="0 0 24 24" aria-hidden="true" className="more" id={i} onClick={(e) => toggleMore(e, i)}>
                   <g>
                     <circle cx="5" cy="12" r="2"></circle>
                     <circle cx="12" cy="12" r="2"></circle>
@@ -90,7 +104,7 @@ const Tweet = ({ dispatch, tweets, user }) => {
         </div>
       </div>
     </div>
-          {moreVisibility && < OptionsPersonalTweetCard />}
+          {shouldToggleMore(i) && <OptionsPersonalTweetCard />}
           </div>
       )
     })

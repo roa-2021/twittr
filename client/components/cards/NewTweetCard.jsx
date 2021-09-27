@@ -1,8 +1,34 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
+import { connect } from 'react-redux'
+
+import { createANewTweetTHUNK } from '../../actions/tweetsActions'
 
 import profilePic from '../../styles/default-profile.png'
 
-const NewTweetCard = ({ togglePopupVis }) => {
+const NewTweetCard = ({ dispatch, togglePopupVis, user }) => {
+  const [formContent, setFormContent] = useState('')
+
+  const changeHandler = (e) => {
+    setFormContent(e.target.value)
+  }
+
+  const postATweet = (e, tweet) => {
+    e.preventDefault()
+    dispatch(createANewTweetTHUNK(tweet))
+    setFormContent('')
+  }
+
+  const timestamp = new Date();
+
+  const tweet = {
+    publisher: user.id,
+    // publisher_name: user.name,
+    publish_time: timestamp.toLocaleString('en-NZ'),
+    content: formContent,
+    like_count: 0,
+    retweet_count: 0,
+    quote_count: 0
+  }
 
   return (
     <div className="new-tweet-card-container">
@@ -20,9 +46,9 @@ const NewTweetCard = ({ togglePopupVis }) => {
         </div>
         <div className="new-tweet-card-container__right-column-container">
           <div className="new-tweet-card-container__tweet-body-container">
-            <span>
-              What's happening?
-            </span>
+            <form onSubmit={(e) => postATweet(e, tweet)} className="tweet-content">
+              <textarea type="text" placeholder="What's happening?" value={formContent} onChange={changeHandler} />
+            </form>
           </div>
           <div className="separator"></div>
           <div className="new-tweet-card-container__icon-button-container">
@@ -123,4 +149,10 @@ const NewTweetCard = ({ togglePopupVis }) => {
   )
 }
 
-export default NewTweetCard
+const mapStateToProps = state => {
+  return {
+    user: state.user,
+  }
+}
+
+export default connect(mapStateToProps)(NewTweetCard)
