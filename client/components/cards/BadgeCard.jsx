@@ -1,8 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { connect } from 'react-redux'
 
 import profilePic from '../../styles/default-profile.png'
 
-const BadgeCard = () => {
+const BadgeCard = ({user}) => {
+
+  const {name, username} = user
+
   return (
     <div className="badge-options-card-container">
       <div className="speech-bubble-container">
@@ -13,10 +17,10 @@ const BadgeCard = () => {
           <div className="user-badge-header-tags-status">
             <div className="user-badge-header-tags-container">
               <span className="user-badge-header__name-text">
-                Gordon Fong
+                {name}
               </span>
               <span className="user-badge-header__handle-text">
-                @LittleRocketDev
+                @{username}
               </span>
             </div>
             <div className="user-badge-header__status-svg">
@@ -33,7 +37,7 @@ const BadgeCard = () => {
         <div className="options-menu-container__button-container">
           <div className="options-menu-container__button-span">
             <span>Log out&nbsp;</span>
-            <span>@LittleRocketDev</span>
+            <span>@{username}</span>
           </div>
         </div>
       </div>
@@ -57,4 +61,10 @@ const BadgeCard = () => {
   )
 }
 
-export default BadgeCard
+function mapStateToProps(state){
+  return {
+    user: state.auth.user,
+  }
+}
+
+export default connect(mapStateToProps)(BadgeCard)
