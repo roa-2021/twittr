@@ -15,7 +15,6 @@ const ConfirmationDeleteTweetCard = ({dispatch, i, toggleDel}) => {
     toggleDel()
   }
 
-const ConfirmationDeleteTweetCard = ({toggleDel}) => {
   return (
     <div className="popup-card-container">
       <div className="popup-card-container__header-text-container">
