@@ -6,7 +6,7 @@ import profileImage from '../../../styles/default-profile.png';
 import { createANewTweetTHUNK, retrieveAUsersTweetsTHUNK, removeATweetByIDTHUNK } from '../../../actions/tweetsActions'
 
 
-const PostTweet = ({ dispatch ,user}) => {
+const PostTweet = ({ dispatch , user }) => {
   const [formContent, setFormContent] = useState('')
 
   const changeHandler = (e) => {
@@ -101,10 +101,11 @@ const PostTweet = ({ dispatch ,user}) => {
     </div>
   )
 }
-function mapStateToProps(state)
-{
+
+const mapStateToProps = state => {
   return {
-    user:state.user,
+    user: state.user,
   }
 }
+
 export default connect(mapStateToProps)(PostTweet)

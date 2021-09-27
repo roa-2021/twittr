@@ -107,6 +107,12 @@
   width: 20px;
   height: 20px;
   padding: 10px;
+  border-radius: 50%;
+  transition: 0.4s;
+}:hover {
+  background-color: #d5eff8;
+  border-radius: 50%;
+  transition: 0.4s;
   }
 }
 
@@ -121,6 +127,10 @@
     font-family: inherit;
     font-size: 0.6rem;
     border-radius: 25px;
+  }
+  button:hover {
+    cursor: pointer;
+    filter: brightness(0.9);
   }
 }
 
@@ -261,7 +271,7 @@
 .post-content {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 506px;
 }
 
 .tweet-interactions {
@@ -284,16 +294,10 @@
     transition-duration: 0.2s;
   }
   :hover {
-    background-color: lightcyan;
+    background-color: #d5eff8;
     fill: rgb(28, 155, 239);
     border-radius: 50%;
     transition-duration: 0.2s;
-  }
-}
-
-.tweet-more {
-  svg {
-    padding: 10px;
   }
 }
 
@@ -438,5 +442,25 @@
   }
   button:hover {
     border-bottom: 2px solid blue;
+  }
+}
+
+.tweet-more {
+  fill: #666;
+  width: 20px;
+  height: 20px;
+  svg {
+    margin: -10px 0px 0px -15px;
+    width: 19px;
+    height: 19px;
+    padding: 10px;
+    border-radius: 50%;
+    transition: 0.4s;
+  }
+  svg:hover {
+    fill: rgb(28, 155, 239);
+    border-radius: 50%;
+    background-color: rgb(208, 221, 223);
+    transition: 0.4s;
   }
 }

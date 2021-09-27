@@ -1,13 +1,21 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 
 import profileImage from '../../../styles/default-profile.png';
 // import meme from '../../../styles/meme.png'
 
 import { retrieveAUsersTweetsTHUNK } from '../../../actions/tweetsActions'
+import OptionsPersonalTweetCard from '../../cards/OptionsPersonalTweetCard';
+
 
 const Tweet = ({ dispatch, tweets,user}) => {
   const userId = user.id
+
+  const [moreVisibility, setMoreVisibilty] = useState(false)
+  
+  function toggleMore() {
+    setMoreVisibilty(!moreVisibility)
+  }
 
   useEffect(() => {
     dispatch(retrieveAUsersTweetsTHUNK(userId))
@@ -16,7 +24,8 @@ const Tweet = ({ dispatch, tweets,user}) => {
   return (
     tweets.map(tweet => {
       return (
-        <div>
+        <>
+        <div key={tweet.id}>
       <div className="tweet-container">
         <div className="tweet">
           <div className="profile-image">
@@ -29,7 +38,7 @@ const Tweet = ({ dispatch, tweets,user}) => {
               <span className="user-handle"> @{user.username}</span>
               </a>
               <div className="tweet-more">
-                <svg viewBox="0 0 24 24" aria-hidden="true" className="more">
+                <svg viewBox="0 0 24 24" aria-hidden="true" className="more" onClick={toggleMore}>
                   <g>
                     <circle cx="5" cy="12" r="2"></circle>
                     <circle cx="12" cy="12" r="2"></circle>
@@ -84,11 +93,17 @@ const Tweet = ({ dispatch, tweets,user}) => {
         </div>
       </div>
     </div>
+          {moreVisibility && < OptionsPersonalTweetCard />}
+          </>
       )
     })
   )
 }
 
-const mapStateToProps = store => {return { tweets: store.tweet , user:store.auth.user}}
+const mapStateToProps = store => {
+  return {
+    tweets: store.tweet, 
+    user: store.auth.user
+}}
 
 export default connect(mapStateToProps)(Tweet)

@@ -1,25 +1,35 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
+import { connect } from 'react-redux'
+
 import Landing from './home/landing/Landing'
 import Home from './home/Home'
 import Logout from './home/Logout'
-import {connect} from 'react-redux'
 
+import CardTestEnvironment from './cards/CardTestEnvironment'
+import LoginTrueForm from './home/landing/LoginTrueForm'
+import LoginForm from './home/landing/LoginForm'
 
-
-function App () {
+function App ({ dispatch }) {
   return (
     <>
-      <Route exact path='/' component={Landing}/>
-      <Route exact path='/home' component={Home}/>
+      {/* <LoginForm /> */}
+      {/* <Landing /> */}
+
+      {/* <Home /> */}
+      {/* <Logout /> */}
+
+      <Route exact path="/" component={Landing} />
+      <Route exact path="/home" component={Home} />
+      <Route exact path="/logout" component={Logout} />
+
+      {/*<CardTestEnvironment />*/}
     </>
   )
 }
 
-const mapStateToProps=(state)=>{
-  return {auth:state.auth,
-          user:state.auth.user
-  }
+const mapStateToProps = state => {
+  return { auth: state.auth, user: state.auth.user }
 }
 
 export default connect(mapStateToProps)(App)

@@ -1,17 +1,18 @@
-import React,{useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
+
 import FeedDock from './feed/FeedDock'
 import NavDock from './nav/NavDock'
 import SideDock from './side/SideDock'
-import Auth from '../../actions/authActions'
-import {retrieveCommentsTHUNK} from '../../actions/commentsAction'
-import {getFollowersOfUserTHUNK} from '../../actions/FollowersActions'
-import {getWhoUserIsFollowingTHUNK} from '../../actions/FollowingActions'
-import {retrieveAUsersTweetsTHUNK} from '../../actions/TweetsActions'
-import {getAUsersDetailsTHUNK} from '../../actions/userActions'
 
-const Home = ({dispatch,user}) => {
-  var id=user.id;
+import { retrieveCommentsTHUNK } from '../../actions/commentsAction'
+import { getFollowersOfUserTHUNK } from '../../actions/followersActions'
+import { getWhoUserIsFollowingTHUNK } from '../../actions/followingActions'
+import { retrieveAUsersTweetsTHUNK } from '../../actions/tweetsActions'
+import { getAUsersDetailsTHUNK } from '../../actions/userActions'
+
+const Home = ({ dispatch, user }) => {
+  const id = user.id
   useEffect(()=>{
     dispatch(retrieveCommentsTHUNK(id))
     dispatch(getFollowersOfUserTHUNK(id))
@@ -19,7 +20,7 @@ const Home = ({dispatch,user}) => {
     dispatch(getWhoUserIsFollowingTHUNK(id))
     dispatch(getAUsersDetailsTHUNK(id))
     dispatch(retrieveAUsersTweetsTHUNK(id))
-  },[])
+  }, [])
 
   return (
     <div className="wall-container">
@@ -29,5 +30,10 @@ const Home = ({dispatch,user}) => {
     </div>
   )
 }
-const mapStateToProps = store => {return {user:store.auth.user}}
+const mapStateToProps = store => {
+  return {
+    user: store.auth.user
+  }
+}
+
 export default connect(mapStateToProps)(Home)
