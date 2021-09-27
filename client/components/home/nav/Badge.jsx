@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 
 import BadgeCard from '../../cards/BadgeCard'
 
-const Badge = ({ profilePic, user }) => {
+const Badge = ({ user }) => {
+  const {profile_image} = user
   const [popupVisibility, setPopupVisibility] = useState(false)
 
   function togglePopupVis () {
@@ -18,7 +19,7 @@ const Badge = ({ profilePic, user }) => {
             {' '}
             {/* profile icon */}
             <div className="nav-profile-badge_profile-img-container">
-              <img src={profilePic} />
+              <img src={profile_image} />
             </div>
           </div>
           <div className="nav-profile-badge_tag-container">

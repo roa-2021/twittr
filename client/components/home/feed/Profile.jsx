@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import profileImage from '../../../styles/default-profile.png'
 
 const Profile = ({ user }) => {
-  const { name, username, bio, followerNum, followingNum  } = user
+  const { name, username, bio, followerNum, followingNum, profile_image  } = user
 
   return (
     <div className="feed-panel-container">
@@ -27,7 +27,7 @@ const Profile = ({ user }) => {
       <div className="user-banner"></div>
       <div className="profile-card-container">
         <div className="img-and-settings">
-          <img src={profileImage}></img>
+          <img src={profile_image ? profile_image : profileImage}></img>
           <button>Set up profile</button>
         </div>
         <h1>{name}</h1>

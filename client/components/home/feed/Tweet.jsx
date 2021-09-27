@@ -10,6 +10,8 @@ import OptionsPersonalTweetCard from '../../cards/OptionsPersonalTweetCard';
 
 const Tweet = ({ dispatch, tweets, user }) => {
 
+  const { profile_image  } = user
+
   const [moreVisibility, setMoreVisibilty] = useState(false)
   const [targetTweet, setTargetTweet] = useState(undefined)
   
@@ -33,7 +35,7 @@ const Tweet = ({ dispatch, tweets, user }) => {
       <div className="tweet-container">
         <div className="tweet">
           <div className="profile-image">
-            <img src={profileImage} />
+            <img src={profile_image ? profile_image : profileImage} />
           </div>
           <div className="post-content">
             <div className="user-info">

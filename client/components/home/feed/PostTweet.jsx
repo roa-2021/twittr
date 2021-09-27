@@ -6,7 +6,8 @@ import profileImage from '../../../styles/default-profile.png';
 import { createANewTweetTHUNK, retrieveAUsersTweetsTHUNK, removeATweetByIDTHUNK } from '../../../actions/tweetsActions'
 
 
-const PostTweet = ({ dispatch , user }) => {
+const PostTweet = ({ dispatch, user }) => {
+  const {profile_image} = user
   const [formContent, setFormContent] = useState('')
 
   const changeHandler = (e) => {
@@ -37,7 +38,7 @@ const PostTweet = ({ dispatch , user }) => {
       <div className="make-tweet-card">
         <div className="make-tweet-container">
           <div className="profile-image">
-            <img src={profileImage} />
+            <img src={profile_image ? profile_image : profileImage} />
           </div>
           <div className="tweet-content">
             <form onSubmit={(e) => postATweet(e, tweet)}>
