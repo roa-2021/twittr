@@ -12,12 +12,23 @@ const Tweet = ({ dispatch, tweets, user }) => {
   const userId = user.id
 
   const [moreVisibility, setMoreVisibilty] = useState(false)
-  const [targetTweet, setTargetTweet] = setState(undefined)
+  const [targetTweet, setTargetTweet] = useState(undefined)
   
   function toggleMore(e, i) {
     setTargetTweet(e.target.id)
     setMoreVisibilty(!moreVisibility)
   }
+
+  const shouldToggleMore = i => {
+    if(moreVisibility && i == targetTweet){
+      return true
+    }
+    return false
+  }
+
+  useEffect(() => {
+    dispatch(retrieveAUsersTweetsTHUNK(userId))
+  }, [])
 
   return (
     tweets.map((tweet, i) => {
@@ -93,9 +104,7 @@ const Tweet = ({ dispatch, tweets, user }) => {
         </div>
       </div>
     </div>
-          {/* {if (moreVisibility && something!) { //something else in there to check if id === to the post's button id
-            return <OptionsPersonalTweetCard />
-          }} */}
+          {shouldToggleMore(i) && <OptionsPersonalTweetCard />}
           </div>
       )
     })
