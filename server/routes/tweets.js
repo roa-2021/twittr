@@ -15,12 +15,15 @@ router.get('/:id',(req,res)=>{
   userID=req.params.id;
   db.getTweets(userID)
   .then(tweets=>{
-    db.getLikes(userID)
-    .then(likes=>{
-      tweets[0].likesNum = likes[0].likesNum
-      res.json(tweets)
+      var promises = tweets.map(tweet=>{
+         return db.getLikes(tweet.id)
+          .then(likes=>{
+            tweet.likesNum=likes[0].likesNum
+              return tweet
+       })
     })
-   
+    Promise.all(promises).then((tweets)=>
+    res.json(tweets))
   })
   .catch(err => res.status(500).json({ message: err.message }))
 })
@@ -33,5 +36,17 @@ router.delete('/:id',(req,res)=>{
   })
   .catch(err => res.status(500).json({ message: err.message }))
 })
+
+// function getAllByTweetID(tweetID)
+// {
+//   db.getTweetByID(tweetID)
+//   .then(tweet=>{
+//     db.getLikes(tweetID)
+//     .then(likes=>{
+//       tweet[0].likesNum=likes[0].likesNum
+//       return tweet
+//     })
+//   })
+// }
 
 module.exports=router

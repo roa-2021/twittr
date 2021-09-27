@@ -22,6 +22,12 @@ function getTweets(userID)
   .where('publisher',userID)
 }
 
+function getTweetByID(tweetID)
+{
+  return db('tweets')
+  .where('id',tweetID)
+}
+
 function createTweet(tweet)
 {
   return db('tweets')
@@ -122,6 +128,7 @@ module.exports = {
   getUser,
   updateUser,
   getTweets,
+  getTweetByID,
   createTweet,
   deleteTweet,
   getFollower,
