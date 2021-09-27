@@ -1,24 +1,42 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+
+import NewTweetCard from '../../cards/NewTweetCard'
 
 const Tweet = () => {
+
+  const [popupVisibility, setPopupVisibility] = useState(false)
+
+  function togglePopupVis() {
+    setPopupVisibility(!popupVisibility)
+  }
+
   return (
-    <div className="nav-tweet-container">
-      <a className="nav-tweet-button">
-        <div className="nav-tweet-button-content">
-          <span>
-            <div>
+    <>
+      <div className="nav-tweet-container" onClick={togglePopupVis}>
+        <button className="nav-tweet-button">
+          <div className="nav-tweet-button-content">
+            <span>
               <div>
-                <span>
+                <div>
                   <span>
-                    Tweet
+                    <span>
+                      Tweet
+                    </span>
                   </span>
-                </span>
+                </div>
               </div>
-            </div>
-          </span>
+            </span>
+          </div>
+        </button>
+      </div>
+      {
+        popupVisibility && 
+        <div className="popup-card-overlay">
+            <NewTweetCard togglePopupVis={togglePopupVis}/>
         </div>
-      </a>
-    </div>
+      }
+    </>
   )
 }
 

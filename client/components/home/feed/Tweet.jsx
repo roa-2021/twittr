@@ -1,35 +1,55 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 
 import profileImage from '../../../styles/default-profile.png';
 // import meme from '../../../styles/meme.png'
 
 import { retrieveAUsersTweetsTHUNK } from '../../../actions/tweetsActions'
+import OptionsPersonalTweetCard from '../../cards/OptionsPersonalTweetCard';
 
-const Tweet = ({ dispatch, tweets }) => {
-  const userId = 5
+
+const Tweet = ({ dispatch, tweets, user }) => {
+  const userId = user.id
+  const { profile_image  } = user
+
+  const [moreVisibility, setMoreVisibilty] = useState(false)
+  const [targetTweet, setTargetTweet] = useState(undefined)
+  
+  function toggleMore(e, i) {
+    setTargetTweet(e.target.id)
+    setMoreVisibilty(!moreVisibility)
+  }
+
+  const shouldToggleMore = i => {
+    if(moreVisibility && i == targetTweet){
+      return true
+    }
+    return false
+  }
 
   useEffect(() => {
     dispatch(retrieveAUsersTweetsTHUNK(userId))
   }, [])
 
   return (
-    tweets.map(tweet => {
+    tweets.map((tweet, i) => {
+    
       return (
+        <div key={i}>
         <div>
       <div className="tweet-container">
         <div className="tweet">
           <div className="profile-image">
-            <img src={profileImage} />
+            <img src={profile_image ? profile_image : profileImage} />
           </div>
           <div className="post-content">
             <div className="user-info">
               <a href="">
-              <span className="user-name">{tweet.publisher}</span>
-              <span className="user-handle"> @{tweet.publisher}</span>
+              <span className="user-name">{user.name}</span>
+              <span className="user-handle"> @{user.username}</span>
               </a>
               <div className="tweet-more">
-                <svg viewBox="0 0 24 24" aria-hidden="true" className="more">
+                      <svg viewBox="0 0 24 24" aria-hidden="true" className="more" id={i} onClick={(e) => toggleMore(e, i)}>
                   <g>
                     <circle cx="5" cy="12" r="2"></circle>
                     <circle cx="12" cy="12" r="2"></circle>
@@ -64,6 +84,7 @@ const Tweet = ({ dispatch, tweets }) => {
                     </path>
                   </g>
                 </svg>
+                <p>5</p>
                 <svg viewBox="0 0 24 24" aria-hidden="true" className="share">
                   <g>
                     <path d="M17.53 7.47l-5-5c-.293-.293-.768-.293-1.06 0l-5 5c-.294.293-.294.768 0 1.06s.767.294 1.06 0l3.72-3.72V15c0 .414.336.75.75.75s.75-.336.75-.75V4.81l3.72 3.72c.146.147.338.22.53.22s.384-.072.53-.22c.293-.293.293-.767 0-1.06z">
@@ -84,11 +105,17 @@ const Tweet = ({ dispatch, tweets }) => {
         </div>
       </div>
     </div>
+          {shouldToggleMore(i) && <OptionsPersonalTweetCard />}
+          </div>
       )
     })
   )
 }
 
-const mapStateToProps = store => ({ tweets: store.tweet })
+const mapStateToProps = store => {
+  return {
+    tweets: store.tweet, 
+    user: store.auth.user
+}}
 
 export default connect(mapStateToProps)(Tweet)
