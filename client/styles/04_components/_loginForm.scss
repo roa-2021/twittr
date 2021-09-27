@@ -11,13 +11,22 @@
 
 .login-form--container {
   width: 536px;
-  height: 800px;
+  height: 500px;
   padding: 8px 32px;
   background-color: white;
   border-radius: 16px;
   color: #0f1419;
 
-  border: red solid 1px; //  delete this <-----------
+  overflow: scroll;
+}
+
+.modalScroll {
+  overflow-y: hidden;
+  height: 100vh;
+}
+
+.login-fixed-height {
+  height: 500px !important;
 }
 
 .login-form--title {
