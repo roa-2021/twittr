@@ -6,6 +6,7 @@ import profileImage from '../../../styles/default-profile.png';
 
 import { retrieveAUsersTweetsTHUNK } from '../../../actions/tweetsActions'
 import OptionsPersonalTweetCard from '../../cards/OptionsPersonalTweetCard';
+import ConfirmationDeleteTweetCard from '../../cards/ConfirmationDeleteTweetCard'
 
 
 const Tweet = ({ dispatch, tweets, user }) => {
@@ -13,9 +14,17 @@ const Tweet = ({ dispatch, tweets, user }) => {
 
   const [moreVisibility, setMoreVisibilty] = useState(false)
   const [targetTweet, setTargetTweet] = useState(undefined)
+  const [delConfirmVisible, setDelConfirmVisible] = useState(false)
   
   function toggleMore(e, i) {
     setTargetTweet(e.target.id)
+  
+
+  function toggleDel() {
+    setDelConfirmVisible(!delConfirmVisible)
+  }
+
+  function toggleMore() {
     setMoreVisibilty(!moreVisibility)
   }
 
@@ -104,7 +113,11 @@ const Tweet = ({ dispatch, tweets, user }) => {
         </div>
       </div>
     </div>
-          {shouldToggleMore(i) && <OptionsPersonalTweetCard />}
+          {shouldToggleMore(i) && <OptionsPersonalTweetCard toggleDel={toggleDel} />}
+          {delConfirmVisible && 
+          <div className="popup-card-overlay">
+          <ConfirmationDeleteTweetCard onClick={toggleDel} />
+          </div>}
           </div>
       )
     })
