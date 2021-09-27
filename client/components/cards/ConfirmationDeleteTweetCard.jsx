@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 
-const ConfirmationDeleteTweetCard = () => {
+const ConfirmationDeleteTweetCard = ({toggleDel}) => {
   return (
     <div className="popup-card-container">
       <div className="popup-card-container__header-text-container">
@@ -18,11 +18,9 @@ const ConfirmationDeleteTweetCard = () => {
           <span>Delete</span>
         </div>
       </Link>
-      <Link to="/home">
-        <div className="popup-card-container__light-button">
+        <div className="popup-card-container__light-button" onClick={toggleDel}>
           <span>Cancel</span>
         </div>
-      </Link>
     </div>
   )
 }
