@@ -13,7 +13,7 @@ exports.up = function(knex) {
     table.string('profile_image');
     table.string('varified');
     table.string('bio');
-    table.string('age')
+    table.datetime('birthday')
   })
 };
 
