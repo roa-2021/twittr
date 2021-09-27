@@ -10,7 +10,7 @@ import OptionsPersonalTweetCard from '../../cards/OptionsPersonalTweetCard';
 
 const Tweet = ({ dispatch, tweets,user}) => {
   const userId = user.id
-
+  const [like,setlike] = useState(false)
   const [moreVisibility, setMoreVisibilty] = useState(false)
   
   function toggleMore() {

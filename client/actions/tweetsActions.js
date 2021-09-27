@@ -16,6 +16,7 @@ export const createANewTweetTHUNK = newTweet => {
   return dispatch => {
     addATweetAPI(newTweet)
     .then(res => {
+      console.log('hi')
       const createdTweetId = res[0]
       const createdTweetObj = {
         id: createdTweetId,

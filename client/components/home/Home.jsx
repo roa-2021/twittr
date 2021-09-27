@@ -15,7 +15,6 @@ const Home = ({ dispatch, user }) => {
   const id = user.id
   
   if(user.id){
-    dispatch(retrieveCommentsTHUNK(id))
     dispatch(getFollowersOfUserTHUNK(id))
     dispatch(retrieveCommentsTHUNK(id))
     dispatch(getWhoUserIsFollowingTHUNK(id))

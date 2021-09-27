@@ -4,6 +4,7 @@ const router = express.Router()
 
 router.post('/', (req,res)=>{
   tweet=req.body
+  console.log(tweet)
   db.createTweet(tweet)
   .then(result=>{
     res.json(result)
