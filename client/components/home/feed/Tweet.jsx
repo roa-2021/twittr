@@ -8,7 +8,7 @@ import { retrieveAUsersTweetsTHUNK } from '../../../actions/tweetsActions'
 import OptionsPersonalTweetCard from '../../cards/OptionsPersonalTweetCard';
 
 
-const Tweet = ({ dispatch, tweets,user}) => {
+const Tweet = ({ dispatch, tweets, user }) => {
   const userId = user.id
 
   const [moreVisibility, setMoreVisibilty] = useState(false)
@@ -22,10 +22,10 @@ const Tweet = ({ dispatch, tweets,user}) => {
   }, [])
 
   return (
-    tweets.map(tweet => {
+    tweets.map((tweet, i) => {
       return (
-        <>
-        <div key={tweet.id}>
+        <div key={i}>
+        <div>
       <div className="tweet-container">
         <div className="tweet">
           <div className="profile-image">
@@ -94,7 +94,7 @@ const Tweet = ({ dispatch, tweets,user}) => {
       </div>
     </div>
           {moreVisibility && < OptionsPersonalTweetCard />}
-          </>
+          </div>
       )
     })
   )
