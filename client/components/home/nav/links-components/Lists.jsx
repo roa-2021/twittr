@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Lists = () => {
   return (
     <div>
-      <a>
+      <Link to="/home">
         <div className="link-button lists-button">
           <div className="lists-button svg-container">
             <svg
@@ -21,7 +22,7 @@ const Lists = () => {
             <span>Lists</span>
           </div>
         </div>
-      </a>
+      </Link>
     </div>
   )
 }
