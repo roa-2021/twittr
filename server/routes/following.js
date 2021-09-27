@@ -3,7 +3,7 @@ const db = require('../db/db')
 const router = express.Router()
 
 router.get('/:id',(req,res)=>{
-  userID=req.params.id
+  const userID = req.params.id
   db.getFollowing(userID)
   .then(following=>{
     res.json(following)
