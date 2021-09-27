@@ -1,5 +1,4 @@
 .edit-profile-container {
-  padding: 16px;
   width: 600px;
   height: 60vh;
 
@@ -9,21 +8,36 @@
   .edit-profile-container__header-container {
     display: flex;
     flex-direction: row;
-
+    
+    padding: 0 16px;
+    height: 53px;
 
     .edit-profile-container__header-svg {
+      min-width: 56px;
       svg {
         width: 20px;
       }
     }
 
     .edit-profile-container__header-text {
-
+      span {
+        font-weight: 900;
+        font-size: 1.25rem;
+      }
     }
 
     .edit-profile-container__header-save-button-container {
-      .edit-profile-container__header-save-button-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
+      background-color: #0f1419;
+      .edit-profile-container__header-save-button-text {
+        span {
+          color: #fff;
+          font-weight: 900;
+          font-size: .9rem;
+        }
       }
     }
   }
