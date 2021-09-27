@@ -14,19 +14,17 @@ const Tweet = ({ dispatch, tweets, user }) => {
   const { profile_image  } = user
 
   const [moreVisibility, setMoreVisibilty] = useState(false)
-  const [targetTweet, setTargetTweet] = useState(undefined)
+  const [targetTweet, setTargetTweet] = useState(undefined) 
+  const [targetDel, setTargetDel] = useState(undefined)
   const [delConfirmVisible, setDelConfirmVisible] = useState(false)
   
   function toggleMore(e, i) {
     setTargetTweet(e.target.id)
-  
+    setMoreVisibilty(!moreVisibility)
+  }
 
   function toggleDel() {
     setDelConfirmVisible(!delConfirmVisible)
-  }
-
-  function toggleMore() {
-    setMoreVisibilty(!moreVisibility)
   }
 
   const shouldToggleMore = i => {
@@ -35,6 +33,7 @@ const Tweet = ({ dispatch, tweets, user }) => {
     }
     return false
   }
+
   return (
     tweets.map((tweet, i) => {
     
@@ -109,10 +108,10 @@ const Tweet = ({ dispatch, tweets, user }) => {
         </div>
       </div>
     </div>
-          {shouldToggleMore(i) && <OptionsPersonalTweetCard toggleDel={toggleDel} />}
+          {shouldToggleMore(i) && < OptionsPersonalTweetCard toggleDel={toggleDel} />}
           {delConfirmVisible && 
           <div className="popup-card-overlay">
-          <ConfirmationDeleteTweetCard onClick={toggleDel} />
+          <ConfirmationDeleteTweetCard i={tweet.id}toggleDel={toggleDel}/>
           </div>}
           </div>
       )
