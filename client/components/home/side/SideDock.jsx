@@ -5,8 +5,6 @@ import setting from '../../../styles/SETTING.png'
 import { Link } from 'react-router-dom'
 // import { logOff } from '/authenticare/client'
 
-import { IfAuthenticated, IfNotAuthenticated } from '../Authenticated'
-
 import OptionsSideBarMoreCard from '../../cards/OptionsSideBarMoreCard'
 
 const SideDock = () => {
@@ -96,9 +94,6 @@ const SideDock = () => {
             <a href="">Ads info</a>
             <a  onClick={toggleMore}>More ...</a>
             <a href="">&copy; 2021 Twitter, Inc.</a>
-            <IfAuthenticated>
-              <Link to="/logout">Log off</Link>
-            </IfAuthenticated>
             {moreVisibilty && < OptionsSideBarMoreCard/>}
           </div>
         </div>

@@ -1,9 +1,12 @@
 import { STORE_TWEETS_CASE } from '../actions/tweetsActions'
+import { RESET_APP } from '../actions/RESET_APP'
 
 const initialState = []
 
 const tweetsReducer = (state = initialState, action) => {
   switch(action.type) {
+    case RESET_APP:
+      return initialState
     case STORE_TWEETS_CASE:
       return [...action.tweet, ...state]
 
