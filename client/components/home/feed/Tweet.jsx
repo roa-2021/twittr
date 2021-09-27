@@ -9,7 +9,6 @@ import OptionsPersonalTweetCard from '../../cards/OptionsPersonalTweetCard';
 
 
 const Tweet = ({ dispatch, tweets, user }) => {
-  const userId = user.id
 
   const [moreVisibility, setMoreVisibilty] = useState(false)
   const [targetTweet, setTargetTweet] = useState(undefined)
@@ -25,11 +24,6 @@ const Tweet = ({ dispatch, tweets, user }) => {
     }
     return false
   }
-
-  useEffect(() => {
-    dispatch(retrieveAUsersTweetsTHUNK(userId))
-  }, [])
-
   return (
     tweets.map((tweet, i) => {
     
