@@ -2,19 +2,19 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import profilePic from '../../styles/default-profile.png'
+import profileImage from '../../styles/default-profile.png'
 import { IfAuthenticated, IfNotAuthenticated } from '../home/Authenticated'
 
 const BadgeCard = ({ user }) => {
 
-  const { name, username } = user
+  const { name, username, profile_image } = user
 
   return (
     <div className="badge-options-card-container">
       <div className="speech-bubble-container">
         <div className="user-badge-header">
           <div className="user-badge-header__img">
-            <img src={profilePic} alt="" />
+            <img src={profile_image ? profile_image : profileImage} />
           </div>
           <div className="user-badge-header-tags-status">
             <div className="user-badge-header-tags-container">

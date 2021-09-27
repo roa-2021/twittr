@@ -32,6 +32,7 @@ export function loginUser (creds, confirmSuccess) {
     dispatch(requestLogin())
     return login(creds)
       .then(userInfo => {
+        console.log(userInfo)
         dispatch(receiveLogin(userInfo))
         confirmSuccess()
       })
