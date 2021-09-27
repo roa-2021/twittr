@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Profile = () => {
   return (
     <div>
-      <a>
+      <Link to='/home/profile'>
         <div className="link-button profile-button">
           <div className="profile-button svg-container">
             <svg
@@ -22,7 +23,7 @@ const Profile = () => {
             <span>Profile</span>
           </div>
         </div>
-      </a>
+      </Link>
     </div>
   )
 }
