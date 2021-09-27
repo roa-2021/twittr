@@ -8,103 +8,70 @@ exports.seed = function(knex) {
       return Promise.all([
         {
           id: 1, 
-          name: 'user1',
-          username:'username1',
-          email_address: 'username1@twitter.com',
-          password: '123456',
-          profile_image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png',
+          name: 'Gordon',
+          username:'MrSass',
+          email_address: 'sassy4you@eda.com',
+          password: 'abc',
+          profile_image: 'https://media.makeameme.org/created/the-sass-is-5ac0d8.jpg',
           varified: 'true',
-          bio: 'this is a lazy guy, didnt type anything in it',
-          age: '20'
-        },
-        {
-          id: 2, 
-          name: 'user2',
-          username:'username2',
-          email_address: 'username2@twitter.com',
-          password: '123456',
-          profile_image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png',
-          varified: 'true',
-          bio: 'this is a lazy guy, didnt type anything in it',
-          age: '60'
-        },
-        {
-          id: 3, 
-          name: 'user3',
-          username:'username3',
-          email_address: 'username3@twitter.com',
-          password: '123456',
-          profile_image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png',
-          varified: 'true',
-          bio: 'this is a lazy guy, didnt type anything in it',
-          age: '23'
-        },
-        {
-          id: 4, 
-          name: 'user4',
-          username:'username4',
-          email_address: 'username4@twitter.com',
-          password: '123456',
-          profile_image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png',
-          varified: 'true',
-          bio: 'this is a lazy guy, didnt type anything in it',
-          age: '55'
-        },
-        {
-          id: 5, 
-          name: 'user5',
-          username:'username5',
-          email_address: 'username5@twitter.com',
-          password: '123456',
-          profile_image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png',
-          varified: 'true',
-          bio: 'this is a lazy guy, didnt type anything in it',
+          bio: '🧑‍💻 killa junior dev with a hankering for the sass',
           age: '21'
         },
         {
+          id: 2, 
+          name: 'Patrick',
+          username:'PJSulley',
+          email_address: 'sulley-till-the-sun-goes-down@eda.com',
+          password: 'abc',
+          profile_image: 'https://camo.githubusercontent.com/1f26eb501b27c68ac74070110676b31e0d4e484c818d61edc4bef2350ab7b054/687474703a2f2f692e696d6775722e636f6d2f4b7653574c486f2e706e67',
+          varified: 'true',
+          bio: '🐼 furry but in a good way',
+          age: '36'
+        },
+        {
+          id: 3, 
+          name: 'Matthew',
+          username:'EDGEmaster69',
+          email_address: 'EDGEmaster69@eda.com',
+          password: 'abc',
+          profile_image: 'https://pbs.twimg.com/media/DwvaXrOX0AEIYh-.jpg',
+          varified: 'true',
+          bio: 'one man\'s trash is another\'s treasure',
+          age: '90'
+        },
+        {
+          id: 4, 
+          name: 'Max',
+          username:'DrDorsaaay',
+          email_address: 'DrDorsaaay@eda.com',
+          password: 'abc',
+          profile_image: '/images/max-profile.png',
+          varified: 'false',
+          bio: 'we\'re all carbon until we aren\'t ⚛',
+          age: '16'
+        },
+        {
+          id: 5, 
+          name: 'Kang',
+          username:'LordOfDBEEEEs',
+          email_address: 'LordOfDBEEEEs@eda.com',
+          password: 'abc',
+          profile_image: '/images/kang-profile.png',
+          varified: 'true',
+          bio: 'you wan\'it you got\'it',
+          age: '1000'
+        },
+        {
           id: 6, 
-          name: 'user6',
-          username:'username6',
-          email_address: 'username6@twitter.com',
-          password: '123456',
-          profile_image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png',
+          name: 'Jordan',
+          username:'LordLiberator',
+          email_address: 'lordLiberty6@eda.com',
+          password: 'abc',
+          profile_image: '/images/jordan-profile.png',
           varified: 'true',
-          bio: 'this is a lazy guy, didnt type anything in it',
-          age: '23'
-        },
-        {
-          id: 7, 
-          name: 'user7',
-          username:'username7',
-          email_address: 'username7@twitter.com',
-          password: '123456',
-          profile_image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png',
-          varified: 'true',
-          bio: 'this is a lazy guy, didnt type anything in it',
-          age: '20'
-        },
-        {
-          id: 8, 
-          name: 'user8',
-          username:'username8',
-          email_address: 'username8@twitter.com',
-          password: '123456',
-          profile_image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png',
-          varified: 'true',
-          bio: 'this is a lazy guy, didnt type anything in it',
-          age: '30'
-        },
-        {
-          id: 9, 
-          name: 'user9',
-          username:'username9',
-          email_address: 'username9@twitter.com',
-          password: '123456',
-          profile_image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png',
-          varified: 'true',
-          bio: 'this is a lazy guy, didnt type anything in it',
-          age: '40'
-        },
+          bio: '🗽🗽🗽🗽🗽🗽🗽🗽',
+          age: '146'
+        }
       ].map(user => {
         return generateHash(user.password)
           .then(hash => {
