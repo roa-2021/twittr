@@ -17,7 +17,13 @@ const Tweet = ({ dispatch, tweets, user }) => {
   const [targetDel, setTargetDel] = useState(undefined)
   const [delConfirmVisible, setDelConfirmVisible] = useState(false)
   
-  function toggleMore(e, i) {
+  const [delConfirmVisible, setDelConfirmVisible] = useState(false)
+
+  function toggleDel() {
+    setDelConfirmVisible(!delConfirmVisible)
+  }
+
+  function toggleMore() {
     setTargetTweet(e.target.id)
     setMoreVisibilty(!moreVisibility)
   }
