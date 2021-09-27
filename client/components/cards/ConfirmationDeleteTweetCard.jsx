@@ -1,8 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import { connect } from 'react-redux'
 
-const ConfirmationDeleteTweetCard = ({toggleDel}) => {
+import {removeATweetByIDTHUNK} from '../../actions/tweetsActions'
+
+import { resetAppTHUNK } from '../../actions/RESET_APP'
+
+const ConfirmationDeleteTweetCard = ({dispatch, i, toggleDel}) => {
+
+  const deleteTweet = i => {
+    console.log(i)
+    dispatch(removeATweetByIDTHUNK(i))
+    toggleDel()
+  }
+
   return (
     <div className="popup-card-container">
       <div className="popup-card-container__header-text-container">
@@ -14,7 +26,7 @@ const ConfirmationDeleteTweetCard = ({toggleDel}) => {
         </span>
       </div>
       <Link to="/home">
-        <div className="popup-card-container__red-button">
+        <div className="popup-card-container__red-button" onClick={() => deleteTweet(i)}>
           <span>Delete</span>
         </div>
       </Link>
@@ -25,4 +37,4 @@ const ConfirmationDeleteTweetCard = ({toggleDel}) => {
   )
 }
 
-export default ConfirmationDeleteTweetCard
+export default connect()(ConfirmationDeleteTweetCard)
