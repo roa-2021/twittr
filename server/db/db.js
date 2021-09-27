@@ -132,7 +132,6 @@ function isLiked(tweetID,userID)
   .where(
   {tweet_id:tweetID,
     user_id:userID,
-    like:true
   })
 }
 
@@ -151,7 +150,6 @@ function likeInsert(tweet)
   .insert({
     tweet_id:tweet.id,
     user_id:tweet.user_id,
-    like:true
   })
 }
 
