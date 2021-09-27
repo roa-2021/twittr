@@ -1,0 +1,15 @@
+.popup-card-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+
+  background-color: #0003;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 50px;
+}

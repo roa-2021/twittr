@@ -4,12 +4,22 @@
   border-radius: 15px;
   background-color: white;
   .new-tweet-card-container__header {
-    padding: 15px;
+    padding: 8px;
     .new-tweet-card-container__exit-svg-container {
-      height: 20px;
+      height: 34px;
+      width: 34px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 50%;
+
       svg {
         width: 20px
       }
+    }
+    .new-tweet-card-container__exit-svg-container:hover {
+      background-color: #eee;
     }
   }
 }
@@ -104,8 +114,10 @@
         }
       }
       .new-tweet-card-container__tweet-button-container {
-        margin-top: 12px;
-        
+        height: inherit;
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
 
         .new-tweet-card-container__tweet-button {
           padding: 8px 20px;
