@@ -121,7 +121,6 @@ function getLikes(tweetID)
   .count('like as likesNum')
   .where(
   {tweet_id:tweetID,
-    like:true
   })
 }
 

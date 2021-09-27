@@ -5,7 +5,7 @@ import { addLikeTHUNK,updateLikeTHUNK,updateUnLikeTHUNK } from '../../../actions
 
 
 const Tweet = ({ dispatch, tweets}) => {
-  
+    console.log('tweets',tweets)
   const Likefunc =(tweet)=>{
       if((tweet.isliked)&&(tweet.likeExist))
       {
