@@ -74,6 +74,7 @@ const Tweet = ({ tweet, i, user, following }) => {
                           <circle cx="19" cy="12" r="2"></circle>
                         </g>
                       </svg>
+                      {shouldToggleMore(i) && < OptionsPersonalTweetCard toggleDel={toggleDel} />}
                     </div>
                   </div>
                   <div className="tweet-post">
@@ -123,7 +124,6 @@ const Tweet = ({ tweet, i, user, following }) => {
               </div>
             </div>
           </div>
-          {shouldToggleMore(i) && < OptionsPersonalTweetCard toggleDel={toggleDel} />}
           {delConfirmVisible &&
             <div className="popup-card-overlay">
               <ConfirmationDeleteTweetCard i={tweet.id} toggleDel={toggleDel} />
