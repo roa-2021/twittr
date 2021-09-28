@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 import profileImage from '../../../styles/default-profile.png'
 import EditProfileCard from '../../cards/EditProfileCard'
@@ -35,10 +36,10 @@ const Profile = (props, tweet) => {
                 </g>
               </svg>
             </div>
-            <a href="#">
+            <div>
               <h2 className="profile-username">{name}</h2>
-              <p className="tweet-count">{ tweet.length }Tweets</p>
-            </a>
+              <p className="tweet-count">{tweet.length}Tweets</p>
+            </div>
           </div>
         </div>
       </div>
@@ -69,12 +70,18 @@ const Profile = (props, tweet) => {
           <p>Joined December 2020</p>
         </div>
         <div className="profile-follows">
-          <p>
-            <span>{followingNum} </span>Following
-          </p>
-          <p>
-            <span>{followerNum} </span>Followers
-          </p>
+          <Link to="/home/following">
+            <p>
+              <span>{followingNum} </span>
+              Following
+            </p>
+          </Link>
+          <Link to="/home/followers">
+            <p>
+              <span>{followerNum} </span>
+              Followers
+            </p>
+          </Link>
         </div>
       </div>
       <div className="profile-menu-cont">

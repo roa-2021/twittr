@@ -30,6 +30,7 @@
   width: 80px;
   height: 65px;
   fill: rgb(28, 155, 239);
+  margin-bottom: 30px;
 }
 
 .landing-container {
@@ -50,9 +51,6 @@
 }
 
 .login-panel {
-  svg {
-    margin-bottom: 30px;
-  }
   h1 {
     margin: 30px 0;
     font-size: 4rem;
@@ -106,6 +104,20 @@
   button:hover {
     background-color: #eee;
     cursor: pointer;
+  }
+  svg {
+    height: 20px;
+    width: 20px;
+    padding-right: 5px;
+  }
+}
+
+.apple-login {
+  button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 }
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
@@ -6,7 +6,16 @@ import { Link } from 'react-router-dom'
 
 const Following = ({user, following}) => {
 
-  
+  const [isFollowing, setFollowing] = useState(true)
+
+  function toggleFollowingHover(e) {
+    setFollowing(!isFollowing)
+    if (isFollowing) {
+      e.target.innerHTML = 'Unfollow'
+    } else {
+      e.target.innerHTML = 'Following'
+    }
+  }
 
   return (
     <div className="feed-panel-container">
