@@ -1,16 +1,25 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import un from '../../../styles/UN.png'
-import setting from '../../../styles/SETTING.png'
-// import mac from '../../../styles/MAC.png'
-import { Link } from 'react-router-dom'
-// import { logOff } from '/authenticare/client'
+import profileImage from '../../../styles/default-profile.png'
+
+
 
 import OptionsSideBarMoreCard from '../../cards/OptionsSideBarMoreCard'
 
-const SideDock = ({ followers, following }) => {
 
+const SideDock = ({ followers, following }) => {
   const [moreVisibilty, setMoreVisibilty] = useState(false)
+  const [isFollowing, setFollowing] = useState(true)
+
+
+  function toggleFollowingHover(e) {
+    setFollowing(!isFollowing)
+    if (isFollowing) {
+      e.target.innerHTML = 'Unfollow'
+    } else {
+      e.target.innerHTML = 'Following'
+    }
+  }
 
   function toggleMore() {
     setMoreVisibilty(!moreVisibilty)
@@ -52,7 +61,7 @@ const SideDock = ({ followers, following }) => {
         </div>
         <section className="sideDock--happening">
           <header className="happening--header">
-            <h2 className="happening--title">What's Happening</h2>
+            <h2 className="happening--title">Who you're following</h2>
           </header>
           <ul>
             {followers.map(follower => {
@@ -61,32 +70,47 @@ const SideDock = ({ followers, following }) => {
             })}
           </ul>
           <div className="happening--body">
-            <article className="happening--card">
-              <div className="happening--card__text-wrapper">
-                <p>World news &bull; LIVE</p>
-                <h3>The UN General Assembly continues in New York</h3>
-              </div>
-
-              <img src={un} />
-            </article>
-            <article className="happening--card">
-              <div>
-                <div className="happening--card__text-wrapper">
-                  <p>Trending in New Zealand</p>
-                  <h3>Chris Hipkins</h3>
+            {following.map(user => {
+              return (
+              <article className="happening--card">
+                <div className="user-info--container">
+                  <img src={user.profile_image ? user.profile_image : profileImage}></img>
+                  <div className="happening--card__text-wrapper">
+                    <a href="">
+                      <h3>{user.name}</h3>
+                      <p>@{user.username}</p>
+                    </a>
+                  </div>
                 </div>
-              </div>
+                  <button className="happening--card__following-button"  onMouseLeave={(e) => toggleFollowingHover(e)} onMouseEnter={(e) => toggleFollowingHover(e)}>Following</button>
+              </article>
+            )})}
+          </div>
+          <footer className="happening--footer">
+            <p className="happening--footer-text">Show more</p>
+          </footer>
+        </section>
+        <section className="sideDock--happening">
+          <header className="happening--header">
+            <h2 className="happening--title">Who's following you</h2>
+          </header>
+          <div className="happening--body">
+            {followers.map(user => {
+              return (
+                <article className="happening--card">
+                  <div className="user-info--container">
+                    <img src={user.profile_image ? user.profile_image : profileImage}></img>
+                    <div className="happening--card__text-wrapper">
+                      <a href="">
+                        <h3>{user.name}</h3>
+                        <p>@{user.username}</p>
+                      </a>
+                    </div>
+                  </div>
+                  <button className="happening--card__follow-button">Follow</button>
             </article>
-            <article className="happening--card">
-              <div className="happening--card__text-wrapper">
-                <p>The Washington Post &bull; This morning</p>
-                <h3>
-                  Every setting you should change right now to protext your
-                  privacy
-                </h3>
-              </div>
-              <img src={setting} />
-            </article>
+            )
+          })}
           </div>
           {following.map(followed => {
               return <Link to={`/Home/profile/${followed.following}`} key={followed.id}>{followed.name}</Link>
@@ -113,11 +137,14 @@ const SideDock = ({ followers, following }) => {
   )
 }
 
-const mapPropsToState = state => {
+function mapStateToProps(state) {
   return {
+    user: state.user,
+
     followers: state.followers,
     following: state.following
   }
 }
 
-export default connect(mapPropsToState)(SideDock)
+export default connect(mapStateToProps)(SideDock)
+
