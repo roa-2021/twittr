@@ -105,7 +105,7 @@ displayList = displayList.filter(instance => typeof instance != 'undefined')
           <div className="happening--body">
             {displayList.map(user => {
               const newTo = {
-                pathname: '/home/profile/',
+                pathname: '/profile/',
                 userObj: user
               }
 
@@ -140,7 +140,7 @@ displayList = displayList.filter(instance => typeof instance != 'undefined')
           <div className="happening--body">
             {following.map(user => {
               const newTo = {
-                pathname: '/home/profile/',
+                pathname: '/profile/',
                 userObj: user
               }
               return (

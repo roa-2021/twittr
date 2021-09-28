@@ -5,12 +5,20 @@ import { connect } from 'react-redux'
 
 import Tweet from './Tweet';
 
-const TweetList = ({ dispatch, tweets, user, following }) => {
+const TweetList = (props) => {
+  const { tweets, user, following, switchLocation, theAuthor } = props
 
 
+  let newTweets = [...tweets]
+  // && user.id ==
+  if (switchLocation && switchLocation === 'profile') {
+    newTweets = tweets.filter(tweet => tweet.publisher == theAuthor.id)
+  } else {
+    newTweets
+  }
 
   return (
-    tweets.map((tweet, i) => {
+    newTweets.map((tweet, i) => {
       return (
         <Tweet key={tweet.id} tweet={tweet} i={i} user={user} following={following}/>
       )
@@ -21,7 +29,7 @@ const TweetList = ({ dispatch, tweets, user, following }) => {
 const mapStateToProps = store => {
   return {
     tweets: store.tweet,
-    user: store.auth.user,
+    user: store.user,
     following: store.following
   }
 }

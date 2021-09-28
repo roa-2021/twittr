@@ -8,14 +8,8 @@ import OptionsPersonalTweetCard from '../../cards/OptionsPersonalTweetCard';
 import ConfirmationDeleteTweetCard from '../../cards/ConfirmationDeleteTweetCard'
 
 const Tweet = ({ tweet, i, user, following }) => {
-
-
     const { profile_image } = user
     const authorObj = following.find(following => following.following === tweet.publisher)
-   
-    console.log(authorObj)
-    // console.log('tweet id', tweet)
-    // console.log('following', following)
 
     const [moreVisibility, setMoreVisibilty] = useState(false)
     const [targetTweet, setTargetTweet] = useState(undefined)
@@ -38,7 +32,7 @@ const Tweet = ({ tweet, i, user, following }) => {
     }
 
     const newTo = {
-      pathname: '/home/profile/',
+      pathname: '/profile/',
       userObj: authorObj ? authorObj : user
     }
 
