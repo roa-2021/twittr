@@ -1,9 +1,11 @@
 .edit-profile-container {
   width: 600px;
-  height: 60vh;
+  max-height: 65vh;
 
   border-radius: 16px;
   background-color: #fff;
+
+  overflow: scroll;
 
   .edit-profile-container__header-container {
     display: flex;
@@ -119,7 +121,7 @@
       border-style: solid;
       border-width: 1px;
       border-color: lightgray;
-      border-radius: lightgray;
+      border-radius: 6px;
 
       padding: 8px;
 
@@ -135,10 +137,29 @@
   }
 
   .edit-profile-container__bio-container {
-    .edit-profile-container__name-label-container {
+    min-height: 120px;
+    padding: 12px 16px;
+    .edit-profile-container__bio-label-container {
+      display: flex;
+      flex-direction: column;
+
       border-style: solid;
       border-width: 1px;
       border-color: lightgray;
+      border-radius: 6px;
+
+      padding: 8px;
+      height: 100%;
+
+      span {
+        font-size: 0.85rem;
+      }
+      textarea {
+        font-size: 1.1rem;
+        height: 120px;
+        border: none;
+      }
     }
   }
 }
+

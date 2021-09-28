@@ -69,15 +69,15 @@ const EditProfileCard = () => {
         <div className="edit-profile-container__bio-container">
           <label className="edit-profile-container__bio-label-container">
             <span>Bio</span>
-            <input
+            <textarea
               type="text"
               className="bio"
-              placeholder="Name"
+              placeholder="Bio"
               name="bio"
               autoComplete="bio"
               onChange={handleChange}
             // value={formData.bio}
-            />
+            ></textarea>
           </label>
         </div>
       </form>
