@@ -8,8 +8,6 @@ import OptionsPersonalTweetCard from '../../cards/OptionsPersonalTweetCard';
 import ConfirmationDeleteTweetCard from '../../cards/ConfirmationDeleteTweetCard'
 
 const Tweet = ({ tweet, i, user, following }) => {
-
-
     const { profile_image } = user
     const authorObj = following.find(following => following.following === tweet.publisher)
 

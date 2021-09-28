@@ -29,7 +29,7 @@ const TweetList = (props) => {
 const mapStateToProps = store => {
   return {
     tweets: store.tweet,
-    user: store.auth.user,
+    user: store.user,
     following: store.following
   }
 }

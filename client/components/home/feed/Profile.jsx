@@ -9,10 +9,9 @@ import EditProfileCard from '../../cards/EditProfileCard'
 
 const Profile = (props, tweet) => {
   // failsafe by pulling in store and render that user if userObj doesnt exist
-  console.log(tweet)
 
   const userObj = props.location.userObj
-  const { name, profile_image, username, bio, followingNum, followerNum } = userObj
+  const { name, profile_image, username, bio, followingNum, followerNum, following, followers } = userObj
 
   const [editProfileCardVis, setEditProfileCardVis] = useState(false)
 
@@ -76,13 +75,13 @@ const Profile = (props, tweet) => {
         <div className="profile-follows">
           <Link to="/following">
             <p>
-              <span>{followingNum} </span>
+              <span>{followingNum ? followingNum : following} </span>
               Following
             </p>
           </Link>
           <Link to="/followers">
             <p>
-              <span>{followerNum} </span>
+              <span>{followerNum ? followerNum : followers} </span>
               Followers
             </p>
           </Link>
