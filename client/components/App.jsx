@@ -25,9 +25,12 @@ function App ({ auth, user, dispatch }) {
   }, [])
 
   useEffect(() => {
-    const id = user.id
-    allFunc(id)
+    if(user){
+      const id = user.id
+      allFunc(id)
+    }
   }, [auth.isAuthenticated])
+
 
   const allFunc = id => {
     if(id){
@@ -50,6 +53,7 @@ function App ({ auth, user, dispatch }) {
       <Route exact path="/" component={Landing} />
       <Route path="/home" component={Home} />
       <Route exact path="/logout" component={Logout} />
+       {/* <Route path='/home/profile' component={Profile} /> */}
 
       {/*<CardTestEnvironment />*/}
     </>

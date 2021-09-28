@@ -5,7 +5,6 @@ import profileImage from '../../../styles/default-profile.png';
 
 import { createANewTweetTHUNK} from '../../../actions/tweetsActions'
 
-
 const PostTweet = ({ dispatch, user }) => {
   const {profile_image} = user
   const [formContent, setFormContent] = useState('')

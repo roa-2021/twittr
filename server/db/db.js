@@ -7,7 +7,6 @@ function getUser(userID)
   .where('id',userID)
 }
 
-
 function updateUser(userID,newUser)
 {
   return db('users')
