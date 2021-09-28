@@ -19,12 +19,13 @@ const PostTweet = ({ dispatch, user }) => {
     publisher: user.id,
     name: user.name,
     username:user.username,
-    publish_time: timestamp.toLocaleString('en-NZ'),
+    publish_time: timestamp.toLocaleString('en-NZ', { hour12: false } ),
     content: formContent,
     like_count: 0,
     retweet_count: 0,
     quote_count: 0
   }
+  console.log(tweet)
 
   const postATweet = (e, tweet) => {
     e.preventDefault()
