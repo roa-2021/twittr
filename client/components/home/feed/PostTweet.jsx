@@ -43,7 +43,7 @@ const PostTweet = ({ dispatch, user }) => {
           <div className="tweet-content">
             <form onSubmit={(e) => postATweet(e, tweet)}>
               <div className="tweet-input">
-                <input type="text" placeholder="What's happening?" onChange={changeHandler} value={formContent}/>
+                <input maxLength="140" type="text" placeholder="What's happening?" onChange={changeHandler} value={formContent}/>
               </div>
               <div className="interactions">
                 <div className="reactions">

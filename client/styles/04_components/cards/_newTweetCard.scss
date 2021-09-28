@@ -51,6 +51,13 @@
         // padding: 15px 15px 15px 0;
         color: #777;
       }
+      textarea {
+        border: none;
+        font-size: 1.2rem;
+        max-width: 507px;
+        height: 120px;
+        resize: none;
+      }
     }
     .new-tweet-card-container__icon-button-container {
       display: flex;
@@ -122,14 +129,16 @@
         .new-tweet-card-container__tweet-button {
           padding: 8px 20px;
           border-radius: 50px;
+          background-color: #1d9bf0;
           span {
             font-size: 0.9rem;
             font-weight: 900;;
             color: #fff;
           }
-
-          // background-color: #1d9bf0;
-          background-color: #8ecdf8;
+        }
+        .new-tweet-card-container__tweet-button:hover {
+          cursor: pointer;
+          background-color: #097bc2;
         }
       }
     }
