@@ -78,7 +78,7 @@
     "knex": "^0.95.11",
     "pg": "^8.5.1",
     "react-datepicker": "^4.2.1",
-    "sqlite3": "^4.2.0",
+    "sqlite3": "^5.0.2",
     "superagent": "^6.1.0"
   }
 }
