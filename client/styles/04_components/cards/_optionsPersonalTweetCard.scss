@@ -1,0 +1,18 @@
+#personal-tweet-options {
+  margin-left: -230px;
+  display: flex;
+  flex-direction: column;
+
+  width: fit-content;
+  position: absolute;
+
+  border-radius: 6px;
+  background-color: #fff;
+  overflow: hidden; // hides the square edges on button hover
+  
+  filter: drop-shadow(0 0 10px #ccc);
+  
+  * {
+    transition-duration: 0.2s;
+  }
+}

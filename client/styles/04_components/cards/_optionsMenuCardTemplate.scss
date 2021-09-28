@@ -2,6 +2,9 @@
   display: flex;
   flex-direction: column;
 
+  width: fit-content;
+  position: absolute;
+
   border-radius: 6px;
   background-color: #fff;
   overflow: hidden; // hides the square edges on button hover
