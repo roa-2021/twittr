@@ -6,7 +6,9 @@
 
   font-size: 1rem;
 
-  transition-duration: 0.2s;
+  * {
+    transition-duration: 0.2s;
+  }
 }
 
 .nav-container {
