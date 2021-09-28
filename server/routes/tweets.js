@@ -55,21 +55,18 @@ router.get('/:id',(req,res)=>{
       var promises = tweets.map(tweet=>{
          return db.getLikes(tweet.id)
           .then(likes=>{
-              return db.likeRowExist(tweet.id,userID)
-              .then(row=>{
                 return db.isLiked(tweet.id,userID)
                 .then(liked=>{
-                  tweet.likeExist = row[0].likeExist
                   tweet.likesNum=likes[0].likesNum
                   tweet.isliked =liked[0].isliked
                   return tweet
               })    
-              })
 
        })
     })
-    Promise.all(promises).then((tweets)=>
-    res.json(tweets))
+    Promise.all(promises).then((tweets)=>{
+    console.log(tweets)
+    res.json(tweets)})
   })
   .catch(err => res.status(500).json({ message: err.message }))
 })

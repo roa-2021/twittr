@@ -31,6 +31,9 @@ function getTweets(userID)
   'tweets.publisher',
   'tweets.publish_time',
   'tweets.content',
+  'tweets.like_count',
+  'tweets.quote_count',
+  'tweets.retweet_count',
   'users.name',
   'users.username'
   )
@@ -126,30 +129,21 @@ function createComment(comment)
 function getLikes(tweetID)
 {
   return db('like')
-  .count('like as likesNum')
+  .count('id as likesNum')
   .where(
-  {tweet_id:tweetID,
-  })
+  {tweet_id:tweetID,})
 }
 
 function isLiked(tweetID,userID)
 {
   return db('like')
-  .count('like as isliked')
+  .count('id as isliked')
   .where(
   {tweet_id:tweetID,
     user_id:userID,
   })
 }
 
-function likeRowExist(tweetID,userID)
-{
-  return db('like')
-  .count('like as likeExist')
-  .where({tweet_id:tweetID,
-    user_id:userID,
-  })
-}
 
 function likeInsert(tweet)
 {
@@ -206,5 +200,4 @@ module.exports = {
   likeInsert,
   likeUpdate,
   unlikeUpdate,
-  likeRowExist,
 }

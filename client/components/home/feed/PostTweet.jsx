@@ -21,6 +21,11 @@ const PostTweet = ({ dispatch, user }) => {
     username:user.username,
     publish_time: timestamp.toLocaleString('en-NZ'),
     content: formContent,
+    like_count: 0,
+    retweet_count: 0,
+    quote_count: 0,
+    likesNum:0,
+    isliked:false,
   }
 
   const postATweet = (e, tweet) => {

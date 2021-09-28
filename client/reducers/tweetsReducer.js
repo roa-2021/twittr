@@ -1,4 +1,4 @@
-import { STORE_TWEETS_CASE,ADD_LIKE,UPDATE_UNLIKE,UPDATE_LIKE,STORE_TWEETS_CASE, DELETE_TWEET_CASE} from '../actions/tweetsActions'
+import { STORE_TWEETS_CASE,ADD_LIKE,UPDATE_UNLIKE,UPDATE_LIKE,DELETE_TWEET_CASE} from '../actions/tweetsActions'
 import { RESET_APP } from '../actions/RESET_APP'
 
 const initialState = []
@@ -21,7 +21,7 @@ const tweetsReducer = (state = initialState, action) => {
       state.map(tweet=>{
         if(tweet.id=action.tweet.id)
         {
-          return Object.assign({},tweet,action.tweet)
+          return Object.assign({},{isliked:true,likesNum:(tweet.likesNum+1)})
         }
       })
       return state
@@ -29,7 +29,7 @@ const tweetsReducer = (state = initialState, action) => {
       state.map(tweet=>{
         if(tweet.id=action.tweet.id)
         {
-          return Object.assign({},tweet,{likesNum:action.tweet.likesNum,isliked:action.tweet.isliked})
+          return Object.assign({},tweet,{isliked:true,likesNum:(tweet.likesNum-1)})
         }
       })
       return state

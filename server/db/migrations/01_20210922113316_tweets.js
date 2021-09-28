@@ -6,6 +6,9 @@ exports.up = function(knex) {
     table.foreign('publisher').references('users.id')
     table.datetime('publish_time')
     table.string('content')
+    table.integer('like_count')
+    table.integer('retweet_count')
+    table.integer('quote_count')
   })
 };
 
