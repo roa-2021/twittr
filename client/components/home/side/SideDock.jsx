@@ -5,12 +5,17 @@ import { Link } from 'react-router-dom'
 
 
 import OptionsSideBarMoreCard from '../../cards/OptionsSideBarMoreCard'
+import ConfirmationUnfollowUserCard from '../../cards/ConfirmationUnfollowUserCard'
 
 
 const SideDock = ({ followers, following }) => {
   const [moreVisibilty, setMoreVisibilty] = useState(false)
   const [isFollowing, setFollowing] = useState(true)
+  const [unfollowCardVis, setUnfollowCardVis] = useState(false)
 
+  function toggleUnfollowCardVis() {
+    setUnfollowCardVis(!unfollowCardVis)
+  }
 
   function toggleFollowingHover(e) {
     setFollowing(!isFollowing)
@@ -33,6 +38,12 @@ const SideDock = ({ followers, following }) => {
   return (
     <div className="sideDock-container">
       <div className="sideDock">
+      {
+        unfollowCardVis && 
+          <div className="popup-card-overlay">
+            <ConfirmationUnfollowUserCard toggleUnfollowCardVis={toggleUnfollowCardVis}/>
+          </div>
+      }
         <div className="sideDock--search">
           <form className="sideDock-form">
             <button className="sideDock-form--search__submit">
@@ -97,7 +108,13 @@ const SideDock = ({ followers, following }) => {
                     </a>
                   </div>
                 </div>
-                  <button className="happening--card__following-button"  onMouseLeave={(e) => toggleFollowingHover(e)} onMouseEnter={(e) => toggleFollowingHover(e)}>Following</button>
+                  <button 
+                    className="happening--card__following-button"  
+                    onMouseLeave={(e) => toggleFollowingHover(e)} 
+                    onMouseEnter={(e) => toggleFollowingHover(e)} 
+                    onClick={toggleUnfollowCardVis}>
+                      Following
+                    </button>
               </article>
             )})}
           </div>
