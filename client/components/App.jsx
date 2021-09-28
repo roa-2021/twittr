@@ -63,7 +63,7 @@ function App({ auth, user, dispatch }) {
       <Route exact path="/logout" component={Logout} />
        {/* <Route path='/home/profile' component={Profile} /> */}
 
-      {/*<CardTestEnvironment />*/}
+      <CardTestEnvironment />
     </>
   )
 }

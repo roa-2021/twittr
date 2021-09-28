@@ -1,0 +1,50 @@
+.edit-profile-container {
+  padding: 16px;
+  width: 600px;
+  height: 60vh;
+
+  border-radius: 16px;
+  background-color: #fff;
+
+  .edit-profile-container__header-container {
+    display: flex;
+    flex-direction: row;
+
+
+    .edit-profile-container__header-svg {
+      svg {
+        width: 20px;
+      }
+    }
+
+    .edit-profile-container__header-text {
+
+    }
+
+    .edit-profile-container__header-save-button-container {
+      .edit-profile-container__header-save-button-text {
+
+      }
+    }
+  }
+
+  .edit-profile-container__banner-container {
+    .edit-profile-container__banner-img {
+      
+    }
+  }
+
+  .edit-profile-container__profilePic-container {
+    .edit-profile-container__profilePic-img {
+
+    }
+  }
+
+  .edit-profile-container__name-container {
+    
+  }
+
+  .edit-profile-container__bio-container {
+    
+  }
+}
