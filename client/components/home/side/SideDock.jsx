@@ -104,14 +104,19 @@ displayList = displayList.filter(instance => typeof instance != 'undefined')
           </header>
           <div className="happening--body">
             {displayList.map(user => {
+              const newTo = {
+                pathname: '/home/profile/',
+                userObj: user
+              }
+
               return (
                 <article className="happening--card">
                   <div className="user-info--container">
                     <img src={user.profile_image ? user.profile_image : profileImage}></img>
                     <div className="happening--card__text-wrapper">
                       <a href="">
-                        <h3>{user.name}</h3>
-                        <p>@{user.username}</p>
+                        <Link to={newTo}><h3>{user.name}</h3></Link>
+                        <Link to={newTo}><p>@{user.username}</p></Link>
                       </a>
                     </div>
                   </div>
@@ -134,14 +139,18 @@ displayList = displayList.filter(instance => typeof instance != 'undefined')
          
           <div className="happening--body">
             {following.map(user => {
+              const newTo = {
+                pathname: '/home/profile/',
+                userObj: user
+              }
               return (
               <article className="happening--card">
                 <div className="user-info--container">
                   <img src={user.profile_image ? user.profile_image : profileImage}></img>
                   <div className="happening--card__text-wrapper">
                     <a href="">
-                      <h3>{user.name}</h3>
-                      <p>@{user.username}</p>
+                      <Link to={newTo}><h3>{user.name}</h3></Link>
+                      <Link to={newTo}><p>@{user.username}</p></Link>
                     </a>
                   </div>
                 </div>
