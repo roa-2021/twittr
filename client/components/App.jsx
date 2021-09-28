@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
@@ -15,25 +15,33 @@ import { getFollowersOfUserTHUNK } from '../actions/followersActions'
 import { getWhoUserIsFollowingTHUNK } from '../actions/followingActions'
 import { retrieveAUsersTweetsTHUNK } from '../actions/tweetsActions'
 import { getAUsersDetailsTHUNK } from '../actions/userActions'
-import {checkAuth} from '../actions/authActions'
+import { resetAppTHUNK } from '../actions/RESET_APP'
 
-function App ({ auth, user, dispatch }) {
+
+import { checkAuth } from '../actions/authActions'
+
+
+function App({ auth, user, dispatch }) {
 
   useEffect(() => {
-    const confirmSuccess = () => { }
+    const confirmSuccess = () => { 
+    }
     dispatch(checkAuth(confirmSuccess))
+    console.log('checking auth')
   }, [])
 
   useEffect(() => {
-    if(user){
+    if (auth.isAuthenticated === true) {
+      console.log('dispatch', auth.isAuthenticated)
       const id = user.id
       allFunc(id)
     }
-  }, [auth.isAuthenticated])
-
+  }, [auth])
 
   const allFunc = id => {
-    if(id){
+    console.log('running all func')
+    if (id) {
+
       dispatch(getFollowersOfUserTHUNK(id))
       dispatch(retrieveCommentsTHUNK(id))
       dispatch(getWhoUserIsFollowingTHUNK(id))
