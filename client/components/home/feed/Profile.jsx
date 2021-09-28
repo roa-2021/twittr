@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
+import TweetList from './TweetList'
+
 import profileImage from '../../../styles/default-profile.png'
 import EditProfileCard from '../../cards/EditProfileCard'
 
@@ -92,6 +94,7 @@ const Profile = (props, tweet) => {
         <button>Media</button>
         <button>Likes</button>
       </div>
+      <TweetList switchLocation={"profile"} theAuthor={userObj} />
     </div>
   )
 }
