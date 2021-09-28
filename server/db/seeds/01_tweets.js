@@ -1,7 +1,7 @@
 
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex('tweets').del()
+  return knex('tweets')
     .then(function () {
       // Inserts seed entries
       return knex('tweets').insert([
