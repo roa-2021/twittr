@@ -34,6 +34,7 @@ function getTweets(userID)
   'tweets.like_count',
   'tweets.quote_count',
   'tweets.retweet_count',
+  'users.profile_image',
   'users.name',
   'users.username'
   )
@@ -154,22 +155,11 @@ function likeInsert(tweet)
   })
 }
 
-function likeUpdate(tweet)
-{
-  return db('like')
-  .update('like.like',true)
-  .where(
-    {
-      tweet_id:tweet.id,
-      user_id:tweet.user_id,
-    }
-  )
-}
 
-function unlikeUpdate(tweet)
+function likeDelete(tweet)
 {
   return db('like')
-  .update('like.like',false)
+  .delete()
   .where(
     {
       tweet_id:tweet.id,
@@ -198,6 +188,5 @@ module.exports = {
   getLikes,
   isLiked,
   likeInsert,
-  likeUpdate,
-  unlikeUpdate,
+  likeDelete,
 }

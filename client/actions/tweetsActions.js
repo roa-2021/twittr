@@ -1,10 +1,9 @@
-import { addATweetAPI, getUsersTweetsAPI, deleteATweetAPI,getAllUsersFollowingTweetsAPI,updateLikeAPI,updateUnLikeAPI,addLikeAPI} from '../apis/tweetsAPI'
+import { addATweetAPI, getUsersTweetsAPI, deleteATweetAPI,getAllUsersFollowingTweetsAPI,deleteLikeAPI,addLikeAPI} from '../apis/tweetsAPI'
 
 // ---- CASES ----
 export const STORE_TWEETS_CASE = 'STORED_TWEETS'
 export const ADD_LIKE = 'ADD_LIKE'
-export const UPDATE_LIKE = 'UPDATE_LIKE'
-export const UPDATE_UNLIKE = 'UPDATE_UNLIKE'
+export const DELETE_LIKE = 'DELETE_LIKE'
 export const DELETE_TWEET_CASE = 'NUKE_TWEET'
 // ---- ACTIONS ----
 
@@ -22,16 +21,10 @@ export const addLikeAction = tweet => {
   }
 }
 
-export const updateLikeAction = tweet => {
-  return {
-    type: UPDATE_LIKE,
-    tweet
-  }
-}
 
-export const updateUnLikeAction = tweet => {
+export const deleteLikeAction = tweet => {
   return {
-    type: UPDATE_UNLIKE,
+    type: DELETE_LIKE,
     tweet
   }
 }
@@ -85,32 +78,23 @@ export const addLikeTHUNK = tweet => {
   return dispatch => {
     addLikeAPI(tweet)
     .then(res => {
+      console.log(res)
       dispatch(addLikeAction(res))
     })
     // .catch(err => console.log(err))
   }
 }
 
-export const updateLikeTHUNK = tweet => {
+export const deleteLikeTHUNK = tweet => {
   return dispatch => {
-    updateLikeAPI(tweet)
+    deleteLikeAPI(tweet)
     .then(res => {
-      dispatch(updateLikeAction(tweet))
+      dispatch(deleteLikeAction(tweet))
     })
     // .catch(err => console.log(err))
   }
 }
 
-
-export const updateUnLikeTHUNK = tweet => {
-  return dispatch => {
-    updateUnLikeAPI(tweet)
-    .then(res => {
-      dispatch(updateUnLikeAction(tweet))
-    })
-    // .catch(err => console.log(err))
-  }
-}
 
 export const getAUsersFollowingTweetsTHUNK = userID => {
   return dispatch => {

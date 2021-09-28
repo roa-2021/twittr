@@ -13,9 +13,9 @@ router.post('/', (req,res)=>{
   .catch(err => res.status(500).json({ message: err.message }))
 })
 
-router.get('/like', (req,res)=>{
-  tweet=req.body
-  db.likeRowExist(tweet)
+router.get('/like/:id', (req,res)=>{
+  id=req.params.id,
+  db.getLikes(id)
   .then(result=>{
     res.json(result)
   })
@@ -31,18 +31,10 @@ router.post('/like', (req,res)=>{
   .catch(err => res.status(500).json({ message: err.message }))
 })
 
-router.patch('/like', (req,res)=>{
-  tweet=req.body
-  db.likeUpdate(tweet)
-  .then(result=>{
-    res.json(result)
-  })
-  .catch(err => res.status(500).json({ message: err.message }))
-})
 
-router.patch('/unlike', (req,res)=>{
+router.delete('/like', (req,res)=>{
   tweet=req.body
-  db.unlikeUpdate(tweet)
+  db.likeDelete(tweet)
   .then(result=>{
     res.json(result)
   })
