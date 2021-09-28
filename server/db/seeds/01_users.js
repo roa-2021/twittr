@@ -15,7 +15,7 @@ exports.seed = function(knex) {
           profile_image: 'https://media.makeameme.org/created/the-sass-is-5ac0d8.jpg',
           varified: 'true',
           bio: '🧑‍💻 killa junior dev with a hankering for the sass',
-          birthday: '06-04-1987 00:00:00'
+          // birthday: '06-04-1987 00:00:00'
 
         },
         {
@@ -27,7 +27,7 @@ exports.seed = function(knex) {
           profile_image: 'https://camo.githubusercontent.com/1f26eb501b27c68ac74070110676b31e0d4e484c818d61edc4bef2350ab7b054/687474703a2f2f692e696d6775722e636f6d2f4b7653574c486f2e706e67',
           varified: 'true',
           bio: '🐼 furry but in a good way',
-          birthday: '06-04-1987 00:00:00'
+          // birthday: '06-04-1987 00:00:00'
         },
         {
           id: 3, 
@@ -38,7 +38,7 @@ exports.seed = function(knex) {
           profile_image: 'https://pbs.twimg.com/media/DwvaXrOX0AEIYh-.jpg',
           varified: 'true',
           bio: 'one man\'s trash is another\'s treasure',
-          birthday: '06-04-1987 00:00:00'
+          // birthday: '06-04-1987 00:00:00'
         },
         {
           id: 4, 
@@ -49,7 +49,7 @@ exports.seed = function(knex) {
           profile_image: '/images/max-profile.png',
           varified: 'false',
           bio: 'we\'re all carbon until we aren\'t ⚛',
-          birthday: '06-04-1987 00:00:00'
+          // birthday: '06-04-1987 00:00:00'
 
         },
         {
@@ -61,7 +61,7 @@ exports.seed = function(knex) {
           profile_image: '/images/kang-profile.png',
           varified: 'true',
           bio: 'you wan\'it you got\'it',
-          birthday: '06-04-1987 00:00:00'
+          // birthday: '06-04-1987 00:00:00'
         },
         {
           id: 6, 
@@ -72,7 +72,7 @@ exports.seed = function(knex) {
           profile_image: '/images/jordan-profile.png',
           varified: 'true',
           bio: '🗽🗽🗽🗽🗽🗽🗽🗽',
-          birthday: '06-04-1987 00:00:06'
+          // birthday: '06-04-1987 00:00:06'
         }
       ].map(user => {
         return generateHash(user.password)
