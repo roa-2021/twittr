@@ -30,11 +30,6 @@ const ConfirmationDeleteTweetCard = ({ dispatch, i, toggleDel }) => {
       <span>Delete</span>
       </div>
       </Link>
-      <Link to="/home">
-      <div className="popup-card-container__red-button" onClick={() => deleteTweet(i)}>
-      <span>Delete</span>
-      </div>
-      </Link>
       <div className="popup-card-container__light-button" onClick={toggleDel}>
       <span>Cancel</span>
       </div>
