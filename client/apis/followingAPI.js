@@ -7,7 +7,6 @@ export const getWhoUserIsFollowingAPI = userId => {
 }
 
 export const userFollowAPI = (userId, followingId) => {
-    console.log('followingAPI.js + ' + followingId)
     return request
     .post(`/api/v1/following/${userId}`)
     .send({followingId})

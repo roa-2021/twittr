@@ -3,12 +3,13 @@ import { connect } from 'react-redux'
 import profileImage from '../../../styles/default-profile.png'
 import { Link } from 'react-router-dom'
 
+import { addFollowing, followUser } from '../../../actions/followUserAction'
 
 import OptionsSideBarMoreCard from '../../cards/OptionsSideBarMoreCard'
 import ConfirmationUnfollowUserCard from '../../cards/ConfirmationUnfollowUserCard'
 
 
-const SideDock = ({ followers, following }) => {
+const SideDock = ({ followers, following, dispatch, user }) => {
   const [moreVisibilty, setMoreVisibilty] = useState(false)
   const [isFollowing, setFollowing] = useState(true)
   const [unfollowCardVis, setUnfollowCardVis] = useState(false)
@@ -25,15 +26,36 @@ const SideDock = ({ followers, following }) => {
       e.target.innerHTML = 'Following'
     }
   }
-
-  const unfollow = (id) => {
-    
-    console.log('unfollow user ', id)
-  }
-
   function toggleMore() {
     setMoreVisibilty(!moreVisibilty)
   }
+
+  //
+  const unfollow = id => {
+    console.log('unfollow user ', id)
+    //dispatch
+    //thunk (remove from db)
+    //dispatch new action (add to followers/following)
+
+  }
+  const follow = id => { 
+    // console.log('follow', id)
+    // console.log(user.id)
+    dispatch(addFollowing(user.id, id))
+    //
+  }
+  //
+
+let displayList = followers.map(foo => {
+  const searchResult = following.find(user => user.id == foo.id)
+  if (searchResult) {
+    return undefined
+  } else {
+    return foo
+  }
+})
+
+displayList = displayList.filter(instance => typeof instance != 'undefined')
 
   return (
     <div className="sideDock-container">
@@ -79,22 +101,7 @@ const SideDock = ({ followers, following }) => {
           <header className="happening--header">
             <h2 className="happening--title">Who you're following</h2>
           </header>
-          <ul>
-          {/* const newTo = {
-                pathname: '/home/profile/',
-                userObj: user
-            } */}
-
-            {followers.map(follower => {
-              return (
-              
-                <Link to={{ pathname: '/home/profile/', userObj:follower}}>{follower.name}</Link>
-               
-              )
-              //  console.log(follower)
-            })}
-
-          </ul>
+         
           <div className="happening--body">
             {following.map(user => {
               return (
@@ -108,6 +115,7 @@ const SideDock = ({ followers, following }) => {
                     </a>
                   </div>
                 </div>
+
                   <button 
                     className="happening--card__following-button"  
                     onMouseLeave={(e) => toggleFollowingHover(e)} 
@@ -115,6 +123,7 @@ const SideDock = ({ followers, following }) => {
                     onClick={toggleUnfollowCardVis}>
                       Following
                     </button>
+
               </article>
             )})}
           </div>
@@ -124,10 +133,10 @@ const SideDock = ({ followers, following }) => {
         </section>
         <section className="sideDock--happening">
           <header className="happening--header">
-            <h2 className="happening--title">Who's following you</h2>
+            <h2 className="happening--title">Who to follow</h2>
           </header>
           <div className="happening--body">
-            {followers.map(user => {
+            {displayList.map(user => {
               return (
                 <article className="happening--card">
                   <div className="user-info--container">
@@ -139,20 +148,13 @@ const SideDock = ({ followers, following }) => {
                       </a>
                     </div>
                   </div>
-                  <button className="happening--card__follow-button">Follow</button>
+                  {/* <p onClick={() => unfollow(followed.following)}>unfollow</p> */}
+                  <button className="happening--card__follow-button" onClick={() => follow(user.followers)}>Follow</button>
             </article>
             )
           })}
           </div>
-          {following.map(followed => {
-              return (
-              <>
-                <Link to={{ pathname: '/home/profile/', userObj:followed}}>{followed.name}</Link>
-                <p onClick={() => unfollow(followed.following)}>unfollow</p>
-             </>  
-              )
-              //  console.log(follower)
-            })}
+         
           <footer className="happening--footer">
             <p className="happening--footer-text">Show more</p>
           </footer>
@@ -185,3 +187,25 @@ function mapStateToProps(state) {
 
 export default connect(mapStateToProps)(SideDock)
 
+
+
+// {following.map(followed => {
+//   return (
+//   <>
+//     <Link to={{ pathname: '/home/profile/', userObj:followed}}>{followed.name}</Link>
+//     <p onClick={() => unfollow(followed.following)}>unfollow</p>
+//  </>  
+//   )
+//   //  console.log(follower)
+// })}
+
+
+
+// {followers.map(follower => {
+//   return (
+  
+//     <Link to={{ pathname: '/home/profile/', userObj:follower}}>{follower.name}</Link>
+   
+//   )
+//   //  console.log(follower)
+// })}
