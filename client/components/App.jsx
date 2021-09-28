@@ -27,8 +27,10 @@ function App ({ auth, user, dispatch }) {
   }, [])
 
   useEffect(() => {
-    const id = user.id
+    if(user){
+      const id = user.id
     allFunc(id)
+  }
   }, [auth])
 
   const allFunc = id => {
