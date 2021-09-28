@@ -430,6 +430,9 @@
   p {
     margin-right: 10px;
   }
+  p:hover {
+    text-decoration: underline;
+  }
   span {
     color: #000;
   }
@@ -487,14 +490,3 @@
   }
 }
 
-// .tweet-input {
-//   textarea {
-//     padding: 12px 0px;
-//     max-width: 506px;
-//     width: 506px;
-//     min-height: 10px;
-//     font-size: 1.3rem;
-//     border: none;
-//     resize: none;
-//   }
-// }
