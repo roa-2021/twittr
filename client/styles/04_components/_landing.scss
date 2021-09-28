@@ -84,6 +84,11 @@
   color: cornflowerblue;
 }
 
+.login-anchor:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .login-panel img {
   width: 100%;
   height: 100%;

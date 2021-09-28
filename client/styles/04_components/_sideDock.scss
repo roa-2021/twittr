@@ -78,6 +78,7 @@
         background-color: #F6F9F9;
         width: 348px;
         border-radius: 18px;
+        margin: 30px 0px;
 
         .happening--header {
             height: 42px;
@@ -92,11 +93,45 @@
         }
 
         .happening--body {
+            .happening--card__follow-button {
+                color: #eee;
+                background-color: #222;
+                width: 78.3px;
+                padding: 10px;
+                border: 1px solid #fff;
+                border-radius: 25px;
+            }
+            .happening--card__following-button {
+                width: 78.3px;
+                padding: 10px;
+                border-radius: 25px;
+                border: 1px solid #ddd;
+                background-color: #F6F9F9;
+                transition: 0.3s;
+            }
+            .happening--card__following-button:hover {
+                color: red;
+                background-color: rgb(255, 196, 196);
+                transition: 0.3s;
+            }
             .happening--card {
                 width: 316px;
                 display: flex;
                 flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
                 padding: 12px 16px;
+                .user-info--container {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                }
+                a {
+                    color: black;
+                    :hover {
+                        text-decoration: underline;
+                    }
+                }
             }
             .happening--card p {
                 font-size: 13px;
@@ -104,21 +139,20 @@
             .happening--card h3 {
                 word-break: break-word;
                 font-size: 15px;
-                padding-top: 6px;
             }
             .happening--card img {
                 width: 68px;
                 height: 68px;
-                border-radius: 8px;
+                border-radius: 50%;
+                margin-right: 10px;
             }
             .happening--card_text-wrapper {
                 display: flex;
                 flex-direction: column;
-                width: 236px;
+                width: 100%;
             }
         }
     }
-   
 
     .happening--card:hover {
         background-color: #EEF1F1

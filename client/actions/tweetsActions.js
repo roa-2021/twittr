@@ -63,7 +63,6 @@ export const retrieveAUsersTweetsTHUNK = userId => {
   return dispatch => {
     getUsersTweetsAPI(userId)
       .then(res => {
-        console.log(res)
         const tweets = res // arr of tweet objs
         dispatch(storeTweetACTION(tweets))
       })

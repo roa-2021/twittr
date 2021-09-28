@@ -30,7 +30,6 @@ const PostTweet = ({ dispatch, user }) => {
 
   const postATweet = (e, tweet) => {
     e.preventDefault()
-    console.log('posting tweet: ', tweet)
     dispatch(createANewTweetTHUNK(tweet))
     setFormContent('')
   }

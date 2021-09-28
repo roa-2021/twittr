@@ -4,7 +4,7 @@ import profileImage from '../../../styles/default-profile.png'
 
 const Profile = (props) => {
   // failsafe by pulling in store and render that user if userObj doesnt exist
-
+  
   const userObj = props.location.userObj
   const { name, profile_image, username, bio, followingNum, followerNum } = userObj
 

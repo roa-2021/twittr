@@ -11,6 +11,7 @@ import OptionsPersonalTweetCard from './OptionsPersonalTweetCard'
 import OptionsTrendCard from './OptionsTrendCard'
 import OptionsSideBarMoreCard from './OptionsSideBarMoreCard'
 import ConfirmationUnfollowUserCard from './ConfirmationUnfollowUserCard'
+import EditProfileCard from './EditProfileCard'
 
 const CardTestEnvironment = () => {
   return (
@@ -47,6 +48,9 @@ const CardTestEnvironment = () => {
       </div>
       <div className="card-test-page__card-container">
         <ConfirmationUnfollowUserCard />
+      </div>
+      <div className="card-test-page__card-container">
+        <EditProfileCard />
       </div>
     </div>
   )

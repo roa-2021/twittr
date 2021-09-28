@@ -15,7 +15,6 @@ export default function authReducer (state = initialState, action) {
         errorMessage: ''
       }
     case 'LOGIN_SUCCESS':
-      console.log(action.user)
       return {
         ...state,
         isFetching: false,

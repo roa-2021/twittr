@@ -65,7 +65,7 @@ router.get('/:id',(req,res)=>{
        })
     })
     Promise.all(promises).then((tweets)=>{
-    console.log(tweets)
+
     res.json(tweets)})
   })
   .catch(err => res.status(500).json({ message: err.message }))
