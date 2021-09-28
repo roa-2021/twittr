@@ -58,9 +58,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    background-color: gray;
 
     .edit-profile-container__banner-img {
-      background-color: gray;
     }
     .edit-profile-container__banner-svg-container {
       position: absolute;
@@ -84,11 +85,14 @@
     margin-top: -45px;
     margin-left: 15px;
 
-    border-radius: 2px;
+    border-width: 4px;
+    border-style: solid;
     border-color: #fff;
+    border-radius: 50%;
+    
+    background-color: gray;
 
     .edit-profile-container__profilePic-img {
-      background-color: gray;
     }
     .edit-profile-container__profilePic-svg-container {
       position: absolute;
@@ -103,10 +107,38 @@
   }
 
   .edit-profile-container__name-container {
+    min-height: 60px;
+    padding: 12px 16px;
+
     
+    
+    .edit-profile-container__name-label-container {
+      display: flex;
+      flex-direction: column;
+
+      border-style: solid;
+      border-width: 1px;
+      border-color: lightgray;
+      border-radius: lightgray;
+
+      padding: 8px;
+
+      span {
+        font-size: 0.85rem;
+      }
+      input {
+        font-size: 1.1rem;
+        height: 20px;
+        border: none;
+      }
+    }
   }
 
   .edit-profile-container__bio-container {
-    
+    .edit-profile-container__name-label-container {
+      border-style: solid;
+      border-width: 1px;
+      border-color: lightgray;
+    }
   }
 }

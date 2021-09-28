@@ -53,28 +53,32 @@ const EditProfileCard = () => {
           </div>
         </div>
         <div className="edit-profile-container__name-container">
-          <span>Name</span>
-          <input
-            type="text"
-            className="name"
-            placeholder="Name"
-            name="name"
-            autoComplete="name"
-            onChange={handleChange}
+          <label className="edit-profile-container__name-label-container">
+            <span>Name</span>
+            <input
+              type="text"
+              className="name"
+              placeholder="Name"
+              name="name"
+              autoComplete="name"
+              onChange={handleChange}
             // value={formData.name}
-          />
+            />
+          </label>
         </div>
         <div className="edit-profile-container__bio-container">
-          <span>Bio</span>
-          <input
-            type="text"
-            className="bio"
-            placeholder="Name"
-            name="bio"
-            autoComplete="bio"
-            onChange={handleChange}
+          <label className="edit-profile-container__bio-label-container">
+            <span>Bio</span>
+            <input
+              type="text"
+              className="bio"
+              placeholder="Name"
+              name="bio"
+              autoComplete="bio"
+              onChange={handleChange}
             // value={formData.bio}
-          />
+            />
+          </label>
         </div>
       </form>
     </div>
