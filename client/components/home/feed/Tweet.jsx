@@ -35,7 +35,6 @@ const Tweet = ({ dispatch, tweets, user }) => {
 
   return (
     tweets.map((tweet, i) => {
-
       return (
         <div key={i}>
           <div>
@@ -47,8 +46,8 @@ const Tweet = ({ dispatch, tweets, user }) => {
                 <div className="post-content">
                   <div className="user-info">
                     <a href="">
-                      <span className="user-name">{user.name}</span>
-                      <span className="user-handle"> @{user.username}</span>
+                      <span className="user-name">{tweet.name}</span>
+                      <span className="user-handle"> @{tweet.username}</span>
                     </a>
                     <div className="tweet-more">
                       <svg viewBox="0 0 24 24" aria-hidden="true" className="more" id={i} onClick={(e) => toggleMore(e, i)}>

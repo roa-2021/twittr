@@ -15,8 +15,6 @@ import { getFollowersOfUserTHUNK } from '../actions/followersActions'
 import { getWhoUserIsFollowingTHUNK } from '../actions/followingActions'
 import { retrieveAUsersTweetsTHUNK } from '../actions/tweetsActions'
 import { getAUsersDetailsTHUNK } from '../actions/userActions'
-
-
 import {checkAuth} from '../actions/authActions'
 
 function App ({ auth, user, dispatch }) {
@@ -29,11 +27,10 @@ function App ({ auth, user, dispatch }) {
   useEffect(() => {
     const id = user.id
     allFunc(id)
-  }, [auth])
+  }, [auth.isAuthenticated])
 
   const allFunc = id => {
     if(id){
-      dispatch(retrieveCommentsTHUNK(id))
       dispatch(getFollowersOfUserTHUNK(id))
       dispatch(retrieveCommentsTHUNK(id))
       dispatch(getWhoUserIsFollowingTHUNK(id))
