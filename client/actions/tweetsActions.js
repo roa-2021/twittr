@@ -2,12 +2,20 @@ import { addATweetAPI, getUsersTweetsAPI, deleteATweetAPI } from '../apis/tweets
 
 // ---- CASES ----
 export const STORE_TWEETS_CASE = 'STORED_TWEETS'
+export const DELETE_TWEET_CASE = 'NUKE_TWEET'
 
 // ---- ACTIONS ----
 export const storeTweetACTION = tweet => {
   return {
     type: STORE_TWEETS_CASE,
     tweet
+  }
+}
+
+export const deleteTweetACTION = tweetId => {
+  return {
+    type: DELETE_TWEET_CASE,
+    tweetId
   }
 }
 
@@ -43,7 +51,7 @@ export const removeATweetByIDTHUNK = id => {
     deleteATweetAPI(id)
     .then(res => {
       const removedTweet = res
-      dispatch(storeTweetACTION(removedTweet))
+      dispatch(deleteTweetACTION(id))
     })
     // .catch(err => console.log(err))
   }

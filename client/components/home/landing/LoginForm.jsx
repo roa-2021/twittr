@@ -2,17 +2,20 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { useHistory } from 'react-router'
 import { loginError, registerUserRequest } from '../../../actions/authActions'
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const LoginForm = props => {
   const { auth, dispatch, user, togglePopupVis } = props
   let history = useHistory()
-
+  const [Birthday, setBirthday] = useState(new Date());
   const [formData, setFormData] = useState({
     name: '',
     username: '',
     email_address: '',
     password: '',
     confirm_password: '',
+    birthday:'',
   })
 
   useEffect(() => {
@@ -43,7 +46,7 @@ const LoginForm = props => {
       const confirmSuccess = id => {
         history.push(`/home`)
       }
-
+      formData.birthday=Birthday
       const userInfo = { ...formData }
       delete userInfo.confirm_password
       dispatch(registerUserRequest(userInfo, confirmSuccess))
@@ -131,26 +134,13 @@ const LoginForm = props => {
           This will not be shown publicly. Confirm your own age, even if this
           account is for a business, a pet, or something else.
         </p>
-        <div className="login-select--wrapper">
-          <select name="" id="" className="login-form--month">
-            <option value="#">Month</option>
-            <option value="#">Jan</option>
-          </select>
-          <select name="" id="" className="login-form--day">
-            <option value="#">Day</option>
-            <option value="#">1</option>
-          </select>
-          <select name="" id="" className="login-form--year">
-            <option value="#">Year</option>
-            <option value="#">1970</option>
-          </select>
-        </div>
+        <DatePicker selected={Birthday} onChange={(date) => setBirthday(date)} />
         <button>Sign up</button>
       </form>
     </div>
   )
 }
-
+  
 const mapStateToProps = globalState => {
   return {
     auth: globalState.auth,
