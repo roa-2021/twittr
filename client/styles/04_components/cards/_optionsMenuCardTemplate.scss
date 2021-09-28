@@ -8,6 +8,9 @@
   
   filter: drop-shadow(0 0 10px #ccc);
   
+  * {
+    transition-duration: 0.2s;
+  }
 }
 
 .options-menu-container__button-container {

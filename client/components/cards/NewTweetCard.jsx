@@ -6,6 +6,7 @@ import { createANewTweetTHUNK } from '../../actions/tweetsActions'
 import profilePic from '../../styles/default-profile.png'
 
 const NewTweetCard = ({ dispatch, togglePopupVis, user }) => {
+  const {profile_image} = user
   const [formContent, setFormContent] = useState('')
 
   const changeHandler = (e) => {
@@ -41,13 +42,13 @@ const NewTweetCard = ({ dispatch, togglePopupVis, user }) => {
       <div className="new-tweet-card-container__content-container">
         <div className="new-tweet-card-container__left-column-container">
           <div className="new-tweet-card-container__profilePic-container">
-            <img src={profilePic} />
+            <img src={profile_image} />
           </div>
         </div>
         <div className="new-tweet-card-container__right-column-container">
           <div className="new-tweet-card-container__tweet-body-container">
             <form onSubmit={(e) => postATweet(e, tweet)} className="tweet-content">
-              <textarea type="text" placeholder="What's happening?" value={formContent} onChange={changeHandler} />
+              <textarea type="text" maxlength="140" placeholder="What's happening?" value={formContent} onChange={changeHandler} />
             </form>
           </div>
           <div className="separator"></div>

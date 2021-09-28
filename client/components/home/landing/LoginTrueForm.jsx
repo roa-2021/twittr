@@ -76,7 +76,7 @@ const LoginTrueForm = props => {
           value={formData.username}
         />
         <input
-          type="text"
+          type="password"
           className="password"
           placeholder="Password"
           name="password"
