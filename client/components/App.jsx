@@ -31,6 +31,7 @@ function App ({ auth, dispatch }) {
       <Route exact path="/" component={Landing} />
       <Route path="/home" component={Home} />
       <Route exact path="/logout" component={Logout} />
+       {/* <Route path='/home/profile' component={Profile} /> */}
 
       {/*<CardTestEnvironment />*/}
     </>
