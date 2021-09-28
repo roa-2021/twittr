@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-const Profile = ({ auth, user }) => {
+const Profile = ({ user }) => {
   // const profileID = auth.user.id
 
   const newTo = {
@@ -36,7 +36,7 @@ const Profile = ({ auth, user }) => {
 }
 
 const mapStateToProps = state => {
-  return { auth: state.auth, user: state.auth.user }
+  return { user: state.user }
 }
 
 export default connect(mapStateToProps)(Profile)

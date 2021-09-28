@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
+
 import profileImage from '../../../styles/default-profile.png'
 import EditProfileCard from '../../cards/EditProfileCard'
 
-const Profile = (props) => {
+const Profile = (props, tweet) => {
   // failsafe by pulling in store and render that user if userObj doesnt exist
-  
+  console.log(tweet)
+
   const userObj = props.location.userObj
-  console.log(userObj)
   const { name, profile_image, username, bio, followingNum, followerNum } = userObj
 
   const [editProfileCardVis, setEditProfileCardVis] = useState(false)
@@ -35,7 +37,7 @@ const Profile = (props) => {
             </div>
             <a href="#">
               <h2 className="profile-username">{name}</h2>
-              <p className="tweet-count">6 Tweets</p>
+              <p className="tweet-count">{ tweet.length }Tweets</p>
             </a>
           </div>
         </div>
@@ -85,4 +87,8 @@ const Profile = (props) => {
   )
 }
 
-export default Profile
+function mapStateToProps(state) {
+  return { tweet: state.tweet }
+}
+
+export default connect(mapStateToProps)(Profile)
