@@ -13,7 +13,7 @@ import LoginForm from './home/landing/LoginForm'
 import { retrieveCommentsTHUNK } from '../actions/commentsAction'
 import { getFollowersOfUserTHUNK } from '../actions/followersActions'
 import { getWhoUserIsFollowingTHUNK } from '../actions/followingActions'
-import { retrieveAUsersTweetsTHUNK } from '../actions/tweetsActions'
+import { retrieveAUsersTweetsTHUNK, getAUsersFollowingTweetsTHUNK } from '../actions/tweetsActions'
 import { getAUsersDetailsTHUNK } from '../actions/userActions'
 import { resetAppTHUNK } from '../actions/RESET_APP'
 
@@ -42,7 +42,7 @@ function App ({ auth, user, dispatch }) {
       dispatch(retrieveCommentsTHUNK(id))
       dispatch(getWhoUserIsFollowingTHUNK(id))
       dispatch(getAUsersDetailsTHUNK(id))
-      dispatch(retrieveAUsersTweetsTHUNK(id))
+      dispatch(getAUsersFollowingTweetsTHUNK(id))
     }
   }
 

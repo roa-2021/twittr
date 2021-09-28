@@ -1,4 +1,4 @@
-import { addATweetAPI, getUsersTweetsAPI, deleteATweetAPI } from '../apis/tweetsAPI'
+import { addATweetAPI, getUsersTweetsAPI, deleteATweetAPI, getAllUsersFollowingTweetsAPI } from '../apis/tweetsAPI'
 
 // ---- CASES ----
 export const STORE_TWEETS_CASE = 'STORED_TWEETS'
@@ -54,5 +54,15 @@ export const removeATweetByIDTHUNK = id => {
       dispatch(deleteTweetACTION(id))
     })
     // .catch(err => console.log(err))
+  }
+}
+
+export const getAUsersFollowingTweetsTHUNK = userID => {
+  return dispatch => {
+    getAllUsersFollowingTweetsAPI(userID)
+      .then(allFollowingTweets => {
+        dispatch(storeTweetACTION(allFollowingTweets))
+      })
+      // .catch(err => console.log(err))
   }
 }

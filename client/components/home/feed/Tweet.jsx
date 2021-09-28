@@ -6,9 +6,11 @@ import { retrieveAUsersTweetsTHUNK } from '../../../actions/tweetsActions'
 import OptionsPersonalTweetCard from '../../cards/OptionsPersonalTweetCard';
 import ConfirmationDeleteTweetCard from '../../cards/ConfirmationDeleteTweetCard'
 
-const Tweet = ({tweet, i, user}) => {
+const Tweet = ({ tweet, i, user, following }) => {
 
     const { profile_image } = user
+    // const authorDetails = following.filter(user => user.id === tweet.id)
+    // console.log(authorDetails)
 
     const [moreVisibility, setMoreVisibilty] = useState(false)
     const [targetTweet, setTargetTweet] = useState(undefined)
@@ -36,7 +38,7 @@ const Tweet = ({tweet, i, user}) => {
             <div className="tweet-container">
               <div className="tweet">
                 <div className="profile-image">
-                  <img src={profile_image ? profile_image : profileImage} />
+                  <img src={false ? profile_image : profileImage} />
                 </div>
                 <div className="post-content">
                   <div className="user-info">
