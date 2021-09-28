@@ -5,14 +5,14 @@ import { connect } from 'react-redux'
 
 import Tweet from './Tweet';
 
-const TweetList = ({ dispatch, tweets, user }) => {
+const TweetList = ({ dispatch, tweets, user, following }) => {
 
 
 
   return (
     tweets.map((tweet, i) => {
       return (
-        <Tweet key={tweet.id} tweet={tweet} i={i} user={user}/>
+        <Tweet key={tweet.id} tweet={tweet} i={i} user={user} following={following}/>
       )
     })
   )
@@ -21,7 +21,8 @@ const TweetList = ({ dispatch, tweets, user }) => {
 const mapStateToProps = store => {
   return {
     tweets: store.tweet,
-    user: store.auth.user
+    user: store.auth.user,
+    following: store.following
   }
 }
 
