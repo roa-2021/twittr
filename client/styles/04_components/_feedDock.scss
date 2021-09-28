@@ -57,7 +57,7 @@
 .make-tweet-container {
   display: flex;
   flex-direction: row;
-  margin: 10px 0px;
+  margin: 0px 0px;
   padding: 0px 16px;
   height: 114px;
   border-bottom: #EEE solid 1px;
@@ -138,8 +138,8 @@
 .tweet-container{
   display: flex;
   flex-direction: row;
-  margin: 10px 0px;
-  padding: 0px 16px;
+  margin: 0px 0px;
+  padding: 5px 16px;
   min-height: 98px;
   border-bottom: #EEE solid 1px;
   transition-duration: 0.2s;
