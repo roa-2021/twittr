@@ -20,6 +20,7 @@ import { resetAppTHUNK } from '../actions/RESET_APP'
 
 import { checkAuth } from '../actions/authActions'
 
+
 function App({ auth, user, dispatch }) {
 
   useEffect(() => {
@@ -40,6 +41,7 @@ function App({ auth, user, dispatch }) {
   const allFunc = id => {
     console.log('running all func')
     if (id) {
+
       dispatch(getFollowersOfUserTHUNK(id))
       dispatch(retrieveCommentsTHUNK(id))
       dispatch(getWhoUserIsFollowingTHUNK(id))
@@ -59,6 +61,7 @@ function App({ auth, user, dispatch }) {
       <Route exact path="/" component={Landing} />
       <Route path="/home" component={Home} />
       <Route exact path="/logout" component={Logout} />
+       {/* <Route path='/home/profile' component={Profile} /> */}
 
       {/*<CardTestEnvironment />*/}
     </>

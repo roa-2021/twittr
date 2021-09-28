@@ -6,7 +6,7 @@ exports.seed = function(knex) {
       // Inserts seed entries
       return knex('follows').insert([
         {id: 1, followers: 1, following: 6},
-        {id: 2, followers: 1, following: 4},
+        {id: 2, followers: 1, following: 5},
         {id: 3, followers: 1, following: 4},
         {id: 4, followers: 2, following: 4},
         {id: 5, followers: 2, following: 1},
