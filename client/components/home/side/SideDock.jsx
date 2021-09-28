@@ -97,6 +97,36 @@ displayList = displayList.filter(instance => typeof instance != 'undefined')
             />
           </form>
         </div>
+       
+        <section className="sideDock--happening">
+          <header className="happening--header">
+            <h2 className="happening--title">Who to follow</h2>
+          </header>
+          <div className="happening--body">
+            {displayList.map(user => {
+              return (
+                <article className="happening--card">
+                  <div className="user-info--container">
+                    <img src={user.profile_image ? user.profile_image : profileImage}></img>
+                    <div className="happening--card__text-wrapper">
+                      <a href="">
+                        <h3>{user.name}</h3>
+                        <p>@{user.username}</p>
+                      </a>
+                    </div>
+                  </div>
+                  {/* <p onClick={() => unfollow(followed.following)}>unfollow</p> */}
+                  <button className="happening--card__follow-button" onClick={() => follow(user.followers)}>Follow</button>
+            </article>
+            )
+          })}
+          </div>
+         
+          <footer className="happening--footer">
+            <p className="happening--footer-text">Show more</p>
+          </footer>
+        </section>
+        {/* /// */}
         <section className="sideDock--happening">
           <header className="happening--header">
             <h2 className="happening--title">Who you're following</h2>
@@ -128,34 +158,6 @@ displayList = displayList.filter(instance => typeof instance != 'undefined')
               </article>
             )})}
           </div>
-          <footer className="happening--footer">
-            <p className="happening--footer-text">Show more</p>
-          </footer>
-        </section>
-        <section className="sideDock--happening">
-          <header className="happening--header">
-            <h2 className="happening--title">Who to follow</h2>
-          </header>
-          <div className="happening--body">
-            {displayList.map(user => {
-              return (
-                <article className="happening--card">
-                  <div className="user-info--container">
-                    <img src={user.profile_image ? user.profile_image : profileImage}></img>
-                    <div className="happening--card__text-wrapper">
-                      <a href="">
-                        <h3>{user.name}</h3>
-                        <p>@{user.username}</p>
-                      </a>
-                    </div>
-                  </div>
-                  {/* <p onClick={() => unfollow(followed.following)}>unfollow</p> */}
-                  <button className="happening--card__follow-button" onClick={() => follow(user.followers)}>Follow</button>
-            </article>
-            )
-          })}
-          </div>
-         
           <footer className="happening--footer">
             <p className="happening--footer-text">Show more</p>
           </footer>
