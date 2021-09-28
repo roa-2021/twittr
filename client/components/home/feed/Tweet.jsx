@@ -1,41 +1,36 @@
-import React, { useEffect, useState } from 'react'
-import { connect } from 'react-redux'
+import React, {useState} from 'react'
 
 import profileImage from '../../../styles/default-profile.png';
-// import meme from '../../../styles/meme.png'
 
 import { retrieveAUsersTweetsTHUNK } from '../../../actions/tweetsActions'
 import OptionsPersonalTweetCard from '../../cards/OptionsPersonalTweetCard';
 import ConfirmationDeleteTweetCard from '../../cards/ConfirmationDeleteTweetCard'
 
+const Tweet = ({tweet, i, user}) => {
 
-const Tweet = ({ dispatch, tweets, user }) => {
+    const { profile_image } = user
 
-  const { profile_image } = user
-
-  const [moreVisibility, setMoreVisibilty] = useState(false)
-  const [targetTweet, setTargetTweet] = useState(undefined)
-  const [delConfirmVisible, setDelConfirmVisible] = useState(false)
-
-  function toggleMore(e, i) {
-    setTargetTweet(e.target.id)
-    setMoreVisibilty(!moreVisibility)
-  }
-
-  function toggleDel() {
-    setDelConfirmVisible(!delConfirmVisible)
-  }
-
-  const shouldToggleMore = i => {
-    if (moreVisibility && i == targetTweet) {
-      return true
+    const [moreVisibility, setMoreVisibilty] = useState(false)
+    const [targetTweet, setTargetTweet] = useState(undefined)
+    const [delConfirmVisible, setDelConfirmVisible] = useState(false)
+  
+    function toggleMore(e, i) {
+      setTargetTweet(e.target.id)
+      setMoreVisibilty(!moreVisibility)
     }
-    return false
-  }
+  
+    function toggleDel() {
+      setDelConfirmVisible(!delConfirmVisible)
+    }
+  
+    const shouldToggleMore = i => {
+      if (moreVisibility && i == targetTweet) {
+        return true
+      }
+      return false
+    }
 
-  return (
-    tweets.map((tweet, i) => {
-      return (
+    return (
         <div key={i}>
           <div>
             <div className="tweet-container">
@@ -112,16 +107,7 @@ const Tweet = ({ dispatch, tweets, user }) => {
               <ConfirmationDeleteTweetCard i={tweet.id} toggleDel={toggleDel} />
             </div>}
         </div>
-      )
-    })
-  )
+    )
 }
 
-const mapStateToProps = store => {
-  return {
-    tweets: store.tweet,
-    user: store.auth.user
-  }
-}
-
-export default connect(mapStateToProps)(Tweet)
+export default Tweet
