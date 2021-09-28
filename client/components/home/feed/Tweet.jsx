@@ -42,13 +42,23 @@ const Tweet = ({ tweet, i, user, following }) => {
       userObj: authorObj ? authorObj : user
     }
 
+    const getImg = () => {
+      if (authorObj) {
+        return authorObj.profile_image
+      } else if (profile_image) {
+        return profile_image
+      } else {
+        return profileImage
+      }
+    }
+
     return (
         <div key={i}>
           <div>
             <div className="tweet-container">
               <div className="tweet">
                 <div className="profile-image">
-                  <img src={false ? profile_image : profileImage} />
+                  <img src={getImg()} />
                 </div>
                 <div className="post-content">
                   <div className="user-info">
