@@ -61,7 +61,7 @@ exports.seed = function(knex) {
           profile_image: '/images/kang-profile.png',
           varified: 'true',
           bio: 'you wan\'it you got\'it',
-          birthday: '06-04-1987 00:0000'
+          birthday: '06-04-1987 00:00'
         },
         {
           id: 6, 
@@ -72,7 +72,7 @@ exports.seed = function(knex) {
           profile_image: '/images/jordan-profile.png',
           varified: 'true',
           bio: '🗽🗽🗽🗽🗽🗽🗽🗽',
-          birthday: '06-04-1987 00:006'
+          birthday: '06-04-1987 00:06'
         }
       ].map(user => {
         return generateHash(user.password)
