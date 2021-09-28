@@ -21,7 +21,7 @@ export const deleteATweetAPI = tweetID => {
       .then(res => res.body)
 }
 
-export const getAllUsersFollowingTweets = userID => {
+export const getAllUsersFollowingTweetsAPI = userID => {
   return request
     .get(`/api/v1/tweets/following/${userID}`)
     .then(res => res.body)
