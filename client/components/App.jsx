@@ -17,14 +17,11 @@ import { retrieveAUsersTweetsTHUNK } from '../actions/tweetsActions'
 import { getAUsersDetailsTHUNK } from '../actions/userActions'
 import { resetAppTHUNK } from '../actions/RESET_APP'
 
-
 import { checkAuth } from '../actions/authActions'
 
-
-function App({ auth, user, dispatch }) {
-
+function App ({ auth, user, dispatch }) {
   useEffect(() => {
-    const confirmSuccess = () => { 
+    const confirmSuccess = () => {
     }
     dispatch(checkAuth(confirmSuccess))
     console.log('checking auth')
@@ -41,7 +38,6 @@ function App({ auth, user, dispatch }) {
   const allFunc = id => {
     console.log('running all func')
     if (id) {
-
       dispatch(getFollowersOfUserTHUNK(id))
       dispatch(retrieveCommentsTHUNK(id))
       dispatch(getWhoUserIsFollowingTHUNK(id))
@@ -61,9 +57,9 @@ function App({ auth, user, dispatch }) {
       <Route exact path="/" component={Landing} />
       <Route path="/home" component={Home} />
       <Route exact path="/logout" component={Logout} />
-       {/* <Route path='/home/profile' component={Profile} /> */}
+      {/* <Route path='/home/profile' component={Profile} /> */}
 
-      <CardTestEnvironment />
+      {/* <CardTestEnvironment /> */}
     </>
   )
 }

@@ -8,6 +8,7 @@
   .edit-profile-container__header-container {
     display: flex;
     flex-direction: row;
+    align-items: center;
     
     padding: 0 16px;
     height: 53px;
@@ -20,6 +21,8 @@
     }
 
     .edit-profile-container__header-text {
+      width: 100%;
+
       span {
         font-weight: 900;
         font-size: 1.25rem;
@@ -30,8 +33,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
-
+      
+      height: 30px;
+      padding: 0 16px;
+      border-radius: 50px;
       background-color: #0f1419;
+      
+
       .edit-profile-container__header-save-button-text {
         span {
           color: #fff;
@@ -43,14 +51,54 @@
   }
 
   .edit-profile-container__banner-container {
+    width: 100%;
+    height: 200px;
+    max-height: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     .edit-profile-container__banner-img {
-      
+      background-color: gray;
+    }
+    .edit-profile-container__banner-svg-container {
+      position: absolute;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      svg {
+        width: 20px;
+      }
     }
   }
 
   .edit-profile-container__profilePic-container {
-    .edit-profile-container__profilePic-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 116px;
+    height: 116px;
+    margin-top: -45px;
+    margin-left: 15px;
 
+    border-radius: 2px;
+    border-color: #fff;
+
+    .edit-profile-container__profilePic-img {
+      background-color: gray;
+    }
+    .edit-profile-container__profilePic-svg-container {
+      position: absolute;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      svg {
+        width: 20px;
+      }
     }
   }
 

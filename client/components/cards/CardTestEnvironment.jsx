@@ -10,12 +10,8 @@ import OptionsFollowingTweetCard from './OptionsFollowingTweetCard'
 import OptionsPersonalTweetCard from './OptionsPersonalTweetCard'
 import OptionsTrendCard from './OptionsTrendCard'
 import OptionsSideBarMoreCard from './OptionsSideBarMoreCard'
-<<<<<<< HEAD
 import ConfirmationUnfollowUserCard from './ConfirmationUnfollowUserCard'
-||||||| parent of 6775125 (wip of edit profile card)
-=======
 import EditProfileCard from './EditProfileCard'
->>>>>>> 6775125 (wip of edit profile card)
 
 const CardTestEnvironment = () => {
   return (
