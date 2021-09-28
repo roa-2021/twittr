@@ -6,7 +6,7 @@
   "main": "server/index.js",
   "engines": {
     "node": "14.x"
-},
+  },
   "scripts": {
     "build": "run-p build:client build:server",
     "build:client": "npm run webpack -- --mode production",

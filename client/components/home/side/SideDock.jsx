@@ -12,6 +12,11 @@ const SideDock = ({ followers, following }) => {
 
   const [moreVisibilty, setMoreVisibilty] = useState(false)
 
+  const unfollow = (id) => {
+    
+    console.log('unfollow user ', id)
+  }
+
   function toggleMore() {
     setMoreVisibilty(!moreVisibilty)
   }
@@ -55,10 +60,20 @@ const SideDock = ({ followers, following }) => {
             <h2 className="happening--title">What's Happening</h2>
           </header>
           <ul>
+          {/* const newTo = {
+                pathname: '/home/profile/',
+                userObj: user
+            } */}
+
             {followers.map(follower => {
-              return <Link to={`/Home/profile/${follower.followers}`} key={follower.id}>{follower.name}</Link>
-              //  console.log(follower.followers, follower.name)
+              return (
+              
+                <Link to={{ pathname: '/home/profile/', userObj:follower}}>{follower.name}</Link>
+               
+              )
+              //  console.log(follower)
             })}
+
           </ul>
           <div className="happening--body">
             <article className="happening--card">
@@ -89,8 +104,13 @@ const SideDock = ({ followers, following }) => {
             </article>
           </div>
           {following.map(followed => {
-              return <Link to={`/Home/profile/${followed.following}`} key={followed.id}>{followed.name}</Link>
-              //  console.log(followed.following, followed.name)
+              return (
+              <>
+                <Link to={{ pathname: '/home/profile/', userObj:followed}}>{followed.name}</Link>
+                <p onClick={() => unfollow(followed.following)}>unfollow</p>
+             </>  
+              )
+              //  console.log(follower)
             })}
           <footer className="happening--footer">
             <p className="happening--footer-text">Show more</p>
