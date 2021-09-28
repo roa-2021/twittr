@@ -26,3 +26,25 @@ export const getAllUsersFollowingTweetsAPI = userID => {
     .get(`/api/v1/tweets/following/${userID}`)
     .then(res => res.body)
 }
+export const addLikeAPI = tuID =>{
+  return request
+        .post('/api/v1/tweets/like')
+        .send(tuID)
+        .then(res=>res.body)
+}
+
+
+export const updateLikeAPI = tuID =>{
+  return request
+        .patch('/api/v1/tweets/like')
+        .send(tuID)
+        .then(res=>res.body)
+}
+
+export const updateUnLikeAPI = tuID =>{
+  return request
+        .patch('/api/v1/tweets/unlike')
+        .send(tuID)
+        .then(res=>res.body)
+}
+

@@ -23,12 +23,13 @@ const PostTweet = ({ dispatch, user }) => {
     content: formContent,
     like_count: 0,
     retweet_count: 0,
-    quote_count: 0
+    quote_count: 0,
+    likesNum:0,
+    isliked:false,
   }
 
   const postATweet = (e, tweet) => {
     e.preventDefault()
-    console.log('posting tweet: ', tweet)
     dispatch(createANewTweetTHUNK(tweet))
     setFormContent('')
   }

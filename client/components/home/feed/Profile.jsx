@@ -7,7 +7,6 @@ import EditProfileCard from '../../cards/EditProfileCard'
 
 const Profile = (props, tweet) => {
   // failsafe by pulling in store and render that user if userObj doesnt exist
-  console.log(tweet)
 
   const userObj = props.location.userObj
   const { name, profile_image, username, bio, followingNum, followerNum } = userObj

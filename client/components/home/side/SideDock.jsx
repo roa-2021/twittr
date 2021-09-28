@@ -32,7 +32,6 @@ const SideDock = ({ followers, following, dispatch, user }) => {
 
   //
   const unfollow = id => {
-    console.log('unfollow user ', id)
     //dispatch
     //thunk (remove from db)
     //dispatch new action (add to followers/following)
@@ -158,6 +157,15 @@ displayList = displayList.filter(instance => typeof instance != 'undefined')
               </article>
             )})}
           </div>
+          {following.map(followed => {
+              return (
+              <>
+                <Link to={{ pathname: '/home/profile/', userObj:followed}}>{followed.name}</Link>
+                <p onClick={() => unfollow(followed.following)}>unfollow</p>
+             </>  
+              )
+              //  console.log(follower)
+            })}
           <footer className="happening--footer">
             <p className="happening--footer-text">Show more</p>
           </footer>

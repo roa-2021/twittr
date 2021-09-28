@@ -12,7 +12,6 @@ const LoginPanel = () => {
   // const btnCloseLoginModal = document.querySelector('.loginModal')
 
   // const btnOpenLoginModal = document.querySelectorAll('.openLoginModal')
-  // console.log(btnOpenLoginModal)
   // const openLoginModal = function () {
   //   loginModal.classList.remove('hidden')
   //   overlay.classList.remove('hidden')

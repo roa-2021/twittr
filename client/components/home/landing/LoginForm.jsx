@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { useHistory } from 'react-router'
 import { loginError, registerUserRequest } from '../../../actions/authActions'
-// import DatePicker from "react-datepicker";
-// import "react-datepicker/dist/react-datepicker.css";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const LoginForm = props => {
   const { auth, dispatch, user, togglePopupVis } = props
