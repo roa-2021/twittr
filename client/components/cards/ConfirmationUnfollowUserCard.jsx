@@ -24,7 +24,7 @@ const ConfirmationUnfollowUserCard = ({ toggleUnfollowCardVis, followers, follow
         Their Tweets will no longer show up in your home timeline. You can still view their profile, unless their Tweets are protected.
         </span>
       </div>
-      <Link to="/home">
+      <Link to="/">
         <div onClick={() => unfollow(followers, following)} className="popup-card-container__dark-button">
           <span>Unfollow</span>
         </div>

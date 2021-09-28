@@ -37,8 +37,8 @@ const Following = ({user, following}) => {
         </div>
       </div>
       <div className="follow-menu-cont">
-      <button><Link to="/home/followers">Followers</Link></button>
-      <button><Link to="/home/following">Following</Link></button>
+      <button><Link to="/followers">Followers</Link></button>
+      <button><Link to="/following">Following</Link></button>
       </div>
 
       {following.map(user => {

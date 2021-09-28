@@ -14,12 +14,12 @@ const FeedDock = () => {
     <>
       <section className="feed-panel">
         {/* <Profile /> */}
-        <Route path='/home/followers' component={Followers} />
-        <Route path='/home/following' component={Following} />
-        <Route path='/home/profile' component={Profile} />
-        <Route exact path='/home' component={HomeHeader} />
-        <Route exact path='/home' component={PostTweet} />
-        <Route exact path='/home' component={TweetList} />
+        <Route path='/followers' component={Followers} />
+        <Route path='/following' component={Following} />
+        <Route path='/profile' component={Profile} />
+        <Route exact path='/' component={HomeHeader} />
+        <Route exact path='/' component={PostTweet} />
+        <Route exact path='/' component={TweetList} />
         {/* <Wtf /> */}
       </section>
     </>

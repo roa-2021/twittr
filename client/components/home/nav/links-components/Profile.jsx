@@ -6,7 +6,7 @@ const Profile = ({ user }) => {
   // const profileID = auth.user.id
 
   const newTo = {
-    pathname: '/home/profile/',
+    pathname: '/profile/',
     userObj: user
   }
   return (

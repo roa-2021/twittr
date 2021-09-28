@@ -70,13 +70,13 @@ const Profile = (props, tweet) => {
           <p>Joined December 2020</p>
         </div>
         <div className="profile-follows">
-          <Link to="/home/following">
+          <Link to="/following">
             <p>
               <span>{followingNum} </span>
               Following
             </p>
           </Link>
-          <Link to="/home/followers">
+          <Link to="/followers">
             <p>
               <span>{followerNum} </span>
               Followers

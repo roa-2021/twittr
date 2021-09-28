@@ -12,12 +12,12 @@ const ConfirmationSaveNewTweetDraftCard = () => {
           You can save this to send later from your unsent Tweets. 
         </span>
       </div>
-      <Link to="/home">
+      <Link to="/">
         <div className="popup-card-container__dark-button">
           <span>Save</span>
         </div>
       </Link>
-      <Link to="/home">
+      <Link to="/">
         <div className="popup-card-container__light-button">
           <span>Discard</span>
         </div>
