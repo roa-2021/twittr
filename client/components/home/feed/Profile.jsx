@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import profileImage from '../../../styles/default-profile.png'
-
+import EditProfileCard from '../../cards/EditProfileCard'
 
 const Profile = (props) => {
   // failsafe by pulling in store and render that user if userObj doesnt exist
@@ -9,8 +9,20 @@ const Profile = (props) => {
   console.log(userObj)
   const { name, profile_image, username, bio, followingNum, followerNum } = userObj
 
+  const [editProfileCardVis, setEditProfileCardVis] = useState(false)
+
+  const toggleEditProfileCardVis = () => {
+    setEditProfileCardVis(!editProfileCardVis)
+  }
+
   return (
     <div className="feed-panel-container">
+      {
+        editProfileCardVis && 
+        <div className="popup-card-overlay">
+          <EditProfileCard toggleEditProfileCardVis={toggleEditProfileCardVis}/>
+        </div>
+        }
       <div className="profile-container">
         <div className="profile-header">
           <div className="profile-header-content">
@@ -32,7 +44,7 @@ const Profile = (props) => {
       <div className="profile-card-container">
         <div className="img-and-settings">
           <img src={profile_image ? profile_image : profileImage}></img>
-          <button>Set up profile</button>
+          <button onClick={toggleEditProfileCardVis}>Set up profile</button>
         </div>
         <h1>{name}</h1>
         <p>@{username}</p>
