@@ -1,7 +1,6 @@
 // Home bar
 
 .feed-panel-container {
-  z-index: 1;
   position: relative;
   margin-bottom: 63px;
 }
@@ -299,6 +298,12 @@
     border-radius: 50%;
     transition-duration: 0.2s;
   }
+  p {
+    align-self: center;
+    height: auto;
+    width: auto;
+    margin-left: -45px;
+  }
 }
 
 //profile
@@ -441,7 +446,7 @@
     background-color: #fff;
   }
   button:hover {
-    border-bottom: 2px solid blue;
+    border-bottom: 2px solid #1c9bef;
   }
 }
 

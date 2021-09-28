@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
@@ -10,7 +10,39 @@ import CardTestEnvironment from './cards/CardTestEnvironment'
 import LoginTrueForm from './home/landing/LoginTrueForm'
 import LoginForm from './home/landing/LoginForm'
 
-function App ({ dispatch }) {
+import { retrieveCommentsTHUNK } from '../actions/commentsAction'
+import { getFollowersOfUserTHUNK } from '../actions/followersActions'
+import { getWhoUserIsFollowingTHUNK } from '../actions/followingActions'
+import { retrieveAUsersTweetsTHUNK } from '../actions/tweetsActions'
+import { getAUsersDetailsTHUNK } from '../actions/userActions'
+import { resetAppTHUNK } from '../actions/RESET_APP'
+
+import { checkAuth } from '../actions/authActions'
+
+function App ({ auth, user, dispatch }) {
+  useEffect(() => {
+    const confirmSuccess = () => {
+    }
+    dispatch(checkAuth(confirmSuccess))
+  }, [])
+
+  useEffect(() => {
+    if (auth.isAuthenticated === true) {
+      const id = user.id
+      allFunc(id)
+    }
+  }, [auth])
+
+  const allFunc = id => {
+    if (id) {
+      dispatch(getFollowersOfUserTHUNK(id))
+      dispatch(retrieveCommentsTHUNK(id))
+      dispatch(getWhoUserIsFollowingTHUNK(id))
+      dispatch(getAUsersDetailsTHUNK(id))
+      dispatch(retrieveAUsersTweetsTHUNK(id))
+    }
+  }
+
   return (
     <>
       {/* <LoginForm /> */}
@@ -20,10 +52,11 @@ function App ({ dispatch }) {
       {/* <Logout /> */}
 
       <Route exact path="/" component={Landing} />
-      <Route exact path="/home" component={Home} />
+      <Route path="/home" component={Home} />
       <Route exact path="/logout" component={Logout} />
+      {/* <Route path='/home/profile' component={Profile} /> */}
 
-      {/*<CardTestEnvironment />*/}
+      {/* <CardTestEnvironment /> */}
     </>
   )
 }

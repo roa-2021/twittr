@@ -1,11 +1,20 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 import { Link } from 'react-router-dom'
 import { logOff } from 'authenticare/client'
 
 import { IfAuthenticated, IfNotAuthenticated } from '../home/Authenticated'
 
-const LogoutCard = () => {
+import { resetAppTHUNK } from '../../actions/RESET_APP'
+
+const LogoutCard = ({ dispatch, history }) => {
+  const handleLogout = () => {
+    dispatch(resetAppTHUNK())
+    dispatch(logOff())
+    
+  }
+
   return (
     <div className="popup-card-container">
       <div className="logout-logo-svg">
@@ -29,8 +38,8 @@ const LogoutCard = () => {
         </span>
       </div>
       <IfAuthenticated>
-        <Link to="/" onClick={logOff}>
-          <div className="popup-card-container__dark-button">
+        <Link to="/">
+          <div className="popup-card-container__dark-button" onClick={handleLogout}>
             <span>Log out</span>
           </div>
         </Link>
@@ -44,4 +53,4 @@ const LogoutCard = () => {
   )
 }
 
-export default LogoutCard
+export default connect()(LogoutCard)

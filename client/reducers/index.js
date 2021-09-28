@@ -13,5 +13,5 @@ export default combineReducers({
   auth: authReducer,
   followers: followersReducer,
   following: followingReducer,
-  comments: commentsReducer
+  comments: commentsReducer,
 })

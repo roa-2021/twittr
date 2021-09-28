@@ -3,10 +3,10 @@ import { connect } from 'react-redux'
 
 import profileImage from '../../../styles/default-profile.png';
 
-import { createANewTweetTHUNK, retrieveAUsersTweetsTHUNK, removeATweetByIDTHUNK } from '../../../actions/tweetsActions'
+import { createANewTweetTHUNK} from '../../../actions/tweetsActions'
 
-
-const PostTweet = ({ dispatch , user }) => {
+const PostTweet = ({ dispatch, user }) => {
+  const {profile_image} = user
   const [formContent, setFormContent] = useState('')
 
   const changeHandler = (e) => {
@@ -17,14 +17,19 @@ const PostTweet = ({ dispatch , user }) => {
 
   const tweet = {
     publisher: user.id,
-    // publisher_name: user.name,
+    name: user.name,
+    username:user.username,
     publish_time: timestamp.toLocaleString('en-NZ'),
     content: formContent,
+    like_count: 0,
+    retweet_count: 0,
+    quote_count: 0,
+    likesNum:0,
+    isliked:false,
   }
 
   const postATweet = (e, tweet) => {
     e.preventDefault()
-    console.log('posting tweet: ', tweet)
     dispatch(createANewTweetTHUNK(tweet))
     setFormContent('')
   }
@@ -34,7 +39,7 @@ const PostTweet = ({ dispatch , user }) => {
       <div className="make-tweet-card">
         <div className="make-tweet-container">
           <div className="profile-image">
-            <img src={profileImage} />
+            <img src={profile_image ? profile_image : profileImage} />
           </div>
           <div className="tweet-content">
             <form onSubmit={(e) => postATweet(e, tweet)}>
@@ -104,7 +109,7 @@ const PostTweet = ({ dispatch , user }) => {
 
 const mapStateToProps = state => {
   return {
-    user: state.user,
+    user: state.auth.user,
   }
 }
 

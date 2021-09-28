@@ -1,15 +1,12 @@
-import React, { useEffect } from 'react'
-import { connect } from 'react-redux'
+import React from 'react'
 import profileImage from '../../../styles/default-profile.png'
 
-import { getAUsersDetailsTHUNK } from '../../../actions/userActions'
 
-const Profile = ({ dispatch, user }) => {
-  const userId = 1
-
-  useEffect(() => {
-    dispatch(getAUsersDetailsTHUNK(userId))
-  }, [])
+const Profile = (props) => {
+  // failsafe by pulling in store and render that user if userObj doesnt exist
+  
+  const userObj = props.location.userObj
+  const { name, profile_image, username, bio, followingNum, followerNum } = userObj
 
   return (
     <div className="feed-panel-container">
@@ -24,7 +21,7 @@ const Profile = ({ dispatch, user }) => {
               </svg>
             </div>
             <a href="#">
-              <h2 className="profile-username">{user.name}</h2>
+              <h2 className="profile-username">{name}</h2>
               <p className="tweet-count">6 Tweets</p>
             </a>
           </div>
@@ -33,13 +30,13 @@ const Profile = ({ dispatch, user }) => {
       <div className="user-banner"></div>
       <div className="profile-card-container">
         <div className="img-and-settings">
-          <img src={profileImage}></img>
+          <img src={profile_image ? profile_image : profileImage}></img>
           <button>Set up profile</button>
         </div>
-        <h1>{user.name}</h1>
-        <p>@{user.username}</p>
+        <h1>{name}</h1>
+        <p>@{username}</p>
         {/* Bio Div needed */}
-        <p>{user.bio}</p>
+        <p>{bio}</p>
         <div className="joined">
           <svg viewBox="0 0 24 24" aria-hidden="true" className="calender">
             <g>
@@ -58,10 +55,10 @@ const Profile = ({ dispatch, user }) => {
         </div>
         <div className="profile-follows">
           <p>
-            <span>{user.followingNum} </span>Following
+            <span>{followingNum} </span>Following
           </p>
           <p>
-            <span>{user.followerNum} </span>Followers
+            <span>{followerNum} </span>Followers
           </p>
         </div>
       </div>
@@ -75,6 +72,4 @@ const Profile = ({ dispatch, user }) => {
   )
 }
 
-const mapStateToProps = store => ({ user: store.user })
-
-export default connect(mapStateToProps)(Profile)
+export default Profile

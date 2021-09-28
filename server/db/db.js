@@ -7,6 +7,12 @@ function getUser(userID)
   .where('id',userID)
 }
 
+function getUserNameByID(userID)
+{
+  return db('users')
+  .where('id',userID)
+  .select('name','username')
+}
 
 function updateUser(userID,newUser)
 {
@@ -19,7 +25,18 @@ function updateUser(userID,newUser)
 function getTweets(userID)
 {
   return db('tweets')
+  .join('users','users.id','tweets.publisher')
   .where('publisher',userID)
+  .select('tweets.id',
+  'tweets.publisher',
+  'tweets.publish_time',
+  'tweets.content',
+  'tweets.like_count',
+  'tweets.quote_count',
+  'tweets.retweet_count',
+  'users.name',
+  'users.username'
+  )
 }
 
 function getTweetByID(tweetID)
@@ -31,7 +48,14 @@ function getTweetByID(tweetID)
 function createTweet(tweet)
 {
   return db('tweets')
-  .insert(tweet)
+  .insert({
+    publisher:tweet.publisher,
+    publish_time:tweet.publish_time,
+    content:tweet.content,
+    like_count:tweet.like_count,
+    quote_count:tweet.quote_count,
+    retweet_count:tweet.retweet_count,
+  })
 }
 
 function deleteTweet(tweetID)
@@ -105,27 +129,59 @@ function createComment(comment)
 function getLikes(tweetID)
 {
   return db('like')
-  .count('like as likesNum')
+  .count('id as likesNum')
   .where(
-  {tweet_id:tweetID,
-    like:true
-  })
+  {tweet_id:tweetID,})
 }
 
 function isLiked(tweetID,userID)
 {
   return db('like')
-  .count('')
+  .count('id as isliked')
   .where(
   {tweet_id:tweetID,
     user_id:userID,
-    like:true
   })
+}
+
+
+function likeInsert(tweet)
+{
+  return db('like')
+  .insert({
+    tweet_id:tweet.id,
+    user_id:tweet.user_id,
+  })
+}
+
+function likeUpdate(tweet)
+{
+  return db('like')
+  .update('like.like',true)
+  .where(
+    {
+      tweet_id:tweet.id,
+      user_id:tweet.user_id,
+    }
+  )
+}
+
+function unlikeUpdate(tweet)
+{
+  return db('like')
+  .update('like.like',false)
+  .where(
+    {
+      tweet_id:tweet.id,
+      user_id:tweet.user_id,
+    }
+  )
 }
 
 //export********************************************
 module.exports = {
   getUser,
+  getUserNameByID,
   updateUser,
   getTweets,
   getTweetByID,
@@ -141,4 +197,7 @@ module.exports = {
   getFollowerNum,
   getLikes,
   isLiked,
+  likeInsert,
+  likeUpdate,
+  unlikeUpdate,
 }

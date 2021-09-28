@@ -32,8 +32,15 @@ const LoginPanel = () => {
   //   }
 
   /////////
-  const [loginToggle, handleLoginToggle] = useState('hide-login')
-  const [registerToggle, handleRegisterToggle] = useState('hide-register')
+  const [popupVisReg, setPopupVisReg] = useState(false)
+  const [popupVisLog, setPopupVisLog] = useState(false)
+
+  function toggleRegPopupVis () {
+    setPopupVisReg (!popupVisReg)
+  }
+  function toggleLogPopupVis () {
+    setPopupVisLog (!popupVisLog)
+  }
 
   return (
     <div className="login-panel">
@@ -45,12 +52,12 @@ const LoginPanel = () => {
       <h1>Happening now</h1>
       <h2>Join Twitter today.</h2>
       <div className="login-buttons">
-        <button onClick={() => handleRegisterToggle('show-register')}>
+        <button onClick={toggleRegPopupVis}>
           Sign up with Apple
         </button>
         <button
           className="login"
-          onClick={() => handleRegisterToggle('show-register')}
+          onClick={toggleRegPopupVis}
         >
           Sign up with phone or email
         </button>
@@ -68,15 +75,27 @@ const LoginPanel = () => {
         <span
           className="login-anchor"
           href=""
-          onClick={() => handleLoginToggle('show-login')}
+          onClick={toggleLogPopupVis}
         >
           Sign in
         </span>
       </p>
       {/* //toggle login and register */}
-      {loginToggle == 'show-login' && <LoginTrueForm show={true} />}
-      {registerToggle == 'show-register' && <LoginForm show={true} />}
+      {/* {loginToggle == 'show-login' && <LoginTrueForm show={true} />}
+      {registerToggle == 'show-register' && <LoginForm show={true} />} */}
       {/* <div className="overlay hidden"></div> */}
+      {
+        popupVisReg && 
+        <div className="popup-card-overlay">
+          <LoginForm togglePopupVis={toggleRegPopupVis} />
+        </div>
+      }
+      {
+        popupVisLog && 
+        <div className="popup-card-overlay">
+          <LoginTrueForm togglePopupVis={toggleLogPopupVis} />
+        </div>
+      }
     </div>
   )
 }

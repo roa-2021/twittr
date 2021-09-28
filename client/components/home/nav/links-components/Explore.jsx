@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Explore = () => {
   return (
     <div>
-      <a>
+      <Link to="/home">
         <div className="link-button explore-button">
           <div className="explore-button svg-container">
             <svg
@@ -22,7 +23,7 @@ const Explore = () => {
             <span>Explore</span>
           </div>
         </div>
-      </a>
+      </Link>
     </div>
   )
 }
