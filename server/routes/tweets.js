@@ -26,6 +26,8 @@ router.get('/following/:id', (req, res) => {
   const userID = req.params.id
   
   let output = []
+  db.getTweets(userID)
+    .then(usersTweets => output.push(...usersTweets))
   db.getFollowing(userID)
     .then(followingArr => {
         var promises = followingArr.map(personBeingFollowed => {
