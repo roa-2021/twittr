@@ -3,7 +3,9 @@ import { connect } from 'react-redux'
 import profileImage from '../../../styles/default-profile.png'
 
 
+
 import OptionsSideBarMoreCard from '../../cards/OptionsSideBarMoreCard'
+
 
 const SideDock = ({ followers, following }) => {
   const [moreVisibilty, setMoreVisibilty] = useState(false)
@@ -61,6 +63,12 @@ const SideDock = ({ followers, following }) => {
           <header className="happening--header">
             <h2 className="happening--title">Who you're following</h2>
           </header>
+          <ul>
+            {followers.map(follower => {
+              return <Link to={`/Home/profile/${follower.followers}`} key={follower.id}>{follower.name}</Link>
+              //  console.log(follower.followers, follower.name)
+            })}
+          </ul>
           <div className="happening--body">
             {following.map(user => {
               return (
@@ -104,6 +112,10 @@ const SideDock = ({ followers, following }) => {
             )
           })}
           </div>
+          {following.map(followed => {
+              return <Link to={`/Home/profile/${followed.following}`} key={followed.id}>{followed.name}</Link>
+              //  console.log(followed.following, followed.name)
+            })}
           <footer className="happening--footer">
             <p className="happening--footer-text">Show more</p>
           </footer>
@@ -128,9 +140,11 @@ const SideDock = ({ followers, following }) => {
 function mapStateToProps(state) {
   return {
     user: state.user,
+
     followers: state.followers,
     following: state.following
   }
 }
 
 export default connect(mapStateToProps)(SideDock)
+

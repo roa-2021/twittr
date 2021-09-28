@@ -12,6 +12,7 @@ const LogoutCard = ({ dispatch, history }) => {
   const handleLogout = () => {
     dispatch(resetAppTHUNK())
     dispatch(logOff())
+    
   }
 
   return (

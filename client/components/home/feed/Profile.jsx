@@ -1,9 +1,12 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import profileImage from '../../../styles/default-profile.png'
 
-const Profile = ({ user }) => {
-  const { name, username, bio, followerNum, followingNum, profile_image  } = user
+
+const Profile = (props) => {
+  // failsafe by pulling in store and render that user if userObj doesnt exist
+
+  const userObj = props.location.userObj
+  const { name, profile_image, username, bio, followingNum, followerNum } = userObj
 
   return (
     <div className="feed-panel-container">
@@ -69,10 +72,4 @@ const Profile = ({ user }) => {
   )
 }
 
-function mapStateToProps(state) {
-  return {
-    user: state.user,
-  }
-}
-
-export default connect(mapStateToProps)(Profile)
+export default Profile
