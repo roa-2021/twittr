@@ -44,7 +44,7 @@ const LogoutCard = ({ dispatch, history }) => {
           </div>
         </Link>
       </IfAuthenticated>
-      <Link to="/home">
+      <Link to="/">
         <div className="popup-card-container__light-button">
           <span>Cancel</span>
         </div>

@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import Landing from './home/landing/Landing'
 import Home from './home/Home'
 import Logout from './home/Logout'
+
+import { IfAuthenticated, IfNotAuthenticated } from './home/Authenticated'
+import { isAuthenticated } from '../utils/auth'
 
 import CardTestEnvironment from './cards/CardTestEnvironment'
 import LoginTrueForm from './home/landing/LoginTrueForm'
@@ -19,7 +22,7 @@ import { resetAppTHUNK } from '../actions/RESET_APP'
 
 import { checkAuth } from '../actions/authActions'
 
-function App ({ auth, user, dispatch }) {
+function App({ auth, user, dispatch }) {
   useEffect(() => {
     const confirmSuccess = () => {
     }
@@ -53,10 +56,14 @@ function App ({ auth, user, dispatch }) {
 
       {/* <Home /> */}
       {/* <Logout /> */}
-
-      <Route exact path="/" component={Landing} />
-      <Route path="/home" component={Home} />
-      <Route exact path="/logout" component={Logout} />
+      <IfAuthenticated>
+        <Switch>
+          <Route exact path="/logout" component={Logout} />
+          <Route path="/" component={Home} />
+        </Switch>
+      </IfAuthenticated>
+      <IfNotAuthenticated><Route exact path="/" component={Landing} />
+      </IfNotAuthenticated>
       {/* <Route path='/home/profile' component={Profile} /> */}
 
       {/* <CardTestEnvironment /> */}

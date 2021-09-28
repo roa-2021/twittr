@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Explore = () => {
   return (
     <div>
-      <Link to="/home">
+      <Link to="/">
         <div className="link-button explore-button">
           <div className="explore-button svg-container">
             <svg

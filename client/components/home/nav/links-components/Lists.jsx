@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Lists = () => {
   return (
     <div>
-      <Link to="/home">
+      <Link to="/">
         <div className="link-button lists-button">
           <div className="lists-button svg-container">
             <svg

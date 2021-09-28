@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Home = () => {
   return (
     <div>
-      <Link to="/home">
+      <Link to="/">
         <div className="link-button home-button">
           <div className="home-button svg-container">
             <svg

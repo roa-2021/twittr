@@ -25,7 +25,7 @@ const ConfirmationDeleteTweetCard = ({ dispatch, i, toggleDel }) => {
           This can’t be undone and it will be removed from your profile, the timeline of any accounts that follow you, and from Twitter search results.
         </span>
       </div>
-      <Link to="/home">
+      <Link to="/">
       <div className="popup-card-container__red-button" onClick={() => deleteTweet(i)}>
       <span>Delete</span>
       </div>

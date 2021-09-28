@@ -30,7 +30,7 @@ const LoginTrueForm = props => {
     e.preventDefault()
     // props.history.push('/listings')
     const confirmSuccess = () => {
-      history.push('/home')
+      history.push('/')
     }
     dispatch(loginUser(formData, confirmSuccess))
   }

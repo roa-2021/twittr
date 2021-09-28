@@ -12,12 +12,12 @@ const ConfirmationDiscardNewTweetDraftCard = () => {
           This can't be undone and you'll lose your draft.
         </span>
       </div>
-      <Link to="/home">
+      <Link to="/">
         <div className="popup-card-container__red-button">
           <span>Discard</span>
         </div>
       </Link>
-      <Link to="/home">
+      <Link to="/">
         <div className="popup-card-container__light-button">
           <span>Cancel</span>
         </div>

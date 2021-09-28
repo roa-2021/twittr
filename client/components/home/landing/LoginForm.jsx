@@ -44,7 +44,7 @@ const LoginForm = props => {
     } else {
 
       const confirmSuccess = id => {
-        history.push(`/home`)
+        history.push(`/`)
       }
       formData.birthday=Birthday
       const userInfo = { ...formData }

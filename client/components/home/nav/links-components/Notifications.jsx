@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Notifications = () => {
   return (
     <div>
-      <Link to="/home">
+      <Link to="/">
         <div className="link-button notifications-button">
           <div className="notifications-button svg-container">
             <svg
