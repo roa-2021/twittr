@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import profileImage from '../../../styles/default-profile.png';
 
-import { createANewTweetTHUNK, retrieveAUsersTweetsTHUNK, removeATweetByIDTHUNK } from '../../../actions/tweetsActions'
+import { createANewTweetTHUNK} from '../../../actions/tweetsActions'
 
 const PostTweet = ({ dispatch, user }) => {
   const {profile_image} = user
@@ -17,7 +17,8 @@ const PostTweet = ({ dispatch, user }) => {
 
   const tweet = {
     publisher: user.id,
-    // publisher_name: user.name,
+    name: user.name,
+    username:user.username,
     publish_time: timestamp.toLocaleString('en-NZ'),
     content: formContent,
     like_count: 0,
