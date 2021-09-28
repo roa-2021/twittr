@@ -14,8 +14,11 @@ export const userFollowAPI = (userId, followingId) => {
 }
 
 export const userUnfollowAPI = (userId, followingId) => {
+   
     return request
         .del(`/api/v1/following/${userId}`)
         .send({followingId})
         .then(res => res.body)
+        
 }
+

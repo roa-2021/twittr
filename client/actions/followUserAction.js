@@ -2,7 +2,7 @@
 // ---- CASE ----
 export const FOLLOW_USER_CASE = 'FOLLOW_USER'
 
-import { userFollowAPI } from "../apis/followingAPI"
+import { userFollowAPI, userUnfollowAPI } from "../apis/followingAPI"
 import { getWhoUserIsFollowingTHUNK } from '../actions/followingActions'
 import { getFollowersOfUserTHUNK} from '../actions/followersActions'
 // ---- ACTION ----
@@ -17,7 +17,7 @@ export const followUser = (followers,following) => {
 
 export const addFollowing = (followers, following) => {
     return dispatch => {
-        userFollowAPI(followers,following).then(res => {
+        userFollowAPI(followers, following).then(res => {
         //    dispatch(getWhoUserIsFollowingTHUNK())
         //     dispatch(getFollowersOfUserTHUNK())
         // change the redux here
@@ -33,12 +33,40 @@ export const addFollowing = (followers, following) => {
     }
 }
 
-// addATweetAPI(newTweet)
-//     .then(res => {
-//       const createdTweetId = res[0]
-//       const createdTweetObj = {
-//         id: createdTweetId,
-//         ...newTweet
-//       }
-//       dispatch(storeTweetACTION([createdTweetObj]))
+// export const removeFollowing = (followers, following) => {
+//  //
+//  return dispatch => {
+//   userFollowAPI(followers, following).then(res => {
+//   return dispatch => {
+//     userUnfollowAPI(followers, following).then(res => {
+//       //
+//       dispatch(getWhoUserIsFollowingTHUNK(followers))
+//       dispatch(getFollowersOfUserTHUNK(followers))
 //     })
+//   }
+// }
+
+export const removeFollowing = (followers, following) => {
+  console.log(followers,following)
+  return dispatch => {
+    userUnfollowAPI(followers, following).then(res => {
+      // console.log(res)
+      // const removeTweet = res;
+        // userUnfollowAPI
+      dispatch(getWhoUserIsFollowingTHUNK(followers))
+      dispatch(getFollowersOfUserTHUNK(followers))
+
+      })
+  }
+}
+
+// export const removeATweetByIDTHUNK = id => {
+//   return dispatch => {
+//     deleteATweetAPI(id)
+//     .then(res => {
+//       const removedTweet = res
+//       dispatch(deleteTweetACTION(id))
+//     })
+//     // .catch(err => console.log(err))
+//   }
+// }

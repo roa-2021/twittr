@@ -12,10 +12,10 @@ import ConfirmationUnfollowUserCard from '../../cards/ConfirmationUnfollowUserCa
 const SideDock = ({ followers, following, dispatch, user }) => {
   const [moreVisibilty, setMoreVisibilty] = useState(false)
   const [isFollowing, setFollowing] = useState(true)
-  const [unfollowCardVis, setUnfollowCardVis] = useState(false)
+  const [unfollowCardVis, setUnfollowCardVis] = useState([false, 0])
 
-  function toggleUnfollowCardVis() {
-    setUnfollowCardVis(!unfollowCardVis)
+  function toggleUnfollowCardVis(followingID) {
+    setUnfollowCardVis([!unfollowCardVis[0], followingID])
   }
 
   function toggleFollowingHover(e) {
@@ -61,9 +61,9 @@ displayList = displayList.filter(instance => typeof instance != 'undefined')
     <div className="sideDock-container">
       <div className="sideDock">
       {
-        unfollowCardVis && 
+        unfollowCardVis[0] && 
           <div className="popup-card-overlay">
-            <ConfirmationUnfollowUserCard toggleUnfollowCardVis={toggleUnfollowCardVis}/>
+            <ConfirmationUnfollowUserCard followers={user.id} following={unfollowCardVis[1]} toggleUnfollowCardVis={toggleUnfollowCardVis}/>
           </div>
       }
         <div className="sideDock--search">
@@ -118,9 +118,10 @@ displayList = displayList.filter(instance => typeof instance != 'undefined')
 
                   <button 
                     className="happening--card__following-button"  
-                    onMouseLeave={(e) => toggleFollowingHover(e)} 
-                    onMouseEnter={(e) => toggleFollowingHover(e)} 
-                    onClick={toggleUnfollowCardVis}>
+                    // onMouseLeave={(e) => toggleFollowingHover(e)} 
+                    // onMouseEnter={(e) => toggleFollowingHover(e)} 
+                    
+                    onClick={(e) => toggleUnfollowCardVis(user.following)}>
                       Following
                     </button>
 

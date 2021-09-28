@@ -1,7 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { removeFollowing } from '../../actions/followUserAction'
+import { connect } from 'react-redux'
 
-const ConfirmationUnfollowUserCard = ({ toggleUnfollowCardVis }) => {
+const ConfirmationUnfollowUserCard = ({ toggleUnfollowCardVis, followers, following, dispatch }) => {
+
+  const unfollow = (followersID, followingID) => {
+    //dispatch the unfollow
+   dispatch(removeFollowing(followersID,followingID))
+   toggleUnfollowCardVis(!toggleUnfollowCardVis[0],following)
+   
+
+  }
+
   return (
     <div className="popup-card-container">
       <div className="popup-card-container__header-text-container">
@@ -14,7 +25,7 @@ const ConfirmationUnfollowUserCard = ({ toggleUnfollowCardVis }) => {
         </span>
       </div>
       <Link to="/home">
-        <div className="popup-card-container__dark-button">
+        <div onClick={() => unfollow(followers, following)} className="popup-card-container__dark-button">
           <span>Unfollow</span>
         </div>
       </Link>
@@ -25,4 +36,4 @@ const ConfirmationUnfollowUserCard = ({ toggleUnfollowCardVis }) => {
   )
 }
 
-export default ConfirmationUnfollowUserCard
+export default connect()(ConfirmationUnfollowUserCard)
