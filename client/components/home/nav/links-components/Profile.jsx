@@ -1,10 +1,17 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-const Profile = () => {
+const Profile = ({ auth, user }) => {
+  // const profileID = auth.user.id
+
+  const newTo = {
+    pathname: '/home/profile/',
+    userObj: user
+  }
   return (
     <div>
-      <Link to='/home/profile'>
+      <Link to={newTo} >
         <div className="link-button profile-button">
           <div className="profile-button svg-container">
             <svg
@@ -28,4 +35,8 @@ const Profile = () => {
   )
 }
 
-export default Profile
+const mapStateToProps = state => {
+  return { auth: state.auth, user: state.auth.user }
+}
+
+export default connect(mapStateToProps)(Profile)

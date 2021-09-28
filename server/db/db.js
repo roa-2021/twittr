@@ -29,6 +29,7 @@ function getTweets(userID)
   .where('publisher',userID)
   .select('tweets.id',
   'tweets.publisher',
+  'tweets.publish_time',
   'tweets.content',
   'users.name',
   'users.username'
@@ -44,7 +45,14 @@ function getTweetByID(tweetID)
 function createTweet(tweet)
 {
   return db('tweets')
-  .insert(tweet)
+  .insert({
+    publisher:tweet.publisher,
+    publish_time:tweet.publish_time,
+    content:tweet.content,
+    like_count:tweet.like_count,
+    quote_count:tweet.quote_count,
+    retweet_count:tweet.retweet_count,
+  })
 }
 
 function deleteTweet(tweetID)

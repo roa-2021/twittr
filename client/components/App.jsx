@@ -10,15 +10,37 @@ import CardTestEnvironment from './cards/CardTestEnvironment'
 import LoginTrueForm from './home/landing/LoginTrueForm'
 import LoginForm from './home/landing/LoginForm'
 
+import { retrieveCommentsTHUNK } from '../actions/commentsAction'
+import { getFollowersOfUserTHUNK } from '../actions/followersActions'
+import { getWhoUserIsFollowingTHUNK } from '../actions/followingActions'
+import { retrieveAUsersTweetsTHUNK } from '../actions/tweetsActions'
+import { getAUsersDetailsTHUNK } from '../actions/userActions'
 import {checkAuth} from '../actions/authActions'
 
-function App ({ auth, dispatch }) {
+function App ({ auth, user, dispatch }) {
 
   useEffect(() => {
     const confirmSuccess = () => { }
     dispatch(checkAuth(confirmSuccess))
   }, [])
 
+  useEffect(() => {
+    if(user){
+      const id = user.id
+      allFunc(id)
+    }
+  }, [auth.isAuthenticated])
+
+
+  const allFunc = id => {
+    if(id){
+      dispatch(getFollowersOfUserTHUNK(id))
+      dispatch(retrieveCommentsTHUNK(id))
+      dispatch(getWhoUserIsFollowingTHUNK(id))
+      dispatch(getAUsersDetailsTHUNK(id))
+      dispatch(retrieveAUsersTweetsTHUNK(id))
+    }
+  }
 
   return (
     <>
@@ -31,6 +53,7 @@ function App ({ auth, dispatch }) {
       <Route exact path="/" component={Landing} />
       <Route path="/home" component={Home} />
       <Route exact path="/logout" component={Logout} />
+       {/* <Route path='/home/profile' component={Profile} /> */}
 
       {/*<CardTestEnvironment />*/}
     </>

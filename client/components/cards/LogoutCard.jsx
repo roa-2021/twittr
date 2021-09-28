@@ -10,8 +10,10 @@ import { resetAppTHUNK } from '../../actions/RESET_APP'
 
 const LogoutCard = ({ dispatch, history }) => {
   const handleLogout = () => {
-    dispatch(resetAppTHUNK())
-    dispatch(logOff())
+    dispatch(resetAppTHUNK()).then(
+      dispatch(logOff())
+    )
+    
   }
 
   return (

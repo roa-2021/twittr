@@ -16,6 +16,7 @@ exports.seed = function(knex) {
           varified: 'true',
           bio: '🧑‍💻 killa junior dev with a hankering for the sass',
           birthday: '06-04-1987 00:00'
+
         },
         {
           id: 2, 
@@ -49,6 +50,7 @@ exports.seed = function(knex) {
           varified: 'false',
           bio: 'we\'re all carbon until we aren\'t ⚛',
           birthday: '06-04-1987 00:00'
+
         },
         {
           id: 5, 
