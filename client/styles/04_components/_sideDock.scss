@@ -1,0 +1,168 @@
+.sideDock {
+    position: fixed;
+    padding-left: 28px;
+}
+    .sideDock--search {
+        display: flex;
+        flex-direction: row;
+        background-color:#EFF3F4;
+        height: 44px;
+        width: 350px;
+        margin-top: 6px;
+        border-radius: 40px;
+    } 
+
+    .sideDock--footer {
+        max-width: 350px;
+        margin-top: 42px;
+    }
+
+    .sideDock--footer a {
+        font-size: 13px;
+        padding: 0 8px;
+        display: inline-block;
+        
+    }
+    .sideDock--footer a:hover {
+        text-decoration: underline;
+    }
+    .footer--wrapper {
+        margin-left: 12px;
+    }
+
+    .happening--footer-text {
+        width: 316px;
+        height: 20px;
+        padding: 16px;
+        color: rgb(29,155,240);
+        font-size: 15px;
+        background-color: #F6F9F9;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+    }
+   
+    .sideDock--footer a {
+        color: rgb(83,100,113);
+        font-size: 13px;
+    }
+
+    /* */
+    
+    .sideDock-form--search__submit {
+        height: 44px;
+        border-radius: 50%;
+        background-color: #EFF3F4;
+        width: 42px;
+        border: none;
+        margin-left: 8px;
+    }
+
+    .sideDock-form--search__input {
+        width: 208px;
+        background-color: #EFF3F4;
+        font-size: 15px;
+        color: rgb(118,118,118);
+        border: none;
+        position: relative;
+        bottom: 4px;
+        margin-left: 4px;
+    }
+
+    .sideDock-form svg {
+        width: 32px;
+        height: 18.75px;
+        margin-top: 4px;
+    }
+
+    .sideDock--happening {
+        background-color: #F6F9F9;
+        width: 348px;
+        border-radius: 18px;
+        margin: 30px 0px;
+
+        .happening--header {
+            height: 42px;
+            width: 348px;
+            margin-top: 18px;
+            padding-bottom: 12px;      
+        }
+        .happening--title {
+            padding: 14px 16px;
+            font-size: 20px;
+            font-weight: bold;;
+        }
+
+        .happening--body {
+            .happening--card__follow-button {
+                color: #eee;
+                background-color: #222;
+                width: 78.3px;
+                padding: 10px;
+                border: 1px solid #fff;
+                border-radius: 25px;
+            }
+            .happening--card__following-button {
+                width: 78.3px;
+                padding: 10px;
+                border-radius: 25px;
+                border: 1px solid #ddd;
+                background-color: #F6F9F9;
+                transition: 0.3s;
+            }
+            .happening--card__following-button:hover {
+                color: red;
+                background-color: rgb(255, 196, 196);
+                transition: 0.3s;
+            }
+            .happening--card {
+                width: 316px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 12px 16px;
+                .user-info--container {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                }
+                a {
+                    color: black;
+                    :hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+            .happening--card p {
+                font-size: 13px;
+            }
+            .happening--card h3 {
+                word-break: break-word;
+                font-size: 15px;
+            }
+            .happening--card img {
+                width: 68px;
+                height: 68px;
+                border-radius: 50%;
+                margin-right: 10px;
+            }
+            .happening--card_text-wrapper {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+        }
+    }
+
+    .happening--card:hover {
+        background-color: #EEF1F1
+    }
+
+    
+    // .happening--footer {
+       
+    // }
+    
+    // .happening--footer:hover {
+    //     background-color: #EEF1F1;
+    // }

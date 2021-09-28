@@ -1,0 +1,139 @@
+// * {
+//   list-style: none;
+//   text-decoration: none;
+
+//   font-size: 1.1rem;
+
+//   transition-duration: 0.2s;
+// }
+
+// .nav-container {
+//   width: auto;
+//   height: 100vh;
+//   margin-left: 0px;
+//   padding: 0px 0px;
+
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+
+//   position: sticky;
+//   top: 0;
+// }
+
+// .logo-container {
+//   svg {
+//     fill: #1c9bef;
+//     width: 30px;
+//   }
+//   padding: 10px 15px;
+// }
+
+// .link-button-container {
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .link-button {
+//   display: flex;
+//   flex-direction: row;
+//   // padding: 0 0;
+//   width: fit-content;
+//   border-radius: 25px;
+//   .span-container {
+//     display: flex;
+//     align-self: center;
+//     padding-right: 15px;
+//     padding-left: 5px;
+//   }
+//   .svg-container {
+//     padding: 10px 15px;
+//   }
+
+//   svg {
+//     width: 26px;
+//   }
+// }
+
+// .link-button:hover {
+//   background-color: #eee;
+// }
+
+// .nav-tweet-container {
+//   margin: 10px 0;
+
+//   :hover {
+//     background-color: #0c8bdf;
+//   }
+// }
+
+// .nav-tweet-button {
+//   display: flex;
+//   justify-content: center;
+//   width: 60%;
+//   padding: 15px 32px;
+//   background-color: #1c9bef;
+//   border-radius: 32px ;
+// }
+
+// .nav-tweet-button-content {
+//   display: flex;
+//   justify-content: center;
+
+//   span {
+//     color: white;
+//     font-size: 1rem;
+//     font-weight: 900;
+//   }
+// }
+
+// .nav-profile-badge-container {
+//   display: flex;
+//   justify-content: center;
+//   width: fit-content;
+//   padding-bottom: 16px;
+
+//   :hover {
+//     border-radius: 50px;
+//     background-color: #eee;
+//   }
+// }
+
+// .nav-profile-badge-content {
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+// }
+
+// .nav-profile-badge_profile-img-container {
+//   padding: 10px;
+//   img {
+//     width: 45px;
+//     border-radius: 50%;
+//   }
+// }
+
+// .nav-profile-badge_tag-container {
+//   display: flex;
+//   align-items: center;
+// }
+
+// .nav-profile-badge_tag-content {
+//   padding: 0px;
+//   .nav-profile-badge_name-tag-container p {
+//     font-weight: 900;
+//     font-size: 0.85rem;
+//   }
+//   .nav-profile-badge_handle-tag-container p {
+//     color: #ccc;
+//     font-size: 0.95rem;
+//   }
+// }
+
+// .nav-profile-badge_svg-container {
+//   padding: 16px;
+
+//   svg {
+//     width: 20px;
+//   }
+// }

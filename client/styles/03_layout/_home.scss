@@ -1,0 +1,24 @@
+/* Home component styles */
+.wall-container {
+  
+  width: 1240px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.nav-panel {
+  width: 252px;
+}
+
+.feed-panel {
+ border-right: #EEE solid 1px;
+ border-left: #EEE solid 1px;
+ width: 598px;
+ margin-left: 12px;
+ 
+}
+
+.side-panel {
+ width: 350px;
+ margin-left: 30px;
+}

@@ -1,0 +1,28 @@
+.nav-tweet-container {
+  margin: 10px 0;
+
+  :hover {
+    background-color: #0c8bdf;
+  }
+}
+
+.nav-tweet-button {
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  padding: 15px 32px;
+  background-color: #1c9bef;
+  border-radius: 32px ;
+  border-style: none;
+}
+
+.nav-tweet-button-content {
+  display: flex;
+  justify-content: center;
+
+  span {
+    color: white;
+    font-size: 1rem;
+    font-weight: 900;
+  }
+}
