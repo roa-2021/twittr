@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { Link } from 'react-router-dom'
 
 import profileImage from '../../../styles/default-profile.png';
 
@@ -8,9 +9,13 @@ import ConfirmationDeleteTweetCard from '../../cards/ConfirmationDeleteTweetCard
 
 const Tweet = ({ tweet, i, user, following }) => {
 
+
     const { profile_image } = user
-    // const authorDetails = following.filter(user => user.id === tweet.id)
-    // console.log(authorDetails)
+    const authorObj = following.find(following => following.following === tweet.publisher)
+   
+    console.log(authorObj)
+    // console.log('tweet id', tweet)
+    // console.log('following', following)
 
     const [moreVisibility, setMoreVisibilty] = useState(false)
     const [targetTweet, setTargetTweet] = useState(undefined)
@@ -32,20 +37,35 @@ const Tweet = ({ tweet, i, user, following }) => {
       return false
     }
 
+    const newTo = {
+      pathname: '/home/profile/',
+      userObj: authorObj ? authorObj : user
+    }
+
+    const getImg = () => {
+      if (authorObj) {
+        return authorObj.profile_image
+      } else if (profile_image) {
+        return profile_image
+      } else {
+        return profileImage
+      }
+    }
+
     return (
         <div key={i}>
           <div>
             <div className="tweet-container">
               <div className="tweet">
                 <div className="profile-image">
-                  <img src={false ? profile_image : profileImage} />
+                  <img src={getImg()} />
                 </div>
                 <div className="post-content">
                   <div className="user-info">
-                    <a href="">
+                    <Link to={newTo}>
                       <span className="user-name">{tweet.name}</span>
                       <span className="user-handle"> @{tweet.username}</span>
-                    </a>
+                    </Link>
                     <div className="tweet-more">
                       <svg viewBox="0 0 24 24" aria-hidden="true" className="more" id={i} onClick={(e) => toggleMore(e, i)}>
                         <g>

@@ -9,6 +9,7 @@ const Profile = ({ user }) => {
     pathname: '/home/profile/',
     userObj: user
   }
+  
   return (
     <div>
       <Link to={newTo} >
