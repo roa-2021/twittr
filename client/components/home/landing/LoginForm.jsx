@@ -8,14 +8,13 @@ import { loginError, registerUserRequest } from '../../../actions/authActions'
 const LoginForm = props => {
   const { auth, dispatch, user, togglePopupVis } = props
   let history = useHistory()
-  const [Birthday, setBirthday] = useState(new Date());
+  // const [Birthday, setBirthday] = useState(new Date());
   const [formData, setFormData] = useState({
     name: '',
     username: '',
     email_address: '',
     password: '',
     confirm_password: '',
-    birthday:'',
   })
 
   useEffect(() => {
@@ -46,9 +45,10 @@ const LoginForm = props => {
       const confirmSuccess = id => {
         history.push(`/`)
       }
-      formData.birthday=Birthday
+      // formData.birthday=Birthday
       const userInfo = { ...formData }
       delete userInfo.confirm_password
+      console.log(userInfo)
       dispatch(registerUserRequest(userInfo, confirmSuccess))
     }
   }
