@@ -18,7 +18,7 @@ const FeedDock = ({dispatch, user}) => {
   const scuffedWebSocket = () => {
     setTimeout(() => {
       dispatch(getAUsersFollowingTweetsTHUNK(user.id))
-      console.log("BAM")
+      // console.log("BAM")
       scuffedWebSocket()
     }, 12000)
   }
