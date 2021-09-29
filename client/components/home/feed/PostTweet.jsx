@@ -14,7 +14,7 @@ const PostTweet = ({ dispatch, user }) => {
   }
 
   const timestamp = Math.floor(Date.now()/1000);
-  console.log(timestamp)
+  // console.log(timestamp)
 
   const tweet = {
     publisher: user.id,

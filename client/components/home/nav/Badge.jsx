@@ -3,12 +3,22 @@ import { connect } from 'react-redux'
 
 import BadgeCard from '../../cards/BadgeCard'
 
+import profileImage from '../../../styles/default-profile.png';
+
 const Badge = ({ user }) => {
   const {profile_image} = user
   const [popupVisibility, setPopupVisibility] = useState(false)
 
   function togglePopupVis () {
     setPopupVisibility (!popupVisibility)
+  }
+
+  const getImg = () => {
+    if (profile_image) {
+      return profile_image
+    } else {
+      return profileImage
+    }
   }
 
   return (
@@ -19,7 +29,7 @@ const Badge = ({ user }) => {
             {' '}
             {/* profile icon */}
             <div className="nav-profile-badge_profile-img-container">
-              <img src={profile_image} />
+              <img src={getImg()} />
             </div>
           </div>
           <div className="nav-profile-badge_tag-container">

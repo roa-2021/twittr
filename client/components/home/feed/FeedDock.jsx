@@ -1,5 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Route } from 'react-router-dom'
+import { connect } from 'react-redux'
+
+import { getAUsersFollowingTweetsTHUNK } from '../../../actions/tweetsActions';
 
 import TweetList from './TweetList'
 import Wtf from './Wtf'
@@ -9,7 +12,19 @@ import Profile from './Profile'
 import Followers from './Followers'
 import Following from './Following'
 
-const FeedDock = () => {
+const FeedDock = ({dispatch, user}) => {
+
+
+  const scuffedWebSocket = () => {
+    setTimeout(() => {
+      dispatch(getAUsersFollowingTweetsTHUNK(user.id))
+      // console.log("BAM")
+      scuffedWebSocket()
+    }, 4000)
+  }
+  scuffedWebSocket()
+
+
   return (
     <>
       <section className="feed-panel">
@@ -26,4 +41,10 @@ const FeedDock = () => {
   )
 }
 
-export default FeedDock
+const mapStateToProps = (state) => {
+  return {
+      user: state.user
+    }
+  }
+
+export default connect(mapStateToProps)(FeedDock)

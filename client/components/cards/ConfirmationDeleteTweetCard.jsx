@@ -10,7 +10,7 @@ import { resetAppTHUNK } from '../../actions/RESET_APP'
 const ConfirmationDeleteTweetCard = ({ dispatch, i, toggleDel }) => {
 
   const deleteTweet = i => {
-    console.log(i)
+    // console.log(i)
     dispatch(removeATweetByIDTHUNK(i))
     toggleDel()
   }

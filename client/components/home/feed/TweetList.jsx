@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 
 // import meme from '../../../styles/meme.png'
-import { addLikeTHUNK, deleteLikeTHUNK, updateLikeCountTHUNK } from '../../../actions/tweetsActions';
+import { addLikeTHUNK, deleteLikeTHUNK, updateLikeCountTHUNK, } from '../../../actions/tweetsActions';
 import Tweet from './Tweet';
 
 const TweetList = (props) => {
@@ -12,6 +12,8 @@ const TweetList = (props) => {
   function likeTweet(tweet) {
     dispatch(updateLikeCountTHUNK(tweet))
   }
+
+  
 
 
   let newTweets = [...tweets]
@@ -29,11 +31,11 @@ const TweetList = (props) => {
 
   return (
     newTweets.map((tweet, i) => {
-      console.log('before ', tweet.publish_time)
+      // console.log('before ', tweet.publish_time)
       tweet = { ...tweet}
       let convertDate = new Date (tweet.publish_time * 1000)
       tweet.publish_time = convertDate.toLocaleString()
-      console.log('after ', tweet.publish_time)
+      // console.log('after ', tweet.publish_time)
       return (
         <Tweet key={tweet.id} tweet={tweet} i={i} user={user} following={following} like={likeTweet} />
       )
