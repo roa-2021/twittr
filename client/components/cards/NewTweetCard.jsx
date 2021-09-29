@@ -22,14 +22,14 @@ const NewTweetCard = ({ dispatch, togglePopupVis, user }) => {
     togglePopupVis(); // hide card
   }
 
-  const timestamp = new Date();
+  const timestamp = Math.floor(Date.now()/1000);
 
   const tweet = {
     publisher: user.id,
     name: user.name,
     username: user.username,
     // publisher_name: user.name,
-    publish_time: timestamp.toLocaleString('en-NZ'),
+    publish_time: timestamp,
     content: formContent,
     like_count: 0,
     retweet_count: 0,
