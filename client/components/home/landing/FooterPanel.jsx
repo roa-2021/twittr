@@ -15,11 +15,11 @@ const FooterPanel = () => {
             <a href="">Brand Resources</a>
             <a href="">Advertising</a>
             <a href="">Marketing</a>
-            <a href="">Twitter for Business</a>
+            <a href="">Hihi for Business</a>
             <a href="">Developers</a>
             <a href="">Directory</a>
             <a href="">Settings</a>
-            <a href="">&copy;2021 Twitter, inc.</a>
+            <a href="">&copy;2021 Hihi, inc.</a>
       </footer>
     )
 }

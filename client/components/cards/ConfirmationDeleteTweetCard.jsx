@@ -10,7 +10,7 @@ import { resetAppTHUNK } from '../../actions/RESET_APP'
 const ConfirmationDeleteTweetCard = ({ dispatch, i, toggleDel }) => {
 
   const deleteTweet = i => {
-    console.log(i)
+    // console.log(i)
     dispatch(removeATweetByIDTHUNK(i))
     toggleDel()
   }
@@ -18,11 +18,11 @@ const ConfirmationDeleteTweetCard = ({ dispatch, i, toggleDel }) => {
   return (
     <div className="popup-card-container">
       <div className="popup-card-container__header-text-container">
-        <span>Delete Tweet?</span>
+        <span>Delete Hi?</span>
       </div>
       <div className="popup-card-container__paragraph-text-container">
         <span>
-          This can’t be undone and it will be removed from your profile, the timeline of any accounts that follow you, and from Twitter search results.
+          This can’t be undone and it will be removed from your profile, the timeline of any accounts that follow you, and from Hihi search results.
         </span>
       </div>
       <Link to="/">

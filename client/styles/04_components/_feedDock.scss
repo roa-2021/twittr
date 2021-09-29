@@ -70,8 +70,10 @@
   height: 100%;
   width: 48px;
   img {
-    max-width: 48px;
-     border-radius: 50%;
+    object-fit: cover;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
   }
 }
 
@@ -95,7 +97,7 @@
   justify-content: space-between;
   width: 100%;
   height: 48px;
-  fill: rgb(28, 155, 239);
+  fill: rgb(89,183,129);
 }
 
 .reactions {
@@ -110,7 +112,7 @@
   border-radius: 50%;
   transition: 0.4s;
 }:hover {
-  background-color: #d5eff8;
+  background-color: rgb(197, 255, 222);
   border-radius: 50%;
   transition: 0.4s;
   }
@@ -126,7 +128,7 @@
   button {
     border: none;
     color: #fff;
-    background-color: rgb(28, 155, 239);
+    background-color: rgb(89,183,129);
     padding: 9px 18px;
     text-decoration: none;
     font-family: inherit;
@@ -136,14 +138,14 @@
   button:hover {
     cursor: pointer;
     // filter: brightness(0.9);
-    background-color: #0c8bdf;
+    background-color: #59B781;
   }
   
   .button-disabled {
-    background-color: #8ecdf8;
+    background-color: #9dd6b6;
   }
   .button-disabled:hover {
-    background-color: #8ecdf8;
+    background-color: #9dd6b6;
   }
 }
 
@@ -194,6 +196,11 @@
   }
   .user-handle {
     color: #666;
+  }
+  .user-time {
+    font-weight: lighter;
+    font-size: 12px;
+    color: #999;
   }
 }
 
@@ -308,7 +315,7 @@
   }
   :hover {
     background-color: #d5eff8;
-    fill: rgb(28, 155, 239);
+    fill: rgb(89,183,129);
     border-radius: 50%;
     transition-duration: 0.2s;
   }
@@ -378,6 +385,12 @@
 .user-banner {
   background-color: rgb(208, 221, 223);
   height:199.33px;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .profile-card-container {
@@ -413,6 +426,7 @@
   }
   img {
     margin-top: -90px;
+    object-fit: cover;
     width: 133.5px;
     height: 133.5px;
     border: 4px solid #fff;
@@ -463,7 +477,7 @@
     background-color: #fff;
   }
   button:hover {
-    border-bottom: 2px solid #1c9bef;
+    border-bottom: 2px solid #59B781;
   }
 }
 
@@ -474,12 +488,13 @@
   height: 53px;
   padding: 0px 50px;
   border-bottom: #EEE solid 1px;
+
   button {
     border: none;
     background-color: #fff;
   }
   button:hover {
-    border-bottom: 2px solid #1c9bef;
+    border-bottom: 2px solid #59B781;
   }
 }
 
@@ -496,9 +511,9 @@
     transition: 0.4s;
   }
   svg:hover {
-    fill: rgb(28, 155, 239);
+    fill: rgb(89,183,129);
     border-radius: 50%;
-    background-color: rgb(208, 221, 223);
+    background-color: rgb(135, 243, 182);
     transition: 0.4s;
   }
 }

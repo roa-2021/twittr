@@ -19,7 +19,9 @@
 .nav-profile-badge_profile-img-container {
   padding: 10px;
   img {
+    object-fit: cover;
     width: 45px;
+    height: 45px;
     border-radius: 50%;
   }
 }

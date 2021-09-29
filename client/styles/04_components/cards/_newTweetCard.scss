@@ -34,7 +34,9 @@
     padding-right: 15px;
     .new-tweet-card-container__profilePic-container {
       img {
+        object-fit: cover;
         width: 48px;
+        height: 48px;
         border-radius: 50%;
       }
     }
@@ -71,7 +73,7 @@
         margin-top: 10px;
 
         svg {
-          fill: #1d9bf0;
+          fill: #59B781;
           width: 20px;
         }
         .new-tweet-card-container__media-icon {
@@ -130,7 +132,7 @@
           padding: 8px 20px;
           border: none;
           border-radius: 50px;
-          background-color: #1d9bf0;
+          background-color: #59B781;
           span {
             font-size: 0.9rem;
             font-weight: 900;;
@@ -140,13 +142,13 @@
         
         .new-tweet-card-container__tweet-button:hover {
           cursor: pointer;
-          background-color: #097bc2;
+          background-color: #348055;
         }
         .button-disabled {
-          background-color: #8ecdf8;
+          background-color: #9dd6b6;
         }
         .button-disabled:hover {
-          background-color: #8ecdf8;
+          background-color: #9dd6b6;
         }
       }
     }

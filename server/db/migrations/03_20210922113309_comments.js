@@ -7,7 +7,7 @@ exports.up = function(knex) {
     table.foreign('publisher').references('users.id')
     table.integer('tweet_id')
     table.foreign('tweet_id').references('tweets.id')
-    table.datetime('publish_date')
+    table.integer('publish_date')
     table.string('content')
   })
       

@@ -13,18 +13,20 @@ const PostTweet = ({ dispatch, user }) => {
     setFormContent(e.target.value)
   }
 
-  const timestamp = new Date();
+  const timestamp = Math.floor(Date.now()/1000);
+  // console.log(timestamp)
 
   const tweet = {
     publisher: user.id,
     name: user.name,
     username:user.username,
-    publish_time: timestamp.toLocaleString('en-NZ'),
+    publish_time: timestamp,
     content: formContent,
     like_count: 0,
     retweet_count: 0,
     quote_count: 0
   }
+  // console.log(tweet)
 
   const postATweet = (e, tweet) => {
     e.preventDefault()
@@ -96,11 +98,11 @@ const PostTweet = ({ dispatch, user }) => {
                 {
                   formContent !== '' ? 
                     <div className="submit-tweet">
-                      <button type='submit'><h2>Tweet</h2></button>
+                      <button type='submit'><h2>Hi</h2></button>
                     </div>
                     :
                     <div className="submit-tweet">
-                      <button type='submit' className="button-disabled" disabled><h2>Tweet</h2></button>
+                      <button type='submit' className="button-disabled" disabled><h2>Hi</h2></button>
                     </div>
                 }
               </div>

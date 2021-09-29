@@ -15,7 +15,7 @@ const OptionsSideBarMoreCard = () => {
       </div>
       <div className="options-menu-container__button-container">
         <div className="options-menu-container__button-span">
-          <span>Twitter for Business</span>
+          <span>Hihi for Business</span>
         </div>
       </div>
       <div className="options-menu-container__button-container">

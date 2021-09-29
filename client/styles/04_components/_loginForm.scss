@@ -5,7 +5,7 @@
 .login-form--logo {
   width: 40.27px;
   height: 30.61px;
-  fill: rgb(29, 155, 240);
+  fill: rgb(89,183,129);
   margin-left: 42%;
 }
 
@@ -38,7 +38,7 @@
   display: flex;
   flex-direction: column;
   a {
-    color: #1b95e0;
+    color: #59B781;
     font-size: 15px;
     margin: 40px 0px;
   }
@@ -53,7 +53,7 @@
     margin-top: 24px;
   }
   button {
-    background-color: #1b95e0;
+    background-color: #59B781;
     width: 536px;
     height: 44px;
     border-radius: 50px;
@@ -65,7 +65,7 @@
   }
   button:hover {
     cursor: pointer;
-    background-color: #097bc2;
+    background-color: #348055;
   }
   .date-title {
     font-size: 15px;
@@ -157,5 +157,5 @@
 
 input:focus {
   border-width: 2px;
-  border-color: #1d9bf0;
+  border-color: #59B781;
 }

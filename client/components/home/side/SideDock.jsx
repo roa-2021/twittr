@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import {getSomeUsers} from '../../../apis/userAPI'
 import { addFollowing, followUser } from '../../../actions/followUserAction'
 import { getAUsersFollowingTweetsTHUNK } from '../../../actions/tweetsActions'
+import { getAUsersDetailsTHUNK } from '../../../actions/userActions'
 
 import OptionsSideBarMoreCard from '../../cards/OptionsSideBarMoreCard'
 import ConfirmationUnfollowUserCard from '../../cards/ConfirmationUnfollowUserCard'
@@ -38,6 +39,7 @@ const SideDock = ({ followers, following, dispatch, user }) => {
     // HOW IS THIS REMOVING THE FOLLOW IN THE DB???
     setUnfollowCardVis([!unfollowCardVis[0], followingID])
     dispatch(getAUsersFollowingTweetsTHUNK(user.id))
+    dispatch(getAUsersDetailsTHUNK(user.id))
   }
 
   function toggleFollowingHover(e) {
@@ -60,6 +62,7 @@ const SideDock = ({ followers, following, dispatch, user }) => {
   const follow = id => { 
     dispatch(addFollowing(user.id, id))
     dispatch(getAUsersFollowingTweetsTHUNK(user.id))
+    dispatch(getAUsersDetailsTHUNK(user.id))
   }
 
   let displayList = followers.map(foo => {
@@ -109,8 +112,8 @@ const SideDock = ({ followers, following, dispatch, user }) => {
             <input
               className="sideDock-form--search__input"
               type="text"
-              placeholder="Search Twitter"
               onChange={searchUser}
+              placeholder="Search Hihi"
             />
           </form>
         </div>
@@ -197,7 +200,7 @@ const SideDock = ({ followers, following, dispatch, user }) => {
             <a href="">Cookie Policy</a>
             <a href="">Ads info</a>
             <a  onClick={toggleMore}>More ...</a>
-            <a href="">&copy; 2021 Twitter, Inc.</a>
+            <a href="">&copy; 2021 Hihi, Inc.</a>
             {moreVisibilty && < OptionsSideBarMoreCard/>}
           </div>
         </div>

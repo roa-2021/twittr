@@ -20,14 +20,14 @@ const NewTweetCard = ({ dispatch, togglePopupVis, user }) => {
     togglePopupVis(); // hide card
   }
 
-  const timestamp = new Date();
+  const timestamp = Math.floor(Date.now()/1000);
 
   const tweet = {
     publisher: user.id,
     name: user.name,
     username: user.username,
     // publisher_name: user.name,
-    publish_time: timestamp.toLocaleString('en-NZ'),
+    publish_time: timestamp,
     content: formContent,
     like_count: 0,
     retweet_count: 0,
@@ -145,7 +145,7 @@ const NewTweetCard = ({ dispatch, togglePopupVis, user }) => {
                   <div className="new-tweet-card-container__tweet-button-container">
                     <button type="submit" className="new-tweet-card-container__tweet-button">
                       <span>
-                        Tweet
+                        Hi
                       </span>
                     </button>
                   </div>
@@ -153,7 +153,7 @@ const NewTweetCard = ({ dispatch, togglePopupVis, user }) => {
                   <div className={"new-tweet-card-container__tweet-button-container"}>
                     <button type="submit" className="new-tweet-card-container__tweet-button button-disabled" disabled>
                       <span>
-                        Tweet
+                        Hi
                       </span>
                     </button>
                   </div>

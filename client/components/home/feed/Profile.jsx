@@ -41,12 +41,14 @@ const Profile = (props, tweet) => {
               </div>
             <div>
               <h2 className="profile-username">{name}</h2>
-              <p className="tweet-count">{tweet.length}Tweets</p>
+              <p className="tweet-count">{tweet.length}His</p>
             </div>
           </div>
         </div>
       </div>
-      <div className="user-banner"></div>
+      <div className="user-banner">
+        <img src="/images/3991e39f3a81fde0993adfeaaa9ef71e.jpeg" />
+      </div>
       <div className="profile-card-container">
         <div className="img-and-settings">
           <img src={profile_image ? profile_image : profileImage}></img>
@@ -88,8 +90,8 @@ const Profile = (props, tweet) => {
         </div>
       </div>
       <div className="profile-menu-cont">
-        <button>Tweet</button>
-        <button>Tweets &amp; replies</button>
+        <button>His</button>
+        <button>Hihis &amp; replies</button>
         <button>Media</button>
         <button>Likes</button>
       </div>
