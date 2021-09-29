@@ -159,6 +159,14 @@ function likeDelete(tweet)
   .delete()
 }
 
+function updateLikeCount(tweet)
+{
+  const like_count=tweet.like_count+1
+  return db('tweets')
+  .where('id',tweet.id)
+  .update('like_count',like_count)
+
+}
 //export********************************************
 module.exports = {
   getUser,
@@ -179,4 +187,5 @@ module.exports = {
   isLiked,
   likeInsert,
   likeDelete,
+  updateLikeCount,
 }

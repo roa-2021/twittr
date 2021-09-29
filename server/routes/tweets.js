@@ -39,7 +39,6 @@ router.get('/:id',(req,res)=>{
 
 router.get('/following/:id', (req, res) => {
   const userID = req.params.id
-  
   let output = []
   db.getTweets(userID)
     .then(usersTweets => output.push(...usersTweets))
@@ -67,7 +66,7 @@ router.delete('/:id',(req,res)=>{
 })
 
 router.post('/like', (req,res)=>{
-  tweet=req.body
+  const tweet=req.body
   db.likeInsert(tweet)
   .then(result=>{
     res.json(result)
@@ -77,8 +76,17 @@ router.post('/like', (req,res)=>{
 
 
 router.delete('/like', (req,res)=>{
-  tweet=req.body
+  const tweet=req.body
   db.likeDelete(tweet)
+  .then(result=>{
+    res.json(result)
+  })
+  .catch(err => res.status(500).json({ message: err.message }))
+})
+
+router.patch('/like', (req,res)=>{
+  const tweet=req.body
+  db.updateLikeCount(tweet)
   .then(result=>{
     res.json(result)
   })

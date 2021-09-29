@@ -27,17 +27,25 @@ export const getAllUsersFollowingTweetsAPI = userID => {
     .then(res => res.body)
 }
 
-export const addLikeAPI = tuID =>{
+export const addLikeAPI = tweet =>{
   return request
         .post('/api/v1/tweets/like')
-        .send(tuID)
+        .send(tweet)
         .then(res=>res.body)
 }
 
 
-export const deleteLikeAPI = tuID =>{
+export const deleteLikeAPI = tweet =>{
   return request
         .delete('/api/v1/tweets/like')
-        .send(tuID)
+        .send(tweet)
+        .then(res=>res.body)
+}
+
+
+export const updateLikeCountAPI = tweet =>{
+  return request
+        .patch('/api/v1/tweets/like')
+        .send(tweet)
         .then(res=>res.body)
 }
