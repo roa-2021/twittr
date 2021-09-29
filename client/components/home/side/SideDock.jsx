@@ -8,6 +8,7 @@ import { getAUsersDetailsTHUNK } from '../../../actions/userActions'
 
 import OptionsSideBarMoreCard from '../../cards/OptionsSideBarMoreCard'
 import ConfirmationUnfollowUserCard from '../../cards/ConfirmationUnfollowUserCard'
+import SearchUserResultsCard from '../../cards/SearchUserResultsCard'
 
 import profileImage from '../../../styles/default-profile.png'
 
@@ -97,6 +98,7 @@ const SideDock = ({ followers, following, dispatch, user }) => {
             />
           </form>
         </div>
+        <SearchUserResultsCard />
        
         <section className="sideDock--happening">
           <header className="happening--header">
