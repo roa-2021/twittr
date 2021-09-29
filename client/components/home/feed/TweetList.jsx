@@ -17,6 +17,9 @@ const TweetList = (props) => {
     newTweets
   }
 
+  newTweets.sort((a,b) => { 
+   return b.id - a.id})
+
   return (
     newTweets.map((tweet, i) => {
       return (
