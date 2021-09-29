@@ -3,6 +3,7 @@ import { addATweetAPI, getUsersTweetsAPI, deleteATweetAPI, getAllUsersFollowingT
 // ---- CASES ----
 export const STORE_TWEETS_CASE = 'STORED_TWEETS'
 export const DELETE_TWEET_CASE = 'NUKE_TWEET'
+export const REFRESH_TWEETS_CASE = 'TWEETS_REFRESHED'
 
 // ---- ACTIONS ----
 export const storeTweetACTION = tweet => {
@@ -16,6 +17,13 @@ export const deleteTweetACTION = tweetId => {
   return {
     type: DELETE_TWEET_CASE,
     tweetId
+  }
+}
+
+export const refreshTweetsACTION = tweets => {
+  return {
+    type: REFRESH_TWEETS_CASE,
+    tweets
   }
 }
 
@@ -61,7 +69,7 @@ export const getAUsersFollowingTweetsTHUNK = userID => {
   return dispatch => {
     getAllUsersFollowingTweetsAPI(userID)
       .then(allFollowingTweets => {
-        dispatch(storeTweetACTION(allFollowingTweets))
+        dispatch(refreshTweetsACTION(allFollowingTweets))
       })
       // .catch(err => console.log(err))
   }
