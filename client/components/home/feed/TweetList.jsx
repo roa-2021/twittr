@@ -6,7 +6,7 @@ import { addLikeTHUNK, deleteLikeTHUNK, updateLikeCountTHUNK } from '../../../ac
 import Tweet from './Tweet';
 
 const TweetList = (props) => {
-  const { tweets, user, following, switchLocation, theAuthor } = props
+  const { dispatch, tweets, user, following, switchLocation, theAuthor } = props
 
 
   function likeTweet(tweet) {
