@@ -12,16 +12,16 @@ const ConfirmationUnfollowUserCard = ({ toggleUnfollowCardVis, followers, follow
    
 
   }
-
+ 
   return (
     <div className="popup-card-container">
       <div className="popup-card-container__header-text-container">
-        <span>Unfollow&nbsp;</span>
-        <span>@user</span>
+        <span>Unfollow user?</span>
+        <span></span>
       </div>
       <div className="popup-card-container__paragraph-text-container">
         <span>
-        Their His will no longer show up in your home timeline. You can still view their profile, unless their His are protected.
+        Their Hi's will no longer show up in your home timeline. You can still view their profile, unless their Hi's are protected.
         </span>
       </div>
       <Link to="/">
