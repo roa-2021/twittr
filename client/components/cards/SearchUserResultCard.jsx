@@ -11,7 +11,9 @@ import ConfirmationUnfollowUserCard from './ConfirmationUnfollowUserCard'
 import profileImage from '../../styles/default-profile.png'
 
 
-const SearchUserResultCard = ({ followers, following, dispatch, user }) => {
+const SearchUserResultCard = (props) => {
+  const {followers, following, dispatch, user, userResult} = props
+  console.log(userResult)
 
   const [isFollowing, setFollowing] = useState(true)
   const [unfollowCardVis, setUnfollowCardVis] = useState([false, 0])
@@ -33,9 +35,10 @@ const SearchUserResultCard = ({ followers, following, dispatch, user }) => {
   }
 
   const follow = id => { 
-    dispatch(addFollowing(user.id, id))
-    dispatch(getAUsersFollowingTweetsTHUNK(user.id))
-    dispatch(getAUsersDetailsTHUNK(user.id))
+    console.log(userResult, id)
+    dispatch(addFollowing(id, userResult.id))
+    dispatch(getAUsersFollowingTweetsTHUNK(userResult.id))
+    dispatch(getAUsersDetailsTHUNK(userResult.id))
   }
 
 
@@ -46,21 +49,25 @@ const SearchUserResultCard = ({ followers, following, dispatch, user }) => {
   return (
     <article className="happening--card">
       <div className="user-info--container">
-        <img src={user.profile_image ? user.profile_image : profileImage}></img>
+        <img src={userResult.profile_image ? userResult.profile_image : profileImage}></img>
         <div className="happening--card__text-wrapper">
-          <a href="">
-            <Link to={newTo}><h3>{user.name}</h3></Link>
-            <Link to={newTo}><p>@{user.username}</p></Link>
-          </a>
+          {/* <a href=""> */}
+            {/* <Link to={newTo}> */}
+              <h3>{userResult.name}</h3>
+            {/* </Link> */}
+            {/* <Link to={newTo}> */}
+              <p>@{userResult.username}</p>
+            {/* </Link> */}
+          {/* </a> */}
         </div>
       </div>
 
-      <button
+      {/* <button
         className="happening--card__follow-button"
-        // onClick={() => follow(user.followers)}
+        onClick={() => follow(user.id)}
         >
         Follow
-      </button>
+      </button> */}
     </article>
   )
 }

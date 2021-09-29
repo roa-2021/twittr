@@ -1,12 +1,17 @@
 import React from 'react'
 import SearchUserResultCard from './SearchUserResultCard'
 
-const SearchUserResultsCard = () => {
+const SearchUserResultsCard = ({ usersResults }) => {
+  console.log(usersResults)
   return (
     <div className="search-results-card-container">
-      <SearchUserResultCard />
-      <SearchUserResultCard />
-      <SearchUserResultCard />
+      {
+        usersResults.map((userResult) => {
+          return(
+            <SearchUserResultCard userResult={userResult}/>
+          )
+        })
+      }
     </div>
   )
 }

@@ -18,11 +18,13 @@ const SideDock = ({ followers, following, dispatch, user ,search, auth}) => {
   const [isFollowing, setFollowing] = useState(true)
   const [unfollowCardVis, setUnfollowCardVis] = useState([false, 0])
 
+  const [searchResultsArray, setSearchResultsArray] = useState([])
 
   useEffect(() => {
       if(search.length==0)
       {
-        console.log('no result')
+        // console.log('no result')
+        setSearchResultsArray([])
       }
       else
       {
@@ -31,19 +33,27 @@ const SideDock = ({ followers, following, dispatch, user ,search, auth}) => {
         var searchResult = search.filter(user => !followingIDs.includes(user.id));
         if(searchResult.length==0)
         {
-          console.log("no result")
+          // console.log("no result")
+          setSearchResultsArray([])
         }
         else{
-          console.log(searchResult)
+          // console.log(searchResult)
+          setSearchResultsArray(searchResult)
         }
       }
     
   }, [search])
 
+
   function searchUser(e)
   {
     const  string = e.target.value
-    dispatch(searchUserTHUNK(string))
+
+    if (string) {
+      dispatch(searchUserTHUNK(string))
+    } else {
+      setSearchResultsArray([])
+    }
 
       // getSomeUsers(string)
       // .then(res=>
@@ -136,7 +146,10 @@ const SideDock = ({ followers, following, dispatch, user ,search, auth}) => {
             />
           </form>
         </div>
-        <SearchUserResultsCard />
+        {
+          (searchResultsArray.length > 0) &&
+            <SearchUserResultsCard usersResults={searchResultsArray}/>
+        }
        
         <section className="sideDock--happening">
           <header className="happening--header">
