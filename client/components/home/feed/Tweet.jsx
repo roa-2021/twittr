@@ -26,7 +26,8 @@ const Tweet = ({ tweet, i, user, following ,like}) => {
     const [targetTweet, setTargetTweet] = useState(undefined)
     const [delConfirmVisible, setDelConfirmVisible] = useState(false)
 
-
+    const [showTime, setShowTime] = useState(false)
+  
     function toggleMore(e, i) {
       setTargetTweet(e.target.id)
       setMoreVisibilty(!moreVisibility)
@@ -58,10 +59,16 @@ const Tweet = ({ tweet, i, user, following ,like}) => {
       }
     }
 
+    const toggleShowTime = () => {
+      setShowTime(!showTime)
+    }
+
+    const tweetTime = ` - ${tweet.publish_time}`
+
     return (
         <div key={i}>
           <div>
-            <div className="tweet-container">
+            <div className="tweet-container" onMouseEnter={toggleShowTime} onMouseLeave={toggleShowTime}>
               <div className="tweet">
                 <div className="profile-image">
                   <img src={getImg()} />
@@ -71,6 +78,7 @@ const Tweet = ({ tweet, i, user, following ,like}) => {
                     <Link to={newTo}>
                       <span className="user-name">{tweet.name}</span>
                       <span className="user-handle"> @{tweet.username}</span>
+                      <span className="user-time">{showTime ? tweetTime : ''}</span>
                     </Link>
                     <div className="tweet-more">
                       <svg viewBox="0 0 24 24" aria-hidden="true" className="more" id={i} onClick={(e) => toggleMore(e, i)}>
