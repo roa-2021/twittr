@@ -1,4 +1,4 @@
-import { addAUserAPI, getAUserByIdAPI, updateAUsersDetailsAPI } from '../apis/userAPI'
+import { addAUserAPI, getAUserByIdAPI, updateAUsersDetailsAPI,getSomeUsers } from '../apis/userAPI'
 
 // ---- CASE ----
 export const STORE_USER_CASE = 'STORED_USER_DETAILS'
@@ -48,4 +48,7 @@ export const updateAUserTHUNK = usersNewDetailsObj => {
       // .catch(err => console.log(err))
   }}
 }
+
+
+
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-
+import {getSomeUsers} from '../../../apis/userAPI'
 import { addFollowing, followUser } from '../../../actions/followUserAction'
 import { getAUsersFollowingTweetsTHUNK } from '../../../actions/tweetsActions'
 
@@ -9,7 +9,7 @@ import OptionsSideBarMoreCard from '../../cards/OptionsSideBarMoreCard'
 import ConfirmationUnfollowUserCard from '../../cards/ConfirmationUnfollowUserCard'
 
 import profileImage from '../../../styles/default-profile.png'
-import SelectSearch from 'react-select-search';
+import Select from "react-dropdown-select";
 
 const SideDock = ({ followers, following, dispatch, user }) => {
   const [moreVisibilty, setMoreVisibilty] = useState(false)
@@ -19,7 +19,13 @@ const SideDock = ({ followers, following, dispatch, user }) => {
 
   function searchUser(e)
   {
-    console.log(e.target.value)
+    const  string = e.target.value
+      getSomeUsers(string)
+      .then(res=>
+        res.map(user=>{
+          console.log(user)
+        })
+        )
   }
 
   const options = [
@@ -100,10 +106,11 @@ const SideDock = ({ followers, following, dispatch, user }) => {
                 </g>
               </svg>
             </button>
-            <SelectSearch  onChange={searchUser}
+            <input
               className="sideDock-form--search__input"
-              type='text'  options={options}
+              type="text"
               placeholder="Search Twitter"
+              onChange={searchUser}
             />
           </form>
         </div>

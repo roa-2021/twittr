@@ -20,9 +20,8 @@ export const updateAUsersDetailsAPI = usersNewDetailsObj => {
       .then(res => res.body)
 }
 
-export const getSomeUsers = stringObj => {
+export const getSomeUsers = string => {
   return request
-    .get('/api/v1/users')
-    .send(stringObj)
+    .get(`/api/v1/users/like/${string}`)
     .then(res => res.body)
 }

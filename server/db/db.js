@@ -14,10 +14,11 @@ function updateUser(userID,newUser)
   .update(newUser)
 }
 
-function getSomeUsers(stringObj)
+function getSomeUsers(string)
 {
   return db('users')
-  .where('name','like','%'+stringObj.name+'%')
+  .where('name','like','%'+string+'%')
+  .select('id','name','username','profile_image')
 }
 
 //tweets*************************************
