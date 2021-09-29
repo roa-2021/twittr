@@ -46,7 +46,9 @@ const Profile = (props, tweet) => {
           </div>
         </div>
       </div>
-      <div className="user-banner"></div>
+      <div className="user-banner">
+        <img src="https://images.ctfassets.net/hrltx12pl8hq/1TygllzQIoWakVyXcqqG3l/8933393059eb72767cb2a7a120e1a882/hero_image.png?fit=fill&w=800&h=300" />
+      </div>
       <div className="profile-card-container">
         <div className="img-and-settings">
           <img src={profile_image ? profile_image : profileImage}></img>
