@@ -122,7 +122,7 @@ export const deleteLikeTHUNK = tweet => {
 }
 
 export const updateLikeCountTHUNK= tweet => {
-  console.log("thunk",tweet)
+  // console.log("thunk",tweet)
   return dispatch => {
     updateLikeCountAPI(tweet)
     .then(res => {

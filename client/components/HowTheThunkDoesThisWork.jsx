@@ -87,7 +87,7 @@ function App ({ dispatch }) {
   }
 
   const followANewUser = (userID, followingID) => {
-    console.log('App.jsx ' + followingID)
+    // console.log('App.jsx ' + followingID)
     dispatch(userWantsToFollowTHUNK(userID, followingID))
   }
 

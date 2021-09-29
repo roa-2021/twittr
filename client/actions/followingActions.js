@@ -24,7 +24,7 @@ export const getWhoUserIsFollowingTHUNK = userId => {
 
 export const userWantsToFollowTHUNK = (userId, followingId) => {
   return dispatch => {
-    console.log('followingAction.js ' + followingId)
+    // console.log('followingAction.js ' + followingId)
     userFollowAPI(userId, followingId)
     .then(res => {
         const newFollowing = res

@@ -30,7 +30,7 @@ router.get('/:id',(req,res)=>{
        })
     })
     Promise.all(promises).then((tweets)=>{
-      console.log(tweets)
+      // console.log(tweets)
 
     res.json(tweets)})
   })

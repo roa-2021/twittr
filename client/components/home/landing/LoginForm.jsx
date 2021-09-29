@@ -48,7 +48,7 @@ const LoginForm = props => {
       // formData.birthday=Birthday
       const userInfo = { ...formData }
       delete userInfo.confirm_password
-      console.log(userInfo)
+      // console.log(userInfo)
       dispatch(registerUserRequest(userInfo, confirmSuccess))
     }
   }

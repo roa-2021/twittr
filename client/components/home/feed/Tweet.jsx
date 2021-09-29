@@ -14,7 +14,7 @@ const Tweet = ({ tweet, i, user, following ,like}) => {
     const { profile_image } = user
     const authorObj = following.find(following => following.following === tweet.publisher)
    
-    console.log(authorObj)
+    // console.log(authorObj)
     // console.log('tweet id', tweet)
     // console.log('following', following)
     const likeButton=()=>{
