@@ -1,4 +1,4 @@
-import { STORE_TWEETS_CASE, DELETE_TWEET_CASE } from '../actions/tweetsActions'
+import { STORE_TWEETS_CASE, DELETE_TWEET_CASE ,ADD_LIKE,DELETE_LIKE} from '../actions/tweetsActions'
 import { RESET_APP } from '../actions/RESET_APP'
 
 const initialState = []
@@ -11,6 +11,12 @@ const tweetsReducer = (state = initialState, action) => {
       return [...action.tweet, ...state]
     case DELETE_TWEET_CASE:
       return state.filter(item => (item.id != action.tweetId))
+      case ADD_LIKE:
+      var newState = state.filter(tweet=>(tweet.id != action.tweet.id))
+      return [...newState,action.tweet]
+    case DELETE_LIKE:
+      var newState = state.filter(tweet=>(tweet.id != action.tweet.id))
+      return [...newState,action.tweet]
     default:
       return state
   }

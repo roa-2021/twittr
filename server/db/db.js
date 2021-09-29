@@ -24,9 +24,19 @@ function getTweets(userID)
   'tweets.publisher',
   'tweets.publish_time',
   'tweets.content',
+  'tweets.like_count',
+  'tweets.quote_count',
+  'tweets.retweet_count',
+  'users.profile_image',
   'users.name',
   'users.username'
   )
+}
+
+function getTweetByID(tweetID)
+{
+  return db('tweets')
+  .where('id',tweetID)
 }
 
 function createTweet(tweet)
@@ -93,7 +103,7 @@ function deleteFollowing(userID,followingID)
     followers:userID,
     following:followingID
   })
-  .delete()
+  .del()
 }
 
 //comments*****************************************
@@ -109,11 +119,52 @@ function createComment(comment)
   .insert(comment)
 }
 
+//like****************************************
+function getLikes(tweetID)
+{
+  return db('like')
+  .count('id as likesNum')
+  .where(
+  {tweet_id:tweetID,})
+}
+
+function isLiked(tweetID,userID)
+{
+  return db('like')
+  .count('id as isliked')
+  .where(
+  {tweet_id:tweetID,
+    user_id:userID,
+  })
+}
+
+
+function likeInsert(tweet)
+{
+  return db('like')
+  .insert({
+    tweet_id:tweet.id,
+    user_id:tweet.user_id,
+  })
+}
+
+
+function likeDelete(tweet)
+{
+  return db('like')
+  .where({
+    tweet_id:tweet.id,
+    user_id:tweet.user_id
+  })
+  .delete()
+}
+
 //export********************************************
 module.exports = {
   getUser,
   updateUser,
   getTweets,
+  getTweetByID,
   createTweet,
   deleteTweet,
   getFollower,
@@ -124,4 +175,8 @@ module.exports = {
   createComment,
   getFollowingNum,
   getFollowerNum,
+  getLikes,
+  isLiked,
+  likeInsert,
+  likeDelete,
 }
