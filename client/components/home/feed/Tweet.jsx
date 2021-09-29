@@ -80,7 +80,7 @@ const Tweet = ({ tweet, i, user, following ,like}) => {
                           <circle cx="19" cy="12" r="2"></circle>
                         </g>
                       </svg>
-                      {shouldToggleMore(i) && < OptionsPersonalTweetCard toggleDel={toggleDel} />}
+                      {shouldToggleMore(i) && < OptionsPersonalTweetCard toggleDel={toggleDel} user={user} publisher={tweet.publisher} />}
                     </div>
                   </div>
                   <div className="tweet-post">
