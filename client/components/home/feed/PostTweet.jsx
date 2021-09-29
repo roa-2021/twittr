@@ -98,11 +98,11 @@ const PostTweet = ({ dispatch, user }) => {
                 {
                   formContent !== '' ? 
                     <div className="submit-tweet">
-                      <button type='submit'><h2>Tweet</h2></button>
+                      <button type='submit'><h2>Hi</h2></button>
                     </div>
                     :
                     <div className="submit-tweet">
-                      <button type='submit' className="button-disabled" disabled><h2>Tweet</h2></button>
+                      <button type='submit' className="button-disabled" disabled><h2>Hi</h2></button>
                     </div>
                 }
               </div>
