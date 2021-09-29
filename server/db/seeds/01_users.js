@@ -26,18 +26,18 @@ exports.seed = function(knex) {
           password: 'abc',
           profile_image: 'https://camo.githubusercontent.com/1f26eb501b27c68ac74070110676b31e0d4e484c818d61edc4bef2350ab7b054/687474703a2f2f692e696d6775722e636f6d2f4b7653574c486f2e706e67',
           varified: 'true',
-          bio: 'My 🤸‍♂️BODY🏋️‍♀️ is a 🚂𝐌𝐀𝐂𝐇𝐈𝐍𝐄🚂 that turns 🐄𝒹𝒶𝒾𝓇𝓎 𝓅𝓇𝑜𝒹𝓊𝒸𝓉𝓈🥛 into ➡ 🔥ⓈⓅⒾⒸⓎ🔥 🐳𝓁𝒾𝓆𝓊𝒾𝒹💦 💩💩𝔻𝕀𝔸ℝℝℍ𝔼𝔸💪💪',
+          bio: 'I feel like Pablo',
           // birthday: '06-04-1987 00:00:00'
         },
         {
           id: 3, 
           name: 'Matthew',
-          username:'X_EDGE_Lord69_X',
+          username:'MattHocking2439',
           email_address: 'EDGEmaster69@eda.com',
           password: 'abc',
           profile_image: 'https://pbs.twimg.com/media/DwvaXrOX0AEIYh-.jpg',
           varified: 'true',
-          bio: 'one man\'s trash is another\'s treasure',
+          bio: 'one man\'s trash is another man\'s treasure',
           // birthday: '06-04-1987 00:00:00'
         },
         {
