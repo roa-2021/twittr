@@ -19,3 +19,10 @@ export const updateAUsersDetailsAPI = usersNewDetailsObj => {
       .send(usersNewDetailsObj)
       .then(res => res.body)
 }
+
+export const getSomeUsers = stringObj => {
+  return request
+    .get('/api/v1/users')
+    .send(stringObj)
+    .then(res => res.body)
+}

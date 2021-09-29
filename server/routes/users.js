@@ -45,4 +45,13 @@ router.patch('/:id', (req, res) => {
     .catch(err => res.status(500).json({ message: err.message }))
 })
 
+router.get('/', (req, res) => {
+  stringObj = req.body
+  db.getSomeUsers(stringObj)
+    .then(result => {
+      res.json(result)
+    })
+    .catch(err => res.status(500).json({ message: err.message }))
+})
+
 module.exports = router

@@ -26,12 +26,9 @@ router.get('/:id',(req,res)=>{
                   tweet.isliked =liked[0].isliked
                   return tweet
               })    
-
        })
     })
     Promise.all(promises).then((tweets)=>{
-      console.log(tweets)
-
     res.json(tweets)})
   })
   .catch(err => res.status(500).json({ message: err.message }))

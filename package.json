@@ -78,6 +78,8 @@
     "knex": "^0.95.11",
     "pg": "^8.5.1",
     "react-datepicker": "^4.2.1",
+    "react-dropdown-select": "^4.7.4",
+    "react-select-search": "^3.0.8",
     "sqlite3": "^4.2.0",
     "superagent": "^6.1.0"
   }

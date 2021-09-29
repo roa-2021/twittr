@@ -9,11 +9,24 @@ import OptionsSideBarMoreCard from '../../cards/OptionsSideBarMoreCard'
 import ConfirmationUnfollowUserCard from '../../cards/ConfirmationUnfollowUserCard'
 
 import profileImage from '../../../styles/default-profile.png'
+import SelectSearch from 'react-select-search';
 
 const SideDock = ({ followers, following, dispatch, user }) => {
   const [moreVisibilty, setMoreVisibilty] = useState(false)
   const [isFollowing, setFollowing] = useState(true)
   const [unfollowCardVis, setUnfollowCardVis] = useState([false, 0])
+
+
+  function searchUser(e)
+  {
+    console.log(e.target.value)
+  }
+
+  const options = [
+    {name: 'Swedish', value: 'sv'},
+    {name: 'English', value: 'en'},
+ 
+];
 
   function toggleUnfollowCardVis(followingID) {
     // HOW IS THIS REMOVING THE FOLLOW IN THE DB???
@@ -87,9 +100,9 @@ const SideDock = ({ followers, following, dispatch, user }) => {
                 </g>
               </svg>
             </button>
-            <input
+            <SelectSearch  onChange={searchUser}
               className="sideDock-form--search__input"
-              type="text"
+              type='text'  options={options}
               placeholder="Search Twitter"
             />
           </form>

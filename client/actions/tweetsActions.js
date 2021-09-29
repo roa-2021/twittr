@@ -128,6 +128,6 @@ export const updateLikeCountTHUNK= tweet => {
     .then(res => {
       dispatch(updateLikeCountAction(tweet))
     })
-    .catch(err => console.log(err))
+    // .catch(err => console.log(err))
   }
 }
