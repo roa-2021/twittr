@@ -20,7 +20,7 @@ const FeedDock = ({dispatch, user}) => {
       dispatch(getAUsersFollowingTweetsTHUNK(user.id))
       // console.log("BAM")
       scuffedWebSocket()
-    }, 12000)
+    }, 4000)
   }
   scuffedWebSocket()
 
