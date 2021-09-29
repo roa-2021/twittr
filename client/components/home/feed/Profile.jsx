@@ -2,15 +2,16 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
+import TweetList from './TweetList'
+
 import profileImage from '../../../styles/default-profile.png'
 import EditProfileCard from '../../cards/EditProfileCard'
 
 const Profile = (props, tweet) => {
   // failsafe by pulling in store and render that user if userObj doesnt exist
-  console.log(tweet)
 
   const userObj = props.location.userObj
-  const { name, profile_image, username, bio, followingNum, followerNum } = userObj
+  const { name, profile_image, username, bio, followingNum, followerNum, following, followers } = userObj
 
   const [editProfileCardVis, setEditProfileCardVis] = useState(false)
 
@@ -30,7 +31,7 @@ const Profile = (props, tweet) => {
         <div className="profile-header">
           <div className="profile-header-content">
             <div className="back-svg">
-              <Link to='/home/'>
+              <Link to='/'>
                 <svg viewBox="0 0 24 24" aria-hidden="true" className="back">
                   <g>
                     <path d="M20 11H7.414l4.293-4.293c.39-.39.39-1.023 0-1.414s-1.023-.39-1.414 0l-6 6c-.39.39-.39 1.023 0 1.414l6 6c.195.195.45.293.707.293s.512-.098.707-.293c.39-.39.39-1.023 0-1.414L7.414 13H20c.553 0 1-.447 1-1s-.447-1-1-1z"></path>
@@ -74,13 +75,13 @@ const Profile = (props, tweet) => {
         <div className="profile-follows">
           <Link to="/following">
             <p>
-              <span>{followingNum} </span>
+              <span>{followingNum ? followingNum : following} </span>
               Following
             </p>
           </Link>
           <Link to="/followers">
             <p>
-              <span>{followerNum} </span>
+              <span>{followerNum ? followerNum : followers} </span>
               Followers
             </p>
           </Link>
@@ -92,6 +93,7 @@ const Profile = (props, tweet) => {
         <button>Media</button>
         <button>Likes</button>
       </div>
+      <TweetList switchLocation={"profile"} theAuthor={userObj} />
     </div>
   )
 }

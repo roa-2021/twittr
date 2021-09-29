@@ -137,9 +137,16 @@
             color: #fff;
           }
         }
+        
         .new-tweet-card-container__tweet-button:hover {
           cursor: pointer;
           background-color: #097bc2;
+        }
+        .button-disabled {
+          background-color: #8ecdf8;
+        }
+        .button-disabled:hover {
+          background-color: #8ecdf8;
         }
       }
     }

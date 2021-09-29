@@ -6,6 +6,9 @@ export const DELETE_TWEET_CASE = 'NUKE_TWEET'
 export const ADD_LIKE = 'ADD_LIKE'
 export const DELETE_LIKE = 'DELETE_LIKE'
 export const UPDATE_LIKE = 'UPDATE_LIKE'
+export const REFRESH_TWEETS_CASE = 'TWEETS_REFRESHED'
+
+
 // ---- ACTIONS ----
 export const storeTweetACTION = tweet => {
   return {
@@ -39,6 +42,13 @@ export const updateLikeCountAction = tweet => {
   return {
     type: UPDATE_LIKE,
     tweet
+  }
+}
+
+export const refreshTweetsACTION = tweets => {
+  return {
+    type: REFRESH_TWEETS_CASE,
+    tweets
   }
 }
 
@@ -84,7 +94,7 @@ export const getAUsersFollowingTweetsTHUNK = userID => {
   return dispatch => {
     getAllUsersFollowingTweetsAPI(userID)
       .then(allFollowingTweets => {
-        dispatch(storeTweetACTION(allFollowingTweets))
+        dispatch(refreshTweetsACTION(allFollowingTweets))
       })
       // .catch(err => console.log(err))
   }

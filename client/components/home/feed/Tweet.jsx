@@ -7,6 +7,7 @@ import { retrieveAUsersTweetsTHUNK } from '../../../actions/tweetsActions'
 import OptionsPersonalTweetCard from '../../cards/OptionsPersonalTweetCard';
 import ConfirmationDeleteTweetCard from '../../cards/ConfirmationDeleteTweetCard'
 
+
 const Tweet = ({ tweet, i, user, following ,like}) => {
 
 
@@ -19,6 +20,7 @@ const Tweet = ({ tweet, i, user, following ,like}) => {
     const likeButton=()=>{
       like(tweet)
     }
+
 
     const [moreVisibility, setMoreVisibilty] = useState(false)
     const [targetTweet, setTargetTweet] = useState(undefined)
@@ -42,7 +44,7 @@ const Tweet = ({ tweet, i, user, following ,like}) => {
     }
 
     const newTo = {
-      pathname: '/home/profile/',
+      pathname: '/profile/',
       userObj: authorObj ? authorObj : user
     }
 

@@ -118,6 +118,11 @@
 
 .submit-tweet {
   align-self: flex-end;
+
+  * {
+    transition-duration: 0.2s;
+  }
+
   button {
     border: none;
     color: #fff;
@@ -130,7 +135,15 @@
   }
   button:hover {
     cursor: pointer;
-    filter: brightness(0.9);
+    // filter: brightness(0.9);
+    background-color: #0c8bdf;
+  }
+  
+  .button-disabled {
+    background-color: #8ecdf8;
+  }
+  .button-disabled:hover {
+    background-color: #8ecdf8;
   }
 }
 

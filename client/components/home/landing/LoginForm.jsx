@@ -129,12 +129,12 @@ const LoginForm = props => {
           value={formData.confirm_password}
         />
         <a href="">Use email instead</a>
-        <p className="date-title">Date of birth</p>
+        {/* <p className="date-title">Date of birth</p>
         <p className="date-text">
           This will not be shown publicly. Confirm your own age, even if this
           account is for a business, a pet, or something else.
-        </p>
-        <DatePicker selected={Birthday} onChange={(date) => setBirthday(date)} />
+        </p> */}
+        {/* <DatePicker selected={Birthday} onChange={(date) => setBirthday(date)} /> */}
         <button>Sign up</button>
       </form>
     </div>

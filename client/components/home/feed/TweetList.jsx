@@ -5,7 +5,9 @@ import { connect } from 'react-redux'
 import { addLikeTHUNK,deleteLikeTHUNK,updateLikeCountTHUNK } from '../../../actions/tweetsActions';
 import Tweet from './Tweet';
 
-const TweetList = ({ dispatch, tweets, user, following }) => {
+const TweetList = (props) => {
+  const { tweets, user, following, switchLocation, theAuthor } = props
+
 
   function likeTweet(tweet)
   {
@@ -13,8 +15,20 @@ const TweetList = ({ dispatch, tweets, user, following }) => {
     // console.log('tweetliked',tweet)
   }
 
+
+  let newTweets = [...tweets]
+  // && user.id ==
+  if (switchLocation && switchLocation === 'profile') {
+    newTweets = tweets.filter(tweet => tweet.publisher == theAuthor.id)
+  } else {
+    newTweets
+  }
+
+  newTweets.sort((a,b) => { 
+   return b.id - a.id})
+
   return (
-    tweets.map((tweet, i) => {
+    newTweets.map((tweet, i) => {
       return (
         <Tweet key={tweet.id} tweet={tweet} i={i} user={user} following={following} like={likeTweet}/>
       )
@@ -25,7 +39,7 @@ const TweetList = ({ dispatch, tweets, user, following }) => {
 const mapStateToProps = store => {
   return {
     tweets: store.tweet,
-    user: store.auth.user,
+    user: store.user,
     following: store.following
   }
 }
