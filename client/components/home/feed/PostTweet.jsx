@@ -13,8 +13,8 @@ const PostTweet = ({ dispatch, user }) => {
     setFormContent(e.target.value)
   }
 
-  const timestamp = Date.now();
-  // console.log(timestamp)
+  const timestamp = Math.floor(Date.now()/1000);
+  console.log(timestamp)
 
   const tweet = {
     publisher: user.id,
@@ -26,7 +26,7 @@ const PostTweet = ({ dispatch, user }) => {
     retweet_count: 0,
     quote_count: 0
   }
-  console.log(tweet)
+  // console.log(tweet)
 
   const postATweet = (e, tweet) => {
     e.preventDefault()
