@@ -85,6 +85,7 @@ const LoginForm = props => {
           autoComplete="name"
           onChange={handleChange}
           value={formData.name}
+          required
         />
         <input
           type="text"
@@ -94,33 +95,37 @@ const LoginForm = props => {
           autoComplete="username"
           onChange={handleChange}
           value={formData.username}
+          required
         />
         <input
-          type="text"
+          type="email"
           className="email"
           placeholder="Email"
           name="email_address"
           autoComplete="email"
           onChange={handleChange}
           value={formData.email_address}
+          required
         />
         <input
-          type="text"
+          type="password"
           className="password"
           placeholder="Password"
           name="password"
           autoComplete="password"
           onChange={handleChange}
           value={formData.password}
+          required
         />
         <input
-          type="text"
+          type="password"
           className="confirm-password"
           placeholder="Confirm Password"
           name="confirm_password"
           autoComplete="password"
           onChange={handleChange}
           value={formData.confirm_password}
+          required
         />
         <a href="">Use email instead</a>
         {/* <p className="date-title">Date of birth</p>
