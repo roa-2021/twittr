@@ -19,6 +19,8 @@ const Profile = (props, tweet) => {
     setEditProfileCardVis(!editProfileCardVis)
   }
 
+  console.log(followingNum, following)
+
   return (
     <div className="feed-panel-container">
       {
@@ -77,13 +79,13 @@ const Profile = (props, tweet) => {
         <div className="profile-follows">
           <Link to="/following">
             <p>
-              <span>{followingNum ? followingNum : following} </span>
+              <span>{followingNum ? followingNum : ''} </span>
               Following
             </p>
           </Link>
           <Link to="/followers">
             <p>
-              <span>{followerNum ? followerNum : followers} </span>
+              <span>{followerNum ? followerNum : ''} </span>
               Followers
             </p>
           </Link>
