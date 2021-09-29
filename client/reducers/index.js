@@ -7,6 +7,7 @@ import followersReducer from './followersReducer'
 import followingReducer from './followingReducer'
 import commentsReducer from './commentsReducer'
 import followUserReducer from './followUserReducer'
+import searchReducer from './searchReducer'
 
 export default combineReducers({
   user: userReducer,
@@ -15,5 +16,6 @@ export default combineReducers({
   followers: followersReducer,
   following: followingReducer,
   comments: commentsReducer,
-  followUser: followUserReducer
+  followUser: followUserReducer,
+  search:searchReducer,
 })

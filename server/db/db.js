@@ -14,6 +14,13 @@ function updateUser(userID,newUser)
   .update(newUser)
 }
 
+function getSomeUsers(string)
+{
+  return db('users')
+  .where('name','like','%'+string+'%')
+  .select('id','name','username','profile_image')
+}
+
 //tweets*************************************
 function getTweets(userID)
 {
@@ -188,4 +195,5 @@ module.exports = {
   likeInsert,
   likeDelete,
   updateLikeCount,
+  getSomeUsers,
 }

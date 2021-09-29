@@ -19,3 +19,9 @@ export const updateAUsersDetailsAPI = usersNewDetailsObj => {
       .send(usersNewDetailsObj)
       .then(res => res.body)
 }
+
+export const searchUsers = string => {
+  return request
+    .get(`/api/v1/users/like/${string}`)
+    .then(res => res.body)
+}

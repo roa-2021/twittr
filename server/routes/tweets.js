@@ -26,11 +26,10 @@ router.get('/:id',(req,res)=>{
                   tweet.isliked =liked[0].isliked
                   return tweet
               })    
-
        })
     })
     Promise.all(promises).then((tweets)=>{
-      console.log(tweets)
+      // console.log(tweets)
 
     res.json(tweets)})
   })

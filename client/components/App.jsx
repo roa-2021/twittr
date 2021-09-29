@@ -27,19 +27,16 @@ function App({ auth, user, dispatch }) {
     const confirmSuccess = () => {
     }
     dispatch(checkAuth(confirmSuccess))
-    console.log('checking auth')
   }, [])
 
   useEffect(() => {
     if (auth.isAuthenticated === true) {
-      console.log('dispatch', auth.isAuthenticated)
       const id = user.id
       allFunc(id)
     }
   }, [auth])
 
   const allFunc = id => {
-    console.log('running all func')
     if (id) {
       dispatch(getFollowersOfUserTHUNK(id))
       dispatch(retrieveCommentsTHUNK(id))

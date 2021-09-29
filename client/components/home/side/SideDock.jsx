@@ -1,21 +1,57 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-
+import {getSomeUsers} from '../../../apis/userAPI'
 import { addFollowing, followUser } from '../../../actions/followUserAction'
 import { getAUsersFollowingTweetsTHUNK } from '../../../actions/tweetsActions'
 import { getAUsersDetailsTHUNK } from '../../../actions/userActions'
-
+import { searchUserTHUNK } from '../../../actions/userActions'
 import OptionsSideBarMoreCard from '../../cards/OptionsSideBarMoreCard'
 import ConfirmationUnfollowUserCard from '../../cards/ConfirmationUnfollowUserCard'
 import SearchUserResultsCard from '../../cards/SearchUserResultsCard'
 
 import profileImage from '../../../styles/default-profile.png'
+import authReducer from '../../../reducers/authReducer'
 
-const SideDock = ({ followers, following, dispatch, user }) => {
+const SideDock = ({ followers, following, dispatch, user ,search, auth}) => {
   const [moreVisibilty, setMoreVisibilty] = useState(false)
   const [isFollowing, setFollowing] = useState(true)
   const [unfollowCardVis, setUnfollowCardVis] = useState([false, 0])
+
+
+  useEffect(() => {
+      if(search.length==0)
+      {
+        console.log('no result')
+      }
+      else
+      {
+        var followingIDs = following.map(user => user.id)
+        followingIDs.push(auth.id)
+        var searchResult = search.filter(user => !followingIDs.includes(user.id));
+        if(searchResult.length==0)
+        {
+          console.log("no result")
+        }
+        else{
+          console.log(searchResult)
+        }
+      }
+    
+  }, [search])
+
+  function searchUser(e)
+  {
+    const  string = e.target.value
+    dispatch(searchUserTHUNK(string))
+
+      // getSomeUsers(string)
+      // .then(res=>
+      //   res.map(user=>{
+      //     console.log(user)
+      //   })
+      //   )
+  }
 
   function toggleUnfollowCardVis(followingID) {
     // HOW IS THIS REMOVING THE FOLLOW IN THE DB???
@@ -94,6 +130,7 @@ const SideDock = ({ followers, following, dispatch, user }) => {
             <input
               className="sideDock-form--search__input"
               type="text"
+              onChange={searchUser}
               placeholder="Search Hihi"
             />
           </form>
@@ -194,9 +231,10 @@ const SideDock = ({ followers, following, dispatch, user }) => {
 function mapStateToProps(state) {
   return {
     user: state.user,
-
+    search: state.search,
     followers: state.followers,
-    following: state.following
+    following: state.following,
+    auth: state.auth.user
   }
 }
 
