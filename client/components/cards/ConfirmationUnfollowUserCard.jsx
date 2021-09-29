@@ -21,7 +21,7 @@ const ConfirmationUnfollowUserCard = ({ toggleUnfollowCardVis, followers, follow
       </div>
       <div className="popup-card-container__paragraph-text-container">
         <span>
-        Their Tweets will no longer show up in your home timeline. You can still view their profile, unless their Tweets are protected.
+        Their His will no longer show up in your home timeline. You can still view their profile, unless their His are protected.
         </span>
       </div>
       <Link to="/">

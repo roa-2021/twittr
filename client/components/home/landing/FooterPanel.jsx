@@ -19,7 +19,7 @@ const FooterPanel = () => {
             <a href="">Developers</a>
             <a href="">Directory</a>
             <a href="">Settings</a>
-            <a href="">&copy;2021 Twitter, inc.</a>
+            <a href="">&copy;2021 Hihi, inc.</a>
       </footer>
     )
 }

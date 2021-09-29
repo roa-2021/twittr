@@ -93,7 +93,7 @@ const SideDock = ({ followers, following, dispatch, user }) => {
             <input
               className="sideDock-form--search__input"
               type="text"
-              placeholder="Search Twitter"
+              placeholder="Search Hihi"
             />
           </form>
         </div>
@@ -180,7 +180,7 @@ const SideDock = ({ followers, following, dispatch, user }) => {
             <a href="">Cookie Policy</a>
             <a href="">Ads info</a>
             <a  onClick={toggleMore}>More ...</a>
-            <a href="">&copy; 2021 Twitter, Inc.</a>
+            <a href="">&copy; 2021 Hihi, Inc.</a>
             {moreVisibilty && < OptionsSideBarMoreCard/>}
           </div>
         </div>

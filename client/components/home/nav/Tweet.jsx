@@ -21,7 +21,7 @@ const Tweet = () => {
                 <div>
                   <span>
                     <span>
-                      Tweet
+                      Hi
                     </span>
                   </span>
                 </div>

@@ -5,7 +5,7 @@ const ConfirmationDiscardNewTweetDraftCard = () => {
   return (
     <div className="popup-card-container">
       <div className="popup-card-container__header-text-container">
-        <span>Discard Tweet?</span>
+        <span>Discard Hi?</span>
       </div>
       <div className="popup-card-container__paragraph-text-container">
         <span>

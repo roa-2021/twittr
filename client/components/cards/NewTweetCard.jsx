@@ -147,7 +147,7 @@ const NewTweetCard = ({ dispatch, togglePopupVis, user }) => {
                   <div className="new-tweet-card-container__tweet-button-container">
                     <button type="submit" className="new-tweet-card-container__tweet-button">
                       <span>
-                        Tweet
+                        Hi
                       </span>
                     </button>
                   </div>
@@ -155,7 +155,7 @@ const NewTweetCard = ({ dispatch, togglePopupVis, user }) => {
                   <div className={"new-tweet-card-container__tweet-button-container"}>
                     <button type="submit" className="new-tweet-card-container__tweet-button button-disabled" disabled>
                       <span>
-                        Tweet
+                        Hi
                       </span>
                     </button>
                   </div>

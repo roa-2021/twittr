@@ -97,7 +97,7 @@
   justify-content: space-between;
   width: 100%;
   height: 48px;
-  fill: rgb(28, 155, 239);
+  fill: rgb(89,183,129);
 }
 
 .reactions {
@@ -112,7 +112,7 @@
   border-radius: 50%;
   transition: 0.4s;
 }:hover {
-  background-color: #d5eff8;
+  background-color: rgb(197, 255, 222);
   border-radius: 50%;
   transition: 0.4s;
   }
@@ -128,7 +128,7 @@
   button {
     border: none;
     color: #fff;
-    background-color: rgb(28, 155, 239);
+    background-color: rgb(89,183,129);
     padding: 9px 18px;
     text-decoration: none;
     font-family: inherit;
@@ -142,10 +142,10 @@
   }
   
   .button-disabled {
-    background-color: #8ecdf8;
+    background-color: #9dd6b6;
   }
   .button-disabled:hover {
-    background-color: #8ecdf8;
+    background-color: #59B781;
   }
 }
 
@@ -310,7 +310,7 @@
   }
   :hover {
     background-color: #d5eff8;
-    fill: rgb(28, 155, 239);
+    fill: rgb(89,183,129);
     border-radius: 50%;
     transition-duration: 0.2s;
   }
@@ -472,7 +472,7 @@
     background-color: #fff;
   }
   button:hover {
-    border-bottom: 2px solid #1c9bef;
+    border-bottom: 2px solid #59B781;
   }
 }
 
@@ -489,7 +489,7 @@
     background-color: #fff;
   }
   button:hover {
-    border-bottom: 2px solid #1c9bef;
+    border-bottom: 2px solid #59B781;
   }
 }
 
@@ -506,9 +506,9 @@
     transition: 0.4s;
   }
   svg:hover {
-    fill: rgb(28, 155, 239);
+    fill: rgb(89,183,129);
     border-radius: 50%;
-    background-color: rgb(208, 221, 223);
+    background-color: rgb(135, 243, 182);
     transition: 0.4s;
   }
 }

@@ -5,11 +5,11 @@ const ConfirmationSaveNewTweetDraftCard = () => {
   return (
     <div className="popup-card-container">
       <div className="popup-card-container__header-text-container">
-        <span>Save Tweet?</span>
+        <span>Save Hi?</span>
       </div>
       <div className="popup-card-container__paragraph-text-container">
         <span>
-          You can save this to send later from your unsent Tweets. 
+          You can save this to send later from your unsent Hihis. 
         </span>
       </div>
       <Link to="/">
