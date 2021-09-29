@@ -4,7 +4,7 @@ exports.up = function(knex) {
     table.increments('id').primary()
     table.integer('publisher')
     table.foreign('publisher').references('users.id')
-    table.timestamp('publish_time')
+    table.integer('publish_time')
     table.string('content')
     table.integer('like_count')
     table.integer('retweet_count')

@@ -8,7 +8,7 @@ exports.seed = function(knex) {
         {
           id: 1, 
           publisher: 4, 
-          publish_time: '04/05/2021 00:00:00',
+          publish_time: 1632872894009,
           content: 'What does twitter have?',
           like_count: 254,
           retweet_count: 6,
@@ -17,7 +17,7 @@ exports.seed = function(knex) {
         {
           id: 2, 
           publisher: 5, 
-          publish_time: '04/05/2021 00:00:00',
+          publish_time: 1632872894010,
           content: 'Guys.. it\'s already done!',
           like_count: 124,
           retweet_count: 3,
@@ -26,7 +26,7 @@ exports.seed = function(knex) {
         {
           id: 3, 
           publisher: 2, 
-          publish_time: '04/05/2021 00:00:00',
+          publish_time: 1632872894011,
           content: 'yeeeeeeeeet!!!',
           like_count: 467,
           retweet_count: 37,
