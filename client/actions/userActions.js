@@ -1,12 +1,20 @@
-import { addAUserAPI, getAUserByIdAPI, updateAUsersDetailsAPI,getSomeUsers } from '../apis/userAPI'
+import { addAUserAPI, getAUserByIdAPI, updateAUsersDetailsAPI,searchUsers } from '../apis/userAPI'
 
 // ---- CASE ----
 export const STORE_USER_CASE = 'STORED_USER_DETAILS'
+export const SEARCH_USER_CASE = 'SEARCH_USER_CASE'
 
 // ---- ACTION ----
 export const storeUserACTION = user => {
   return {
     type: STORE_USER_CASE,
+    user
+  }
+}
+
+export const searchUserACTION = user => {
+  return {
+    type: SEARCH_USER_CASE,
     user
   }
 }
@@ -48,6 +56,17 @@ export const updateAUserTHUNK = usersNewDetailsObj => {
       // .catch(err => console.log(err))
   }}
 }
+
+
+export const searchUserTHUNK = string => {{
+  return dispatch => {
+    searchUsers(string)
+      .then(users => {
+        dispatch(searchUserACTION(users))
+      })
+      // .catch(err => console.log(err))
+  }
+}}
 
 
 

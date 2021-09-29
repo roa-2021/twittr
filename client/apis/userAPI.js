@@ -20,7 +20,7 @@ export const updateAUsersDetailsAPI = usersNewDetailsObj => {
       .then(res => res.body)
 }
 
-export const getSomeUsers = string => {
+export const searchUsers = string => {
   return request
     .get(`/api/v1/users/like/${string}`)
     .then(res => res.body)
