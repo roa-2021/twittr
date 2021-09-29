@@ -13,22 +13,23 @@ const PostTweet = ({ dispatch, user }) => {
     setFormContent(e.target.value)
   }
 
-  const timestamp = new Date();
+  const timestamp = Math.floor(Date.now()/1000);
+  console.log(timestamp)
 
   const tweet = {
     publisher: user.id,
     name: user.name,
     username:user.username,
-    publish_time: timestamp.toLocaleString('en-NZ'),
+    publish_time: timestamp,
     content: formContent,
     like_count: 0,
     retweet_count: 0,
     quote_count: 0
   }
+  // console.log(tweet)
 
   const postATweet = (e, tweet) => {
     e.preventDefault()
-    console.log('posting tweet: ', tweet)
     dispatch(createANewTweetTHUNK(tweet))
     setFormContent('')
   }
