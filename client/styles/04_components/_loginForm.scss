@@ -154,3 +154,8 @@
   backdrop-filter: blur(3px);
   z-index: 5;
 }
+
+input:focus {
+  border-width: 2px;
+  border-color: #1d9bf0;
+}
