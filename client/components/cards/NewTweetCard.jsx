@@ -54,7 +54,7 @@ const NewTweetCard = ({ dispatch, togglePopupVis, user }) => {
           <form onSubmit={(e) => postATweet(e, tweet)}>
             <div className="new-tweet-card-container__tweet-body-container">
               <div className="tweet-content">
-                <textarea type="text" maxlength="140" placeholder="What's happening?" value={formContent} onChange={changeHandler} />
+                <textarea type="text" maxlength="140" placeholder="What's happening?" value={formContent} onChange={changeHandler} required />
               </div>
             </div>
             <div className="separator"></div>
@@ -142,13 +142,24 @@ const NewTweetCard = ({ dispatch, togglePopupVis, user }) => {
                   </svg>
                 </div>
               </div>
-              <div className="new-tweet-card-container__tweet-button-container">
-                <button type="submit" className="new-tweet-card-container__tweet-button">
-                  <span>
-                    Tweet
-                  </span>
-                </button>
-              </div>
+              {
+                formContent !== '' ?
+                  <div className="new-tweet-card-container__tweet-button-container">
+                    <button type="submit" className="new-tweet-card-container__tweet-button">
+                      <span>
+                        Tweet
+                      </span>
+                    </button>
+                  </div>
+                  :
+                  <div className={"new-tweet-card-container__tweet-button-container"}>
+                    <button type="submit" className="new-tweet-card-container__tweet-button button-disabled" disabled>
+                      <span>
+                        Tweet
+                      </span>
+                    </button>
+                  </div>
+              }
             </div>
           </form>
         </div>

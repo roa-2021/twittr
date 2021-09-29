@@ -43,7 +43,7 @@ const PostTweet = ({ dispatch, user }) => {
           <div className="tweet-content">
             <form onSubmit={(e) => postATweet(e, tweet)}>
               <div className="tweet-input">
-                <input maxLength="140" type="text" placeholder="What's happening?" onChange={changeHandler} value={formContent}/>
+                <input maxLength="140" type="text" placeholder="What's happening?" onChange={changeHandler} value={formContent} required />
               </div>
               <div className="interactions">
                 <div className="reactions">
@@ -94,9 +94,16 @@ const PostTweet = ({ dispatch, user }) => {
                     </g>
                   </svg>
                 </div>
-                <div className="submit-tweet">
-                  <button type='submit'><h2>Tweet</h2></button>
-                </div>
+                {
+                  formContent !== '' ? 
+                    <div className="submit-tweet">
+                      <button type='submit'><h2>Tweet</h2></button>
+                    </div>
+                    :
+                    <div className="submit-tweet">
+                      <button type='submit' className="button-disabled" disabled><h2>Tweet</h2></button>
+                    </div>
+                }
               </div>
             </form>
           </div>
