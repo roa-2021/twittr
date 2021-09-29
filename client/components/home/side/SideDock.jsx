@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 import { addFollowing, followUser } from '../../../actions/followUserAction'
 import { getAUsersFollowingTweetsTHUNK } from '../../../actions/tweetsActions'
+import { getAUsersDetailsTHUNK } from '../../../actions/userActions'
 
 import OptionsSideBarMoreCard from '../../cards/OptionsSideBarMoreCard'
 import ConfirmationUnfollowUserCard from '../../cards/ConfirmationUnfollowUserCard'
@@ -19,6 +20,7 @@ const SideDock = ({ followers, following, dispatch, user }) => {
     // HOW IS THIS REMOVING THE FOLLOW IN THE DB???
     setUnfollowCardVis([!unfollowCardVis[0], followingID])
     dispatch(getAUsersFollowingTweetsTHUNK(user.id))
+    dispatch(getAUsersDetailsTHUNK(user.id))
   }
 
   function toggleFollowingHover(e) {
@@ -41,6 +43,7 @@ const SideDock = ({ followers, following, dispatch, user }) => {
   const follow = id => { 
     dispatch(addFollowing(user.id, id))
     dispatch(getAUsersFollowingTweetsTHUNK(user.id))
+    dispatch(getAUsersDetailsTHUNK(user.id))
   }
 
   let displayList = followers.map(foo => {
