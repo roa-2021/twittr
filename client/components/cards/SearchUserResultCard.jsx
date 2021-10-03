@@ -13,7 +13,7 @@ import profileImage from '../../styles/default-profile.png'
 
 const SearchUserResultCard = (props) => {
   const {followers, following, dispatch, user, userResult} = props
-  console.log(userResult)
+  // console.log(userResult)
 
   const [isFollowing, setFollowing] = useState(true)
   const [unfollowCardVis, setUnfollowCardVis] = useState([false, 0])
@@ -35,7 +35,7 @@ const SearchUserResultCard = (props) => {
   }
 
   const follow = id => { 
-    console.log(userResult, id)
+    // console.log(userResult, id)
     dispatch(addFollowing(id, userResult.id))
     dispatch(getAUsersFollowingTweetsTHUNK(userResult.id))
     dispatch(getAUsersDetailsTHUNK(userResult.id))

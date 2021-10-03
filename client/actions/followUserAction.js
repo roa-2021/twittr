@@ -47,7 +47,7 @@ export const addFollowing = (followers, following) => {
 // }
 
 export const removeFollowing = (followers, following) => {
-  console.log(followers,following)
+  // console.log(followers,following)
   return dispatch => {
     userUnfollowAPI(followers, following).then(res => {
       // console.log(res)
