@@ -79,6 +79,8 @@
     "pg": "^8.5.1",
     "react-datepicker": "^4.2.1",
     "sqlite3": "^5.0.2",
+    "react-dropdown-select": "^4.7.4",
+    "react-select-search": "^3.0.8",
     "superagent": "^6.1.0"
   }
 }

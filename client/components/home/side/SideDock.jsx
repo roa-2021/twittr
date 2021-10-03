@@ -12,6 +12,7 @@ import SearchUserResultsCard from '../../cards/SearchUserResultsCard'
 
 import profileImage from '../../../styles/default-profile.png'
 import authReducer from '../../../reducers/authReducer'
+import SelectSearch from 'react-select-search';
 
 const SideDock = ({ followers, following, dispatch, user ,search, auth}) => {
   const [moreVisibilty, setMoreVisibilty] = useState(false)
@@ -127,7 +128,7 @@ const SideDock = ({ followers, following, dispatch, user ,search, auth}) => {
                 </g>
               </svg>
             </button>
-            <input
+            <SelectSearch 
               className="sideDock-form--search__input"
               type="text"
               onChange={searchUser}

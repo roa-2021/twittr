@@ -25,3 +25,10 @@ export const searchUsers = string => {
     .get(`/api/v1/users/like/${string}`)
     .then(res => res.body)
 }
+
+// export const getSomeUsers = stringObj => {
+//   return request
+//     .get('/api/v1/users')
+//     .send(stringObj)
+//     .then(res => res.body)
+// }
